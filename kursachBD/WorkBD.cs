@@ -1,26 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 
 namespace kursachBD
 {
-    class WorkBD
+    class DWorks
     {
         string Credentials = string.Empty;
         SqlConnection connection;
-        public WorkBD(string Credentials)
+        public DWorks(string Credentials)
         {
             this.Credentials = Credentials;
             connection = new SqlConnection(Credentials);
             connection.Open(); GC.SuppressFinalize(this);
         }
-        ~WorkBD()
+        ~DWorks()
         {
             connection.Close();
         }
+        public DataSet dataSet(string Columns, string Tables, string Arguments)
+        {
+            DataSet Temp = new DataSet();
+            SqlDataAdapter sqlData = new SqlDataAdapter($"SELECT {Columns} FROM {Tables} {Arguments}", connection);
+            sqlData.Fill(Temp);
+            return Temp;
+        }
+
     }
 }
