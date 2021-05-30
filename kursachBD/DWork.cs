@@ -133,5 +133,42 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        public string addStatusSotr(string status)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"INSERT INTO Статус_сотрудника (Статус) VALUES ('{status}')", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string delStatusSotr(int ID)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"DELETE FROM Статус_сотрудника WHERE Код = ('{ID}')", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string editStatusSotr(string edit, int ID)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"UPDATE Статус_сотрудника SET Статус = '{edit}' WHERE Код = {ID};", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
     }
 }
