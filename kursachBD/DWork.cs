@@ -149,7 +149,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"DELETE FROM Статус_сотрудника WHERE Код = ('{ID}')", connection);
+                SqlCommand command = new SqlCommand($"DELETE FROM Статус_сотрудника WHERE Код = {ID}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -170,5 +170,42 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        public string addSotrud(string surname, string name, string otch)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"INSERT INTO Список_сотрудников (Фамилия, Имя, Отчество) VALUES ('{surname}', '{name}', '{otch}')", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string delSotrud(int ID)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"DELETE FROM Список_сотрудников WHERE Код = ('{ID}')", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string editSotrud(string edit, string edit1, string edit2, int ID)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"UPDATE Список_сотрудников SET Фамилия = '{edit}', Имя = '{edit1}', Отчество = '{edit2}' WHERE Код = {ID}", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+
     }
 }
