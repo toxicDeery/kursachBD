@@ -97,5 +97,41 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        public string addPodrazdel(string Name, string floor)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"INSERT INTO Подразделение (Название, Этаж) VALUES ('{Name}', '{floor}')", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string delPodrazdel(int ID)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"DELETE FROM Подразделение WHERE Код = {ID}", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string editPodrazdel(string edit, string edit1, int ID)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"UPDATE Подразделение SET Название = '{edit}', Этаж = '{edit1}'  WHERE Код = {ID};", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
     }
 }
