@@ -186,7 +186,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"DELETE FROM Список_сотрудников WHERE Код = ('{ID}')", connection);
+                SqlCommand command = new SqlCommand($"DELETE FROM Список_сотрудников WHERE Код = {ID}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -206,6 +206,42 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        public string addDolzn(string dolzn)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"INSERT INTO Должность (Должность) VALUES ('{dolzn}')", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
 
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string delDolzn(int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"DELETE FROM Должность WHERE Код = {id}", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string editDolzn(string edit, int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"UPDATE Должность SET Должность = '{edit}' WHERE Код = {id}", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
     }
 }
