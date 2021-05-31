@@ -423,5 +423,41 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        public string addTypestreet(string nazvan)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"INSERT INTO Тип_улицы (Название) VALUES ('{nazvan}')", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string delTypestreet(int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"DELETE FROM Тип_улицы WHERE Код = '{id}'", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string editTypestreet(string edit, int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"UPDATE Тип_улицы SET Название = '{edit}' WHERE Код = {id}", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
     }
 }
