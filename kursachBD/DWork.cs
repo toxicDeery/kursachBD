@@ -387,6 +387,41 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-
+        public string addStreet(string nazv)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"INSERT INTO Улица (Название) VALUES ('{nazv}')", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string delStreet(int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"DELETE FROM Улица WHERE Код = '{id}'", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string editStreet(string edit, int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"UPDATE Улица SET Название = '{edit}' WHERE Код = {id}", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
     }
 }
