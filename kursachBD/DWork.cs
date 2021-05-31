@@ -267,11 +267,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string editNews(string edit, string edit1, DateTime date, DateTime date1)
+        public string editNews(string edit, string edit1, DateTime date, DateTime date1, int id)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Новость SET Название_информации = '{edit}', Текст = '{edit1}', Дата_размещения = '{date}', Дата_перевода_в_архив = '{date1}'", connection);
+                SqlCommand command = new SqlCommand($"UPDATE Новость SET Название_информации = '{edit}', Текст = '{edit1}', Дата_размещения = '{date}', Дата_перевода_в_архив = '{date1}' WHERE Код = {id}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -279,6 +279,41 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        
+        public string addArchive(DateTime date)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"INSERT INTO Архив (Дата_новости) VALUES ('{date}')", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string delArchive(int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"DELETE FROM Архив WHERE Код = '{id}'", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string editArchive(DateTime date, int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"UPDATE Архив SET Дата_новости = '{date}' WHERE Код = {id}", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
     }
 }
