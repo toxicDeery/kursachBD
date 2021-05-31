@@ -315,5 +315,43 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        public string addFile(string Name, string size, string type)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"INSERT INTO Файл (Название, Размер, Тип) VALUES ('{Name}', '{size}', '{type}')", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string delFile(int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"DELETE FROM Файл WHERE Код = '{id}'", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string editFile(string edit, string edit1, string edit2, int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"UPDATE Файл SET Назавние = '{edit}', Размер = '{edit1}', Тип = '{edit2}' WHERE Код = {id}", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+
+
     }
 }
