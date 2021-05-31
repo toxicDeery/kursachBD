@@ -459,5 +459,42 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        public string addNaspunkt(string nazvanie)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"INSERT INTO Населенный_пункт (Название) VALUES ('{nazvanie}')", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string delNaspunkt(int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"DELETE FROM Населенный_пункт WHERE Код = '{id}'", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string editNaspunkt(string edit, int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"UPDATE Населенный_пункт SET Название = '{edit}' WHERE Код = {id}", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        
     }
 }
