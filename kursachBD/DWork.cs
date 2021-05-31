@@ -243,5 +243,42 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        public string addNews(string Nazv, string text, DateTime date, DateTime date1)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"INSERT INTO Новость (Название_информации, Текст, Дата_размещения, Дата_перевода_в_архив) VALUES ('{Nazv}', '{text}', '{date}', '{date1}')", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string delNews(int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"DELETE FROM Новость WHERE Код = {id}", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string editNews(string edit, string edit1, DateTime date, DateTime date1)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"UPDATE Новость SET Название_информации = '{edit}', Текст = '{edit1}', Дата_размещения = '{date}', Дата_перевода_в_архив = '{date1}'", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        
     }
 }
