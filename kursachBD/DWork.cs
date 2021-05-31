@@ -351,7 +351,42 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-
+        public string addAdress(string numHome, string korpus)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"INSERT INTO Адрес (Номер_дома, Корпус) VALUES ('{numHome}', '{korpus}')", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string delAdress(int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"DELETE FROM Адрес WHERE Код = '{id}'", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
+        public string editAdress(string edit, string edit1, int id)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand($"UPDATE Адрес SET Номер_дома = '{edit}', Корпус = '{edit1}' WHERE Код = {id}", connection);
+                return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+        }
 
     }
 }
