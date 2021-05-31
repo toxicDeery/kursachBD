@@ -25,6 +25,13 @@ namespace kursachBD
             sqlData.Fill(Temp);
             return Temp;
         }
+        public DataSet ReturnTable(string Columns, string TablesName, string Arguments)
+        {
+            SqlDataAdapter sqlData = new SqlDataAdapter($"SELECT {Columns} FROM {TablesName} {Arguments}", connection);
+            DataSet dataSet = new DataSet();
+            sqlData.Fill(dataSet);
+            return dataSet;
+        }
         public string addOrganization(string Name, string kratName, string phoneNum, string adress, string email, string site)
         {
             try
@@ -531,5 +538,6 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+
     }
 }
