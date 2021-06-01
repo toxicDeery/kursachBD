@@ -6,11 +6,11 @@ namespace kursachBD
 {
     class DWorks
     {
-        string Credentials = string.Empty;
+        //string Credentials = string.Empty;
         SqlConnection connection;
         public DWorks(string Credentials)
         {
-            this.Credentials = Credentials;
+            //this.Credentials = Credentials;
             connection = new SqlConnection(Credentials);
             connection.Open(); GC.SuppressFinalize(this);
         }
@@ -250,11 +250,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string addNews(string Nazv, string text, DateTime date, DateTime date1)
+        public string addNews(string Nazv, string text, DateTime date, DateTime date1, string size)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"INSERT INTO Новость (Название_информации, Текст, Дата_размещения, Дата_перевода_в_архив) VALUES ('{Nazv}', '{text}', '{date}', '{date1}')", connection);
+                SqlCommand command = new SqlCommand($"INSERT INTO Новость (Название_информации, Текст, Дата_размещения, Дата_перевода_в_архив, Размер_в_Кб) VALUES ('{Nazv}', '{text}', '{date}', '{date1}', '{size}')", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -274,11 +274,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string editNews(string edit, string edit1, DateTime date, DateTime date1, int id)
+        public string editNews(string edit, string edit1, DateTime date, DateTime date1, string edit2, int id)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Новость SET Название_информации = '{edit}', Текст = '{edit1}', Дата_размещения = '{date}', Дата_перевода_в_архив = '{date1}' WHERE Код = {id}", connection);
+                SqlCommand command = new SqlCommand($"UPDATE Новость SET Название_информации = '{edit}', Текст = '{edit1}', Дата_размещения = '{date}', Дата_перевода_в_архив = '{date1}', Размер_в_Кб = '{edit2}' WHERE Код = {id}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)

@@ -16,5 +16,105 @@ namespace kursachBD
         {
             InitializeComponent();
         }
+        string Credentials =
+            @"Server = localhost\SQLExpress;" +
+            "Integrated security = SSPI;"+
+            "database = kurs;";
+        int tempeID = -1;
+
+        private void TypenpaddBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            listBox1.Items.Add(database.addTypenasp(TypenaspTB.Text));
+        }
+
+        private void TypenaspeditBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != -1) { listBox1.Items.Add(database.editTypenasp(TypenaspTB.Text, tempeID)); tempeID = -1; } 
+        }
+
+        private void TypenaspdelBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != 1) { listBox1.Items.Add(database.delTypenasp(tempeID)); tempeID = -1; }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabControl1.SelectedIndex)
+            {
+                case 1: tab3(); break;
+                case 0: tab0(); break;
+                case 2: tab4(); break;
+            }
+        }
+     
+
+        void tab3()
+        {
+            DWorks tet = new DWorks(Credentials);
+            switch (tabControl3.SelectedIndex)
+            {
+                case 0: { dataGridView1.DataSource = tet.dataSet("*", "Адрес", null).Tables[0].DefaultView; break; }
+                case 1: { dataGridView1.DataSource = tet.dataSet("*", "Улица", null).Tables[0].DefaultView; break; }
+                case 2: { dataGridView1.DataSource = tet.dataSet("*", "Тип_улицы", null).Tables[0].DefaultView; break; }
+                case 3: { dataGridView1.DataSource = tet.dataSet("*", "Населенный_пункт", null).Tables[0].DefaultView; break; }
+                case 4: { dataGridView1.DataSource = tet.dataSet("*", "Тип_населенного_пункта", null).Tables[0].DefaultView; break; }
+            }
+        }
+
+        private void tabControl3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tab3();
+        }
+
+        private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tab0();
+        }
+
+        void tab0()
+        {
+            DWorks tet = new DWorks(Credentials);
+            switch (tabControl2.SelectedIndex)
+            {
+                case 0: { break; }
+                case 1: { break; }
+                case 2: { break; }
+                case 3: { break; }
+                case 4: { break; }
+            }
+        }
+
+        private void tabControl4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tab4();
+        }
+        void tab4()
+        {
+            switch (tabControl4.SelectedIndex)
+            {
+                case 0: { break; }
+                case 1: { break; }
+                case 2: { break; }
+                case 3: { break; }
+            }
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
     }
 }
