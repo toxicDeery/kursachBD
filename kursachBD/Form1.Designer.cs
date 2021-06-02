@@ -44,6 +44,8 @@ namespace kursachBD
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.TypenaspdelBTN = new System.Windows.Forms.Button();
+            this.TypenaspeditBTN = new System.Windows.Forms.Button();
             this.TypenpaddBTN = new System.Windows.Forms.Button();
             this.TypenaspTB = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -52,14 +54,12 @@ namespace kursachBD
             this.tabPage15 = new System.Windows.Forms.TabPage();
             this.tabPage16 = new System.Windows.Forms.TabPage();
             this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabPage18 = new System.Windows.Forms.TabPage();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.TypenaspeditBTN = new System.Windows.Forms.Button();
-            this.TypenaspdelBTN = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -240,6 +240,26 @@ namespace kursachBD
             this.tabPage13.Text = "Тип_населенного_пункта";
             this.tabPage13.UseVisualStyleBackColor = true;
             // 
+            // TypenaspdelBTN
+            // 
+            this.TypenaspdelBTN.Location = new System.Drawing.Point(227, 52);
+            this.TypenaspdelBTN.Name = "TypenaspdelBTN";
+            this.TypenaspdelBTN.Size = new System.Drawing.Size(75, 23);
+            this.TypenaspdelBTN.TabIndex = 3;
+            this.TypenaspdelBTN.Text = "Удалить";
+            this.TypenaspdelBTN.UseVisualStyleBackColor = true;
+            this.TypenaspdelBTN.Click += new System.EventHandler(this.TypenaspdelBTN_Click);
+            // 
+            // TypenaspeditBTN
+            // 
+            this.TypenaspeditBTN.Location = new System.Drawing.Point(103, 52);
+            this.TypenaspeditBTN.Name = "TypenaspeditBTN";
+            this.TypenaspeditBTN.Size = new System.Drawing.Size(101, 23);
+            this.TypenaspeditBTN.TabIndex = 2;
+            this.TypenaspeditBTN.Text = "Редактировать";
+            this.TypenaspeditBTN.UseVisualStyleBackColor = true;
+            this.TypenaspeditBTN.Click += new System.EventHandler(this.TypenaspeditBTN_Click);
+            // 
             // TypenpaddBTN
             // 
             this.TypenpaddBTN.Location = new System.Drawing.Point(6, 52);
@@ -322,6 +342,16 @@ namespace kursachBD
             this.tabPage17.Text = "Файл";
             this.tabPage17.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(126, 158);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // tabPage18
             // 
             this.tabPage18.Controls.Add(this.listBox1);
@@ -350,6 +380,7 @@ namespace kursachBD
             this.dataGridView1.Size = new System.Drawing.Size(427, 497);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // dataGridView2
             // 
@@ -359,40 +390,10 @@ namespace kursachBD
             this.dataGridView2.Size = new System.Drawing.Size(240, 150);
             this.dataGridView2.TabIndex = 2;
             // 
-            // TypenaspeditBTN
-            // 
-            this.TypenaspeditBTN.Location = new System.Drawing.Point(103, 52);
-            this.TypenaspeditBTN.Name = "TypenaspeditBTN";
-            this.TypenaspeditBTN.Size = new System.Drawing.Size(101, 23);
-            this.TypenaspeditBTN.TabIndex = 2;
-            this.TypenaspeditBTN.Text = "Редактировать";
-            this.TypenaspeditBTN.UseVisualStyleBackColor = true;
-            this.TypenaspeditBTN.Click += new System.EventHandler(this.TypenaspeditBTN_Click);
-            // 
-            // TypenaspdelBTN
-            // 
-            this.TypenaspdelBTN.Location = new System.Drawing.Point(227, 52);
-            this.TypenaspdelBTN.Name = "TypenaspdelBTN";
-            this.TypenaspdelBTN.Size = new System.Drawing.Size(75, 23);
-            this.TypenaspdelBTN.TabIndex = 3;
-            this.TypenaspdelBTN.Text = "Удалить";
-            this.TypenaspdelBTN.UseVisualStyleBackColor = true;
-            this.TypenaspdelBTN.Click += new System.EventHandler(this.TypenaspdelBTN_Click);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(126, 158);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
