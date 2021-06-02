@@ -84,11 +84,11 @@ namespace kursachBD
             DWorks tet = new DWorks(Credentials);
             switch (tabControl2.SelectedIndex)
             {
-                case 0: { break; }
-                case 1: { break; }
-                case 2: { break; }
-                case 3: { break; }
-                case 4: { break; }
+                case 0: { dataGridView1.DataSource = tet.dataSet("*", "Организация", null).Tables[0].DefaultView; break; }
+                case 1: { dataGridView1.DataSource = tet.dataSet("*", "Подразделение", null).Tables[0].DefaultView; break; }
+                case 2: { dataGridView1.DataSource = tet.dataSet("*", "Список_сотрудников", null).Tables[0].DefaultView; break; }
+                case 3: { dataGridView1.DataSource = tet.dataSet("*", "Статус_сотрудника", null).Tables[0].DefaultView; break; }
+                case 4: { dataGridView1.DataSource = tet.dataSet("*", "Должность", null).Tables[0].DefaultView; break; }
             }
         }
 
@@ -98,12 +98,13 @@ namespace kursachBD
         }
         void tab4()
         {
+            DWorks tet = new DWorks(Credentials);
             switch (tabControl4.SelectedIndex)
             {
-                case 0: { break; }
-                case 1: { break; }
-                case 2: { break; }
-                case 3: { break; }
+                case 0: { dataGridView1.DataSource = tet.dataSet("*", "Новость", null).Tables[0].DefaultView; break; }
+                case 1: { dataGridView1.DataSource = tet.dataSet("*", "Рубрика", null).Tables[0].DefaultView; break; }
+                case 2: { dataGridView1.DataSource = tet.dataSet("*", "Архив", null).Tables[0].DefaultView; break; }
+                case 3: { dataGridView1.DataSource = tet.dataSet("*", "Файл", null).Tables[0].DefaultView; break; }
             }
         }
 
