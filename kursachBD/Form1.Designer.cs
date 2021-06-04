@@ -60,11 +60,33 @@ namespace kursachBD
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.dataGridViewListReturner = new System.Windows.Forms.DataGridView();
+            this.NaspTB = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.TypestrTB = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.StreetTB = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.NumHomeTB = new System.Windows.Forms.TextBox();
+            this.KorpusTB = new System.Windows.Forms.TextBox();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabControl3.SuspendLayout();
+            this.tabPage9.SuspendLayout();
+            this.tabPage10.SuspendLayout();
+            this.tabPage11.SuspendLayout();
+            this.tabPage12.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabControl4.SuspendLayout();
@@ -72,6 +94,7 @@ namespace kursachBD
             this.tabPage18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -188,6 +211,11 @@ namespace kursachBD
             // 
             // tabPage9
             // 
+            this.tabPage9.Controls.Add(this.button13);
+            this.tabPage9.Controls.Add(this.button12);
+            this.tabPage9.Controls.Add(this.button11);
+            this.tabPage9.Controls.Add(this.KorpusTB);
+            this.tabPage9.Controls.Add(this.NumHomeTB);
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
@@ -198,6 +226,10 @@ namespace kursachBD
             // 
             // tabPage10
             // 
+            this.tabPage10.Controls.Add(this.button10);
+            this.tabPage10.Controls.Add(this.button9);
+            this.tabPage10.Controls.Add(this.button8);
+            this.tabPage10.Controls.Add(this.StreetTB);
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
@@ -208,6 +240,10 @@ namespace kursachBD
             // 
             // tabPage11
             // 
+            this.tabPage11.Controls.Add(this.button7);
+            this.tabPage11.Controls.Add(this.button6);
+            this.tabPage11.Controls.Add(this.button5);
+            this.tabPage11.Controls.Add(this.TypestrTB);
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
@@ -218,6 +254,10 @@ namespace kursachBD
             // 
             // tabPage12
             // 
+            this.tabPage12.Controls.Add(this.button4);
+            this.tabPage12.Controls.Add(this.button3);
+            this.tabPage12.Controls.Add(this.button2);
+            this.tabPage12.Controls.Add(this.NaspTB);
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
@@ -380,12 +420,11 @@ namespace kursachBD
             this.dataGridView1.Size = new System.Drawing.Size(427, 497);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(1004, 52);
+            this.dataGridView2.Location = new System.Drawing.Point(948, 52);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(240, 150);
             this.dataGridView2.TabIndex = 2;
@@ -395,11 +434,163 @@ namespace kursachBD
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
+            // dataGridViewListReturner
+            // 
+            this.dataGridViewListReturner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListReturner.Location = new System.Drawing.Point(948, 240);
+            this.dataGridViewListReturner.Name = "dataGridViewListReturner";
+            this.dataGridViewListReturner.Size = new System.Drawing.Size(240, 150);
+            this.dataGridViewListReturner.TabIndex = 3;
+            // 
+            // NaspTB
+            // 
+            this.NaspTB.Location = new System.Drawing.Point(6, 27);
+            this.NaspTB.Name = "NaspTB";
+            this.NaspTB.Size = new System.Drawing.Size(100, 20);
+            this.NaspTB.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(6, 53);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(116, 53);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(233, 53);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // TypestrTB
+            // 
+            this.TypestrTB.Location = new System.Drawing.Point(6, 33);
+            this.TypestrTB.Name = "TypestrTB";
+            this.TypestrTB.Size = new System.Drawing.Size(100, 20);
+            this.TypestrTB.TabIndex = 0;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(6, 59);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(126, 59);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(254, 59);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "button7";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // StreetTB
+            // 
+            this.StreetTB.Location = new System.Drawing.Point(6, 33);
+            this.StreetTB.Name = "StreetTB";
+            this.StreetTB.Size = new System.Drawing.Size(100, 20);
+            this.StreetTB.TabIndex = 0;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(6, 59);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 1;
+            this.button8.Text = "button8";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(130, 59);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 2;
+            this.button9.Text = "button9";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(260, 59);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.TabIndex = 3;
+            this.button10.Text = "button10";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // NumHomeTB
+            // 
+            this.NumHomeTB.Location = new System.Drawing.Point(6, 28);
+            this.NumHomeTB.Name = "NumHomeTB";
+            this.NumHomeTB.Size = new System.Drawing.Size(100, 20);
+            this.NumHomeTB.TabIndex = 0;
+            // 
+            // KorpusTB
+            // 
+            this.KorpusTB.Location = new System.Drawing.Point(6, 65);
+            this.KorpusTB.Name = "KorpusTB";
+            this.KorpusTB.Size = new System.Drawing.Size(100, 20);
+            this.KorpusTB.TabIndex = 1;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(6, 91);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 23);
+            this.button11.TabIndex = 2;
+            this.button11.Text = "button11";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(135, 91);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 3;
+            this.button12.Text = "button12";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(266, 91);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 4;
+            this.button13.Text = "button13";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 532);
+            this.ClientSize = new System.Drawing.Size(1317, 532);
+            this.Controls.Add(this.dataGridViewListReturner);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tabControl1);
@@ -410,6 +601,14 @@ namespace kursachBD
             this.tabControl2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
+            this.tabPage10.ResumeLayout(false);
+            this.tabPage10.PerformLayout();
+            this.tabPage11.ResumeLayout(false);
+            this.tabPage11.PerformLayout();
+            this.tabPage12.ResumeLayout(false);
+            this.tabPage12.PerformLayout();
             this.tabPage13.ResumeLayout(false);
             this.tabPage13.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -418,6 +617,7 @@ namespace kursachBD
             this.tabPage18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -455,6 +655,24 @@ namespace kursachBD
         private System.Windows.Forms.Button TypenaspdelBTN;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridViewListReturner;
+        private System.Windows.Forms.TextBox KorpusTB;
+        private System.Windows.Forms.TextBox NumHomeTB;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox StreetTB;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox TypestrTB;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox NaspTB;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button11;
     }
 }
 
