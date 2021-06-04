@@ -78,9 +78,23 @@ namespace kursachBD
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
+            this.DolznTB = new System.Windows.Forms.TextBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.tabPage8.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage9.SuspendLayout();
@@ -90,6 +104,7 @@ namespace kursachBD
             this.tabPage13.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabControl4.SuspendLayout();
+            this.tabPage16.SuspendLayout();
             this.tabPage17.SuspendLayout();
             this.tabPage18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -167,6 +182,10 @@ namespace kursachBD
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.button19);
+            this.tabPage7.Controls.Add(this.button18);
+            this.tabPage7.Controls.Add(this.button17);
+            this.tabPage7.Controls.Add(this.textBox1);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
@@ -177,6 +196,10 @@ namespace kursachBD
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.button16);
+            this.tabPage8.Controls.Add(this.button15);
+            this.tabPage8.Controls.Add(this.button14);
+            this.tabPage8.Controls.Add(this.DolznTB);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Size = new System.Drawing.Size(438, 459);
@@ -363,6 +386,10 @@ namespace kursachBD
             // 
             // tabPage16
             // 
+            this.tabPage16.Controls.Add(this.button22);
+            this.tabPage16.Controls.Add(this.button21);
+            this.tabPage16.Controls.Add(this.button20);
+            this.tabPage16.Controls.Add(this.dateTimePicker1);
             this.tabPage16.Location = new System.Drawing.Point(4, 22);
             this.tabPage16.Name = "tabPage16";
             this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
@@ -585,6 +612,108 @@ namespace kursachBD
             this.button13.Text = "button13";
             this.button13.UseVisualStyleBackColor = true;
             // 
+            // DolznTB
+            // 
+            this.DolznTB.Location = new System.Drawing.Point(3, 33);
+            this.DolznTB.Name = "DolznTB";
+            this.DolznTB.Size = new System.Drawing.Size(100, 20);
+            this.DolznTB.TabIndex = 0;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(3, 59);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 1;
+            this.button14.Text = "button14";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(120, 59);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(75, 23);
+            this.button15.TabIndex = 2;
+            this.button15.Text = "button15";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(247, 59);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(75, 23);
+            this.button16.TabIndex = 3;
+            this.button16.Text = "button16";
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 28);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 0;
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(6, 54);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(75, 23);
+            this.button17.TabIndex = 1;
+            this.button17.Text = "button17";
+            this.button17.UseVisualStyleBackColor = true;
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(131, 54);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(75, 23);
+            this.button18.TabIndex = 2;
+            this.button18.Text = "button18";
+            this.button18.UseVisualStyleBackColor = true;
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(265, 54);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(75, 23);
+            this.button19.TabIndex = 3;
+            this.button19.Text = "button19";
+            this.button19.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(6, 53);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 0;
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(6, 89);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(75, 23);
+            this.button20.TabIndex = 1;
+            this.button20.Text = "button20";
+            this.button20.UseVisualStyleBackColor = true;
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(131, 89);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(75, 23);
+            this.button21.TabIndex = 2;
+            this.button21.Text = "button21";
+            this.button21.UseVisualStyleBackColor = true;
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(269, 89);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(75, 23);
+            this.button22.TabIndex = 3;
+            this.button22.Text = "button22";
+            this.button22.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -599,6 +728,10 @@ namespace kursachBD
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
@@ -613,6 +746,7 @@ namespace kursachBD
             this.tabPage13.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
+            this.tabPage16.ResumeLayout(false);
             this.tabPage17.ResumeLayout(false);
             this.tabPage18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -673,6 +807,18 @@ namespace kursachBD
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.TextBox DolznTB;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 
