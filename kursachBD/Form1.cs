@@ -15,39 +15,44 @@ namespace kursachBD
         public Form1()
         {
             InitializeComponent();
+            ComboUpdates();
+            TableUpdate();
         }
         string Credentials =
             @"Server = localhost\SQLExpress;" +
-            "Integrated security = SSPI;"+
+            "Integrated security = SSPI;" +
             "database = kurs;";
         int tempeID = -1;
         string selectedTable;
-        int tempStudID = -1;
+        //int tempStudID = -1;
 
         #region Тип_нас_пункт
         private void TypenpaddBTN_Click(object sender, EventArgs e)
         {
             DWorks database = new DWorks(Credentials);
             listBox1.Items.Add(database.addTypenasp(TypenaspTB.Text));
+            TableUpdate(); ComboUpdates();
         }
 
         private void TypenaspeditBTN_Click(object sender, EventArgs e)
         {
             DWorks database = new DWorks(Credentials);
-            if (tempeID != -1) { listBox1.Items.Add(database.editTypenasp(TypenaspTB.Text, tempeID)); tempeID = -1; } 
+            if (tempeID != -1) { listBox1.Items.Add(database.editTypenasp(TypenaspTB.Text, tempeID)); tempeID = -1; }
+            TableUpdate();
         }
 
         private void TypenaspdelBTN_Click(object sender, EventArgs e)
         {
             DWorks database = new DWorks(Credentials);
             if (tempeID != 1) { listBox1.Items.Add(database.delTypenasp(tempeID)); tempeID = -1; }
+            TableUpdate();
         }
         #endregion
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DWorks database = new DWorks(Credentials);
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect; 
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             tempeID = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString());
             switch (selectedTable)
             {
@@ -63,31 +68,11 @@ namespace kursachBD
         {
             switch (tabControl1.SelectedIndex)
             {
-                case 1: tab3(); break;
                 case 0: tab0(); break;
+                case 1: tab3(); break;
                 case 2: tab4(); break;
             }
         }
-     
-
-        void tab3()
-        {
-            DWorks tet = new DWorks(Credentials);
-            switch (tabControl3.SelectedIndex)
-            {
-                case 0: { selectedTable = "Адрес"; dataGridView1.DataSource = tet.dataSet("Номер_дома, Корпус", "Адрес", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Адрес", null).Tables[0].DefaultView; break; }
-                case 1: { selectedTable = "Улица"; dataGridView1.DataSource = tet.dataSet("Название", "Улица", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Улица", null).Tables[0].DefaultView; break; }
-                case 2: { selectedTable = "Тип_улицы"; dataGridView1.DataSource = tet.dataSet("Название", "Тип_улицы", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Тип_улицы", null).Tables[0].DefaultView; break; }
-                case 3: { selectedTable = "Населенный_пункт"; dataGridView1.DataSource = tet.dataSet("Название", "Населенный_пункт", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Населенный_пункт", null).Tables[0].DefaultView; break; }
-                case 4: { selectedTable = "Тип_населенного_пункта"; dataGridView1.DataSource = tet.dataSet("Название", "Тип_населенного_пункта", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Тип_населенного_пункта", null).Tables[0].DefaultView; break; }
-            }
-        }
-
-        private void tabControl3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            tab3();
-        }
-
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
         {
             tab0();
@@ -104,7 +89,23 @@ namespace kursachBD
                 case 3: { selectedTable = "Статус_сотрудника"; dataGridView1.DataSource = tet.dataSet("Статус", "Статус_сотрудника", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Статус_сотрудника", null).Tables[0].DefaultView; break; }
                 case 4: { selectedTable = "Должность"; dataGridView1.DataSource = tet.dataSet("Должность", "Должность", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Должность", null).Tables[0].DefaultView; break; }
             }
+        }        private void tabControl3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tab3();
         }
+        void tab3()
+        {
+            DWorks tet = new DWorks(Credentials);
+            switch (tabControl3.SelectedIndex)
+            {
+                case 0: { selectedTable = "Адрес"; dataGridView1.DataSource = tet.dataSet("Номер_дома, Корпус, Код_улицы, Код_нас_пункт, Код_организации", "Адрес", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Адрес", null).Tables[0].DefaultView; break; }
+                case 1: { selectedTable = "Улица"; dataGridView1.DataSource = tet.dataSet("Название", "Улица", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Улица", null).Tables[0].DefaultView; break; }
+                case 2: { selectedTable = "Тип_улицы"; dataGridView1.DataSource = tet.dataSet("Название", "Тип_улицы", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Тип_улицы", null).Tables[0].DefaultView; break; }
+                case 3: { selectedTable = "Населенный_пункт"; dataGridView1.DataSource = tet.dataSet("Название", "Населенный_пункт", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Населенный_пункт", null).Tables[0].DefaultView; break; }
+                case 4: { selectedTable = "Тип_населенного_пункта"; dataGridView1.DataSource = tet.dataSet("Название", "Тип_населенного_пункта", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Тип_населенного_пункта", null).Tables[0].DefaultView; break; }
+            }
+        }
+       
 
         private void tabControl4_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -122,17 +123,6 @@ namespace kursachBD
             }
         }
 
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.ShowDialog();
-        }
-
-       
         int GetDirCode(string Table, string ToFind, int cell) // Вернуть код (итератор) из справочника
         {
             DWorks database = new DWorks(Credentials);
@@ -146,5 +136,128 @@ namespace kursachBD
             }
             return -1;
         }
+        
+        void ComboUpdates()
+        {
+            TypenaspCB.Items.Clear();
+            TypestrCB.Items.Clear();
+            StreetCB.Items.Clear();
+            NaspCB.Items.Clear();
+            foreach(string i in BufferListUpdate(0))
+            {
+                TypenaspCB.Items.Add(i);
+            }
+            foreach (string i in BufferListUpdate(1))
+            {
+                TypestrCB.Items.Add(i);
+            }
+            foreach (string i in BufferListUpdate(2))
+            {
+                StreetCB.Items.Add(i);
+            }
+            foreach (string i in BufferListUpdate(3))
+            {
+                NaspCB.Items.Add(i);
+            }
+
+        }
+        List<string> BufferListUpdate(int Index)
+        {
+            DWorks database = new DWorks(Credentials);
+            List<string> Temp = new List<string>();
+            switch (Index)
+            {
+                case 0: //Добавить тип нас.пункт
+                    dataGridViewListReturner.DataSource = database.ReturnTable("Название", "Тип_населенного_пункта", null).Tables[0].DefaultView;
+                    for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
+                    {
+                        Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
+                    }
+                    break;
+                case 1: //Добавить тип_улицы
+                    dataGridViewListReturner.DataSource = database.ReturnTable("Название", "Тип_улицы", null).Tables[0].DefaultView;
+                    for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
+                    {
+                        Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
+                    }
+                    break;
+                case 2: // Заполнение улицы
+                    dataGridViewListReturner.DataSource = database.ReturnTable("Название", "Улица", null).Tables[0].DefaultView;
+                    for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
+                    {
+                        Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
+                    }
+                    break;
+                case 3: // Заполнение населенного пункта
+                    dataGridViewListReturner.DataSource = database.ReturnTable("Название", "Населенный_пункт", null).Tables[0].DefaultView;
+                    for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
+                    {
+                        Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
+                    }
+                    break;
+
+            }
+            return Temp;
+        }
+        void TableUpdate()
+        {
+            DWorks database = new DWorks(Credentials);
+            switch (selectedTable)
+            {
+                case "Тип_населенного_пункта":
+                    dataGridView1.DataSource = database.ReturnTable("Название", "Тип_населенного_пункта", null).Tables[0].DefaultView; break;
+            }
+
+        }
+        #region Нас_пункт
+        private void NpktAddBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            
+            listBox1.Items.Add(database.addNaspunkt(NaspTB.Text));
+            TableUpdate(); ComboUpdates();
+        }
+        #endregion
+        #region Тип_улицы
+        private void TypestraddBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            listBox1.Items.Add(database.addTypestreet(TypestrTB.Text));
+            TableUpdate(); ComboUpdates();
+        }
+        #endregion
+        #region File
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
+        #endregion
+        #region Адрес
+        private void AdressAddBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            listBox1.Items.Add(database.addAdress(
+                NumHomeTB.Text, KorpusTB.Text,
+                GetDirCode("Улица", $"{StreetCB.SelectedItem.ToString()}", 1),
+                GetDirCode("Населенный_пункт", $"{NaspCB.SelectedItem.ToString()}", 1)
+                //GetDirCode("Организация", $"{OrganizeCB.SelectedItem.ToString()}", 1)
+                ));
+            TableUpdate(); ComboUpdates();
+        }
+        #endregion
+        #region Улица
+        private void StrAddBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+
+            listBox1.Items.Add(database.addStreet(StreetTB.Text));
+            TableUpdate(); ComboUpdates();
+        }
+        #endregion
     }
 }
