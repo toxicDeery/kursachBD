@@ -394,11 +394,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string addStreet(string nazv)
+        public string addStreet(string nazv, int typestr)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"INSERT INTO Улица (Название) VALUES ('{nazv}')", connection);
+                SqlCommand command = new SqlCommand($"INSERT INTO Улица (Название, Код_типа_улицы) VALUES ('{nazv}', {typestr})", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -466,11 +466,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string addNaspunkt(string nazvanie)
+        public string addNaspunkt(string nazvanie, int typenasp)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"INSERT INTO Населенный_пункт (Название) VALUES ('{nazvanie}')", connection);
+                SqlCommand command = new SqlCommand($"INSERT INTO Населенный_пункт (Название, Код_типа_нас_пункт) VALUES ('{nazvanie}', {typenasp})", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -518,7 +518,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"DELETE FROM Тип_населенного_пункта WHERE Код = '{id}'", connection);
+                SqlCommand command = new SqlCommand($"DELETE FROM Тип_населенного_пункта WHERE Код = {id}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)

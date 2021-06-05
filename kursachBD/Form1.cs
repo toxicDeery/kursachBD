@@ -57,10 +57,11 @@ namespace kursachBD
             switch (selectedTable)
             {
                 case "Тип_населенного_пункта": TypenaspTB.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(); break;
-                case "Населенный_пункт": break;
+                case "Населенный_пункт": NaspTB.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(); NaspCB.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString(); break;
                 case "Тип_улицы": break;
                 case "Улица": break;
                 case "Адрес": break;
+                
             }
         }
 
@@ -99,9 +100,9 @@ namespace kursachBD
             switch (tabControl3.SelectedIndex)
             {
                 case 0: { selectedTable = "Адрес"; dataGridView1.DataSource = tet.dataSet("Номер_дома, Корпус, Код_улицы, Код_нас_пункт, Код_организации", "Адрес", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Адрес", null).Tables[0].DefaultView; break; }
-                case 1: { selectedTable = "Улица"; dataGridView1.DataSource = tet.dataSet("Название", "Улица", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Улица", null).Tables[0].DefaultView; break; }
+                case 1: { selectedTable = "Улица"; dataGridView1.DataSource = tet.dataSet("Название, Код_типа_улицы", "Улица", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Улица", null).Tables[0].DefaultView; break; }
                 case 2: { selectedTable = "Тип_улицы"; dataGridView1.DataSource = tet.dataSet("Название", "Тип_улицы", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Тип_улицы", null).Tables[0].DefaultView; break; }
-                case 3: { selectedTable = "Населенный_пункт"; dataGridView1.DataSource = tet.dataSet("Название", "Населенный_пункт", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Населенный_пункт", null).Tables[0].DefaultView; break; }
+                case 3: { selectedTable = "Населенный_пункт"; dataGridView1.DataSource = tet.dataSet("Название, Код_типа_нас_пункт", "Населенный_пункт", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Населенный_пункт", null).Tables[0].DefaultView; break; }
                 case 4: { selectedTable = "Тип_населенного_пункта"; dataGridView1.DataSource = tet.dataSet("Название", "Тип_населенного_пункта", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Тип_населенного_пункта", null).Tables[0].DefaultView; break; }
             }
         }
@@ -209,9 +210,9 @@ namespace kursachBD
                 case "Тип_улицы":
                     dataGridView1.DataSource = database.ReturnTable("Название", "Тип_улицы", null).Tables[0].DefaultView; break;
                 case "Населенный_пункт":
-                    dataGridView1.DataSource = database.ReturnTable("Название", "Населенный_пункт", null).Tables[0].DefaultView; break;
+                    dataGridView1.DataSource = database.ReturnTable("Название, Код_типа_нас_пункт", "Населенный_пункт", null).Tables[0].DefaultView; break;
                 case "Улица":
-                    dataGridView1.DataSource = database.ReturnTable("Название", "Улица", null).Tables[0].DefaultView; break;
+                    dataGridView1.DataSource = database.ReturnTable("Название, Код_типа_улицы", "Улица", null).Tables[0].DefaultView; break;
                 case "Адрес":
                     dataGridView1.DataSource = database.ReturnTable("Номер_дома, Корпус, Код_улицы, Код_нас_пункт", "Адрес", null).Tables[0].DefaultView; break;
 
@@ -223,7 +224,7 @@ namespace kursachBD
         {
             DWorks database = new DWorks(Credentials);
             
-            listBox1.Items.Add(database.addNaspunkt(NaspTB.Text));
+            listBox1.Items.Add(database.addNaspunkt(NaspTB.Text, GetDirCode("Тип_населенного_пункта", $"{TypenaspCB.SelectedItem.ToString()}", 1)));
             TableUpdate(); ComboUpdates();
         }
         private void NpktEditBTN_Click(object sender, EventArgs e)
@@ -287,8 +288,7 @@ namespace kursachBD
         private void StrAddBTN_Click(object sender, EventArgs e)
         {
             DWorks database = new DWorks(Credentials);
-
-            listBox1.Items.Add(database.addStreet(StreetTB.Text));
+            listBox1.Items.Add(database.addStreet(StreetTB.Text, GetDirCode("Тип_улицы", $"{TypestrCB.SelectedItem.ToString()}", 1)));
             TableUpdate(); ComboUpdates();
         }
         private void StrEditBTN_Click(object sender, EventArgs e)
