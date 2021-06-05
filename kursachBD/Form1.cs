@@ -43,6 +43,7 @@ namespace kursachBD
                     StreetCB.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                     NaspCB.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                     break;
+
                 //case "Организация": 
                     
             }
@@ -127,6 +128,8 @@ namespace kursachBD
             TypestrCB.Items.Clear();
             StreetCB.Items.Clear();
             NaspCB.Items.Clear();
+            DolznCB.Items.Clear();
+            StatusCB.Items.Clear();
             foreach(string i in BufferListUpdate(0))
             {
                 TypenaspCB.Items.Add(i);
@@ -143,6 +146,15 @@ namespace kursachBD
             {
                 NaspCB.Items.Add(i);
             }
+            foreach (string i in BufferListUpdate(4))
+            {
+                DolznCB.Items.Add(i);
+            }
+            foreach (string i in BufferListUpdate(5))
+            {
+                StatusCB.Items.Add(i);
+            }
+
 
         }
         List<string> BufferListUpdate(int Index)
@@ -179,6 +191,22 @@ namespace kursachBD
                         Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
                     }
                     break;
+                case 4: // Заполнение должности сотрудника
+                    dataGridViewListReturner.DataSource = database.ReturnTable("Должность", "Должность", null).Tables[0].DefaultView;
+                    for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
+                    {
+                        Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
+                    }
+                    break;
+                case 5: // Заполнение статуса сотрудника
+                    dataGridViewListReturner.DataSource = database.ReturnTable("Статус", "Статус_сотрудника", null).Tables[0].DefaultView;
+                    for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
+                    {
+                        Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
+                    }
+                    break;
+
+
 
             }
             return Temp;
@@ -204,7 +232,10 @@ namespace kursachBD
                     dataGridView1.DataSource = database.ReturnTable("Статус", "Статус_сотрудника", null).Tables[0].DefaultView; break;
                 case "Список_сотрудников":
                     dataGridView1.DataSource = database.ReturnTable("Фамилия, Имя, Отчество, Код_подразделения, Код_должности, Логин, Пароль, Код_статуса", "Список_сотрудников", null).Tables[0].DefaultView; break;
-
+                case "Подразделение":
+                    dataGridView1.DataSource = database.ReturnTable("Название, Этаж", "Подразделение", null).Tables[0].DefaultView; break;
+                case "Организация":
+                    dataGridView1.DataSource = database.ReturnTable("Название, Краткое_название, Контактный_телефон, Адрес, Эл_адрес, Адрес_сайта", "Организация", null).Tables[0].DefaultView; break;
 
 
             }
