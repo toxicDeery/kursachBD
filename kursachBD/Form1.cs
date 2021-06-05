@@ -408,5 +408,39 @@ namespace kursachBD
             TableUpdate(); ComboUpdates();
         }
         #endregion
+        #region Sotrudnik
+        private void SotrAddBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            listBox1.Items.Add(database.addSotrud(
+                SurnameTB.Text, NameTB.Text, MiddlenameTB.Text,
+                GetDirCode("Подразделение", $"{PodrazdelCB.SelectedItem.ToString()}", 1),
+                GetDirCode("Должность", $"{DolznCB.SelectedItem.ToString()}", 1), LogTB.Text, PasswordTB.Text,
+                GetDirCode("Статус", $"{StatusCB.SelectedItem.ToString()}", 1)
+                ));
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void SotrEditBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != -1)
+            {
+                listBox1.Items.Add(database.editSotrud(SurnameTB.Text, NameTB.Text, MiddlenameTB.Text,
+                GetDirCode("Подразделение", $"{PodrazdelCB.SelectedItem.ToString()}", 1),
+                GetDirCode("Должность", $"{DolznCB.SelectedItem.ToString()}", 1), LogTB.Text, PasswordTB.Text,
+                GetDirCode("Статус", $"{StatusCB.SelectedItem.ToString()}", 1),
+                tempeID)); tempeID = -1;
+            }
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void SotrDelBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != 1) { listBox1.Items.Add(database.delSotrud(tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
+        }
+        #endregion
     }
 }

@@ -201,11 +201,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string editSotrud(string edit, string edit1, string edit2, int ID)
+        public string editSotrud(string edit, string edit1, string edit2, int PodrCode, int DolCode, string log, string pass, int StatCode, int ID)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Список_сотрудников SET Фамилия = '{edit}', Имя = '{edit1}', Отчество = '{edit2}' WHERE Код = {ID}", connection);
+                SqlCommand command = new SqlCommand($"UPDATE Список_сотрудников SET Фамилия = '{edit}', Имя = '{edit1}', Отчество = '{edit2}', Код_подразделения = {PodrCode}, Код_должности = {DolCode}, Логин = '{log}', Пароль = '{pass}', Код_статуса = {StatCode} WHERE Код = {ID}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)

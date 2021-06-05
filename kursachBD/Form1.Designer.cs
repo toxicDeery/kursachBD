@@ -103,6 +103,9 @@ namespace kursachBD
             this.PodrazdelCB = new System.Windows.Forms.ComboBox();
             this.DolznCB = new System.Windows.Forms.ComboBox();
             this.StatusCB = new System.Windows.Forms.ComboBox();
+            this.SotrAddBTN = new System.Windows.Forms.Button();
+            this.SotrEditBTN = new System.Windows.Forms.Button();
+            this.SotrDelBTN = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -186,6 +189,9 @@ namespace kursachBD
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.SotrDelBTN);
+            this.tabPage6.Controls.Add(this.SotrEditBTN);
+            this.tabPage6.Controls.Add(this.SotrAddBTN);
             this.tabPage6.Controls.Add(this.StatusCB);
             this.tabPage6.Controls.Add(this.DolznCB);
             this.tabPage6.Controls.Add(this.PodrazdelCB);
@@ -860,6 +866,36 @@ namespace kursachBD
             this.StatusCB.Size = new System.Drawing.Size(121, 21);
             this.StatusCB.TabIndex = 7;
             // 
+            // SotrAddBTN
+            // 
+            this.SotrAddBTN.Location = new System.Drawing.Point(19, 233);
+            this.SotrAddBTN.Name = "SotrAddBTN";
+            this.SotrAddBTN.Size = new System.Drawing.Size(75, 23);
+            this.SotrAddBTN.TabIndex = 8;
+            this.SotrAddBTN.Text = "button2";
+            this.SotrAddBTN.UseVisualStyleBackColor = true;
+            this.SotrAddBTN.Click += new System.EventHandler(this.SotrAddBTN_Click);
+            // 
+            // SotrEditBTN
+            // 
+            this.SotrEditBTN.Location = new System.Drawing.Point(147, 233);
+            this.SotrEditBTN.Name = "SotrEditBTN";
+            this.SotrEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.SotrEditBTN.TabIndex = 9;
+            this.SotrEditBTN.Text = "button3";
+            this.SotrEditBTN.UseVisualStyleBackColor = true;
+            this.SotrEditBTN.Click += new System.EventHandler(this.SotrEditBTN_Click);
+            // 
+            // SotrDelBTN
+            // 
+            this.SotrDelBTN.Location = new System.Drawing.Point(267, 233);
+            this.SotrDelBTN.Name = "SotrDelBTN";
+            this.SotrDelBTN.Size = new System.Drawing.Size(75, 23);
+            this.SotrDelBTN.TabIndex = 10;
+            this.SotrDelBTN.Text = "button4";
+            this.SotrDelBTN.UseVisualStyleBackColor = true;
+            this.SotrDelBTN.Click += new System.EventHandler(this.SotrDelBTN_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -980,6 +1016,9 @@ namespace kursachBD
         private System.Windows.Forms.TextBox MiddlenameTB;
         private System.Windows.Forms.TextBox NameTB;
         private System.Windows.Forms.TextBox SurnameTB;
+        private System.Windows.Forms.Button SotrDelBTN;
+        private System.Windows.Forms.Button SotrEditBTN;
+        private System.Windows.Forms.Button SotrAddBTN;
     }
 }
 
