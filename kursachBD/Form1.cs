@@ -205,6 +205,13 @@ namespace kursachBD
                         Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
                     }
                     break;
+                /*case 6: // Заполнение адреса
+                    dataGridViewListReturner.DataSource = database.ReturnTable("Код", "Адрес", null).Tables[0].DefaultView;
+                    for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
+                    {
+                        Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
+                    }*/
+
 
 
 
@@ -461,12 +468,16 @@ namespace kursachBD
         #region Organization
         private void OrgAddBTN_Click(object sender, EventArgs e)
         {
-
+            DWorks database = new DWorks(Credentials);
+            listBox1.Items.Add(database.addOrganization(OrgTB.Text, KratOrgTB.Text, NumPhoneTB.Text, GetDirCode("Адрес", $"{AdressCB.SelectedItem.ToString()}", 1), EmailTB.Text, SiteTB.Text));
+            TableUpdate(); ComboUpdates();
         }
 
         private void OrgEditBTN_Click(object sender, EventArgs e)
         {
-
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != -1) { listBox1.Items.Add(database.editOrganization(OrgTB.Text, KratOrgTB.Text, NumPhoneTB.Text, GetDirCode("Адрес", $"{AdressCB.SelectedItem.ToString()}", 1), EmailTB.Text, SiteTB.Text, tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
         }
 
         private void OrgDelBTN_Click(object sender, EventArgs e)
