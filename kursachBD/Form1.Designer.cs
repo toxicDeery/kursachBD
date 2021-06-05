@@ -112,9 +112,15 @@ namespace kursachBD
             this.PodrazAddBTN = new System.Windows.Forms.Button();
             this.PodrazEditBTN = new System.Windows.Forms.Button();
             this.PodrazDelBTN = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.OrgTB = new System.Windows.Forms.TextBox();
+            this.KratOrgTB = new System.Windows.Forms.TextBox();
+            this.NumPhoneTB = new System.Windows.Forms.TextBox();
+            this.AdressCB = new System.Windows.Forms.ComboBox();
+            this.EmailTB = new System.Windows.Forms.TextBox();
+            this.SiteTB = new System.Windows.Forms.TextBox();
+            this.OrgAddBTN = new System.Windows.Forms.Button();
+            this.OrgEditBTN = new System.Windows.Forms.Button();
+            this.OrgDelBTN = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -180,9 +186,15 @@ namespace kursachBD
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.textBox3);
-            this.tabPage4.Controls.Add(this.textBox2);
-            this.tabPage4.Controls.Add(this.textBox1);
+            this.tabPage4.Controls.Add(this.OrgDelBTN);
+            this.tabPage4.Controls.Add(this.OrgEditBTN);
+            this.tabPage4.Controls.Add(this.OrgAddBTN);
+            this.tabPage4.Controls.Add(this.SiteTB);
+            this.tabPage4.Controls.Add(this.EmailTB);
+            this.tabPage4.Controls.Add(this.AdressCB);
+            this.tabPage4.Controls.Add(this.NumPhoneTB);
+            this.tabPage4.Controls.Add(this.KratOrgTB);
+            this.tabPage4.Controls.Add(this.OrgTB);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -968,26 +980,78 @@ namespace kursachBD
             this.PodrazDelBTN.UseVisualStyleBackColor = true;
             this.PodrazDelBTN.Click += new System.EventHandler(this.PodrazDelBTN_Click);
             // 
-            // textBox1
+            // OrgTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.OrgTB.Location = new System.Drawing.Point(6, 16);
+            this.OrgTB.Name = "OrgTB";
+            this.OrgTB.Size = new System.Drawing.Size(100, 20);
+            this.OrgTB.TabIndex = 0;
             // 
-            // textBox2
+            // KratOrgTB
             // 
-            this.textBox2.Location = new System.Drawing.Point(48, 70);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.KratOrgTB.Location = new System.Drawing.Point(6, 42);
+            this.KratOrgTB.Name = "KratOrgTB";
+            this.KratOrgTB.Size = new System.Drawing.Size(100, 20);
+            this.KratOrgTB.TabIndex = 1;
             // 
-            // textBox3
+            // NumPhoneTB
             // 
-            this.textBox3.Location = new System.Drawing.Point(81, 131);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 2;
+            this.NumPhoneTB.Location = new System.Drawing.Point(6, 68);
+            this.NumPhoneTB.Name = "NumPhoneTB";
+            this.NumPhoneTB.Size = new System.Drawing.Size(100, 20);
+            this.NumPhoneTB.TabIndex = 2;
+            // 
+            // AdressCB
+            // 
+            this.AdressCB.FormattingEnabled = true;
+            this.AdressCB.Location = new System.Drawing.Point(6, 94);
+            this.AdressCB.Name = "AdressCB";
+            this.AdressCB.Size = new System.Drawing.Size(121, 21);
+            this.AdressCB.TabIndex = 3;
+            // 
+            // EmailTB
+            // 
+            this.EmailTB.Location = new System.Drawing.Point(6, 121);
+            this.EmailTB.Name = "EmailTB";
+            this.EmailTB.Size = new System.Drawing.Size(100, 20);
+            this.EmailTB.TabIndex = 4;
+            // 
+            // SiteTB
+            // 
+            this.SiteTB.Location = new System.Drawing.Point(6, 147);
+            this.SiteTB.Name = "SiteTB";
+            this.SiteTB.Size = new System.Drawing.Size(100, 20);
+            this.SiteTB.TabIndex = 5;
+            // 
+            // OrgAddBTN
+            // 
+            this.OrgAddBTN.Location = new System.Drawing.Point(31, 188);
+            this.OrgAddBTN.Name = "OrgAddBTN";
+            this.OrgAddBTN.Size = new System.Drawing.Size(75, 23);
+            this.OrgAddBTN.TabIndex = 6;
+            this.OrgAddBTN.Text = "button2";
+            this.OrgAddBTN.UseVisualStyleBackColor = true;
+            this.OrgAddBTN.Click += new System.EventHandler(this.OrgAddBTN_Click);
+            // 
+            // OrgEditBTN
+            // 
+            this.OrgEditBTN.Location = new System.Drawing.Point(165, 188);
+            this.OrgEditBTN.Name = "OrgEditBTN";
+            this.OrgEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.OrgEditBTN.TabIndex = 7;
+            this.OrgEditBTN.Text = "button3";
+            this.OrgEditBTN.UseVisualStyleBackColor = true;
+            this.OrgEditBTN.Click += new System.EventHandler(this.OrgEditBTN_Click);
+            // 
+            // OrgDelBTN
+            // 
+            this.OrgDelBTN.Location = new System.Drawing.Point(306, 188);
+            this.OrgDelBTN.Name = "OrgDelBTN";
+            this.OrgDelBTN.Size = new System.Drawing.Size(75, 23);
+            this.OrgDelBTN.TabIndex = 8;
+            this.OrgDelBTN.Text = "button4";
+            this.OrgDelBTN.UseVisualStyleBackColor = true;
+            this.OrgDelBTN.Click += new System.EventHandler(this.OrgDelBTN_Click);
             // 
             // Form1
             // 
@@ -1122,9 +1186,15 @@ namespace kursachBD
         private System.Windows.Forms.Button PodrazDelBTN;
         private System.Windows.Forms.Button PodrazEditBTN;
         private System.Windows.Forms.Button PodrazAddBTN;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NumPhoneTB;
+        private System.Windows.Forms.TextBox KratOrgTB;
+        private System.Windows.Forms.TextBox OrgTB;
+        private System.Windows.Forms.TextBox SiteTB;
+        private System.Windows.Forms.TextBox EmailTB;
+        private System.Windows.Forms.ComboBox AdressCB;
+        private System.Windows.Forms.Button OrgDelBTN;
+        private System.Windows.Forms.Button OrgEditBTN;
+        private System.Windows.Forms.Button OrgAddBTN;
     }
 }
 

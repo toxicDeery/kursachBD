@@ -458,6 +458,23 @@ namespace kursachBD
 
         }
         #endregion
+        #region Organization
+        private void OrgAddBTN_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void OrgEditBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OrgDelBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != 1) { listBox1.Items.Add(database.deleteOrganization(tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
+        }
+        #endregion
     }
 }
