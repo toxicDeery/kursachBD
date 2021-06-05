@@ -442,5 +442,22 @@ namespace kursachBD
             TableUpdate(); ComboUpdates();
         }
         #endregion
+        #region Podrazdel
+        private void PodrazAddBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PodrazEditBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PodrazDelBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
     }
 }

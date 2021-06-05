@@ -32,11 +32,11 @@ namespace kursachBD
             sqlData.Fill(dataSet);
             return dataSet;
         }
-        public string addOrganization(string Name, string kratName, string phoneNum, string adress, string email, string site)
+        public string addOrganization(string Name, string kratName, string phoneNum, int adress, string email, string site)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"INSERT INTO Организация (Название, Краткое_название, Контактный_телефон, Адрес, Эл_адрес, Адрес_сайта) VALUES('{Name}', '{kratName}', '{phoneNum}',' {adress}', '{email}', '{site}')", connection);
+                SqlCommand command = new SqlCommand($"INSERT INTO Организация (Название, Краткое_название, Контактный_телефон, Адрес, Эл_адрес, Адрес_сайта) VALUES('{Name}', '{kratName}', '{phoneNum}', {adress}, '{email}', '{site}')", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: { command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -56,11 +56,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string editOrganization(string edit, string edit1, string edit2, string edit3, string edit4, string edit5 ,int ID)
+        public string editOrganization(string edit, string edit1, string edit2, int edit3, string edit4, string edit5 ,int ID)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Организация SET Название = '{edit}', Краткое_название = '{edit1}', Контактный_телефон = '{edit2}', Адрес = '{edit3}', Эл_адрес = '{edit4}' , Адрес_сайта = '{edit5}' WHERE Код = {ID}");
+                SqlCommand command = new SqlCommand($"UPDATE Организация SET Название = '{edit}', Краткое_название = '{edit1}', Контактный_телефон = '{edit2}', Адрес = {edit3}, Эл_адрес = '{edit4}' , Адрес_сайта = '{edit5}' WHERE Код = {ID}");
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -104,11 +104,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string addPodrazdel(string Name, string floor)
+        public string addPodrazdel(string Name, string floor, int OrgCode)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"INSERT INTO Подразделение (Название, Этаж) VALUES ('{Name}', '{floor}')", connection);
+                SqlCommand command = new SqlCommand($"INSERT INTO Подразделение (Название, Этаж, Код_организации) VALUES ('{Name}', '{floor}', {OrgCode})", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -128,11 +128,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string editPodrazdel(string edit, string edit1, int ID)
+        public string editPodrazdel(string edit, string edit1, int OrgCode, int ID)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Подразделение SET Название = '{edit}', Этаж = '{edit1}'  WHERE Код = {ID};", connection);
+                SqlCommand command = new SqlCommand($"UPDATE Подразделение SET Название = '{edit}', Этаж = '{edit1}', Код_организации = {OrgCode}  WHERE Код = {ID};", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)

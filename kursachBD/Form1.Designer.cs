@@ -106,9 +106,20 @@ namespace kursachBD
             this.SotrAddBTN = new System.Windows.Forms.Button();
             this.SotrEditBTN = new System.Windows.Forms.Button();
             this.SotrDelBTN = new System.Windows.Forms.Button();
+            this.PodrazdelTB = new System.Windows.Forms.TextBox();
+            this.FloorTB = new System.Windows.Forms.TextBox();
+            this.OrgaCB = new System.Windows.Forms.ComboBox();
+            this.PodrazAddBTN = new System.Windows.Forms.Button();
+            this.PodrazEditBTN = new System.Windows.Forms.Button();
+            this.PodrazDelBTN = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
@@ -169,6 +180,9 @@ namespace kursachBD
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.textBox3);
+            this.tabPage4.Controls.Add(this.textBox2);
+            this.tabPage4.Controls.Add(this.textBox1);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -179,6 +193,12 @@ namespace kursachBD
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.PodrazDelBTN);
+            this.tabPage5.Controls.Add(this.PodrazEditBTN);
+            this.tabPage5.Controls.Add(this.PodrazAddBTN);
+            this.tabPage5.Controls.Add(this.OrgaCB);
+            this.tabPage5.Controls.Add(this.FloorTB);
+            this.tabPage5.Controls.Add(this.PodrazdelTB);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -896,6 +916,79 @@ namespace kursachBD
             this.SotrDelBTN.UseVisualStyleBackColor = true;
             this.SotrDelBTN.Click += new System.EventHandler(this.SotrDelBTN_Click);
             // 
+            // PodrazdelTB
+            // 
+            this.PodrazdelTB.Location = new System.Drawing.Point(27, 26);
+            this.PodrazdelTB.Name = "PodrazdelTB";
+            this.PodrazdelTB.Size = new System.Drawing.Size(100, 20);
+            this.PodrazdelTB.TabIndex = 0;
+            // 
+            // FloorTB
+            // 
+            this.FloorTB.Location = new System.Drawing.Point(27, 52);
+            this.FloorTB.Name = "FloorTB";
+            this.FloorTB.Size = new System.Drawing.Size(100, 20);
+            this.FloorTB.TabIndex = 1;
+            // 
+            // OrgaCB
+            // 
+            this.OrgaCB.FormattingEnabled = true;
+            this.OrgaCB.Location = new System.Drawing.Point(27, 78);
+            this.OrgaCB.Name = "OrgaCB";
+            this.OrgaCB.Size = new System.Drawing.Size(121, 21);
+            this.OrgaCB.TabIndex = 2;
+            // 
+            // PodrazAddBTN
+            // 
+            this.PodrazAddBTN.Location = new System.Drawing.Point(27, 105);
+            this.PodrazAddBTN.Name = "PodrazAddBTN";
+            this.PodrazAddBTN.Size = new System.Drawing.Size(75, 23);
+            this.PodrazAddBTN.TabIndex = 3;
+            this.PodrazAddBTN.Text = "button2";
+            this.PodrazAddBTN.UseVisualStyleBackColor = true;
+            this.PodrazAddBTN.Click += new System.EventHandler(this.PodrazAddBTN_Click);
+            // 
+            // PodrazEditBTN
+            // 
+            this.PodrazEditBTN.Location = new System.Drawing.Point(156, 105);
+            this.PodrazEditBTN.Name = "PodrazEditBTN";
+            this.PodrazEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.PodrazEditBTN.TabIndex = 4;
+            this.PodrazEditBTN.Text = "button3";
+            this.PodrazEditBTN.UseVisualStyleBackColor = true;
+            this.PodrazEditBTN.Click += new System.EventHandler(this.PodrazEditBTN_Click);
+            // 
+            // PodrazDelBTN
+            // 
+            this.PodrazDelBTN.Location = new System.Drawing.Point(288, 105);
+            this.PodrazDelBTN.Name = "PodrazDelBTN";
+            this.PodrazDelBTN.Size = new System.Drawing.Size(75, 23);
+            this.PodrazDelBTN.TabIndex = 5;
+            this.PodrazDelBTN.Text = "button4";
+            this.PodrazDelBTN.UseVisualStyleBackColor = true;
+            this.PodrazDelBTN.Click += new System.EventHandler(this.PodrazDelBTN_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 16);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 0;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(48, 70);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 1;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(81, 131);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -910,6 +1003,10 @@ namespace kursachBD
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             this.tabPage7.ResumeLayout(false);
@@ -1019,6 +1116,15 @@ namespace kursachBD
         private System.Windows.Forms.Button SotrDelBTN;
         private System.Windows.Forms.Button SotrEditBTN;
         private System.Windows.Forms.Button SotrAddBTN;
+        private System.Windows.Forms.TextBox PodrazdelTB;
+        private System.Windows.Forms.ComboBox OrgaCB;
+        private System.Windows.Forms.TextBox FloorTB;
+        private System.Windows.Forms.Button PodrazDelBTN;
+        private System.Windows.Forms.Button PodrazEditBTN;
+        private System.Windows.Forms.Button PodrazAddBTN;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
