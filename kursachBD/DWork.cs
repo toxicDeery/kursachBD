@@ -382,11 +382,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string editAdress(string edit, string edit1, int id)
+        public string editAdress(string edit, string edit1, int streetCode, int hoodCode, int id)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Адрес SET Номер_дома = '{edit}', Корпус = '{edit1}' WHERE Код = {id}", connection);
+                SqlCommand command = new SqlCommand($"UPDATE Адрес SET Номер_дома = '{edit}', Корпус = '{edit1}', Код_улицы = {streetCode}, Код_нас_пункт = {hoodCode} WHERE Код = {id}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -418,11 +418,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string editStreet(string edit, int id)
+        public string editStreet(string edit, int type, int id)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Улица SET Название = '{edit}' WHERE Код = {id}", connection);
+                SqlCommand command = new SqlCommand($"UPDATE Улица SET Название = '{edit}', Код_типа_улицы = {type} WHERE Код = {id}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)

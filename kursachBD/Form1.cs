@@ -26,28 +26,7 @@ namespace kursachBD
         string selectedTable;
         //int tempStudID = -1;
 
-        #region Тип_нас_пункт
-        private void TypenpaddBTN_Click(object sender, EventArgs e)
-        {
-            DWorks database = new DWorks(Credentials);
-            listBox1.Items.Add(database.addTypenasp(TypenaspTB.Text));
-            TableUpdate(); ComboUpdates();
-        }
-
-        private void TypenaspeditBTN_Click(object sender, EventArgs e)
-        {
-            DWorks database = new DWorks(Credentials);
-            if (tempeID != -1) { listBox1.Items.Add(database.editTypenasp(TypenaspTB.Text, tempeID)); tempeID = -1; }
-            TableUpdate();
-        }
-
-        private void TypenaspdelBTN_Click(object sender, EventArgs e)
-        {
-            DWorks database = new DWorks(Credentials);
-            if (tempeID != 1) { listBox1.Items.Add(database.delTypenasp(tempeID)); tempeID = -1; }
-            TableUpdate();
-        }
-        #endregion
+      
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -57,10 +36,16 @@ namespace kursachBD
             switch (selectedTable)
             {
                 case "Тип_населенного_пункта": TypenaspTB.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(); break;
-                case "Населенный_пункт": NaspTB.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(); NaspCB.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString(); break;
-                case "Тип_улицы": break;
-                case "Улица": break;
-                case "Адрес": break;
+                case "Населенный_пункт": NaspTB.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(); TypenaspCB.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString(); break;
+                case "Тип_улицы": TypestrTB.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(); break;
+                case "Улица": StreetTB.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(); TypestrCB.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString(); break;
+                case "Адрес":
+                    NumHomeTB.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    KorpusTB.Text  = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    StreetCB.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    NaspCB.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    break;
+               
                 
             }
         }
@@ -229,11 +214,15 @@ namespace kursachBD
         }
         private void NpktEditBTN_Click(object sender, EventArgs e)
         {
-
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != -1) { listBox1.Items.Add(database.editNaspunkt(NaspTB.Text, GetDirCode("Тип_населенного_пункта", $"{TypenaspCB.SelectedItem.ToString()}", 1), tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
         }
         private void NpktDelBTN_Click(object sender, EventArgs e)
         {
-
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != 1) { listBox1.Items.Add(database.delNaspunkt(tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
         }
         #endregion
         #region Тип_улицы
@@ -245,11 +234,15 @@ namespace kursachBD
         }
         private void TypestrEditBTN_Click(object sender, EventArgs e)
         {
-
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != -1) { listBox1.Items.Add(database.editTypestreet(TypestrTB.Text, tempeID)); tempeID = -1; }
+            TableUpdate();
         }
         private void TypestrDelBTN_Click(object sender, EventArgs e)
         {
-
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != 1) { listBox1.Items.Add(database.delTypestreet(tempeID)); tempeID = -1; }
+            TableUpdate();
         }
         #endregion
         #region File
@@ -277,11 +270,15 @@ namespace kursachBD
         }
         private void AdressEditBTN_Click(object sender, EventArgs e)
         {
-
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != -1) { listBox1.Items.Add(database.editAdress(StreetTB.Text, GetDirCode("Тип_улицы", $"{TypestrCB.SelectedItem.ToString()}", 1), tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
         }
         private void AdressDelBTN_Click(object sender, EventArgs e)
         {
-
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != 1) { listBox1.Items.Add(database.delAdress(tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
         }
         #endregion
         #region Улица
@@ -293,18 +290,39 @@ namespace kursachBD
         }
         private void StrEditBTN_Click(object sender, EventArgs e)
         {
-
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != -1) { listBox1.Items.Add(database.editStreet(StreetTB.Text, GetDirCode("Тип_улицы", $"{TypestrCB.SelectedItem.ToString()}", 1)  ,tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
         }
         private void StrDelBTN_Click(object sender, EventArgs e)
         {
-
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != 1) { listBox1.Items.Add(database.delStreet(tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
+        }
+        #endregion
+        #region Тип_нас_пункт
+        private void TypenpaddBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            listBox1.Items.Add(database.addTypenasp(TypenaspTB.Text));
+            TableUpdate(); ComboUpdates();
         }
 
+        private void TypenaspeditBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != -1) { listBox1.Items.Add(database.editTypenasp(TypenaspTB.Text, tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
+        }
 
-
-
+        private void TypenaspdelBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != 1) { listBox1.Items.Add(database.delTypenasp(tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
+        }
         #endregion
-
         
     }
 }
