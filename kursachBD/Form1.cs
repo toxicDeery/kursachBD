@@ -206,6 +206,15 @@ namespace kursachBD
             {
                 case "Тип_населенного_пункта":
                     dataGridView1.DataSource = database.ReturnTable("Название", "Тип_населенного_пункта", null).Tables[0].DefaultView; break;
+                case "Тип_улицы":
+                    dataGridView1.DataSource = database.ReturnTable("Название", "Тип_улицы", null).Tables[0].DefaultView; break;
+                case "Населенный_пункт":
+                    dataGridView1.DataSource = database.ReturnTable("Название", "Населенный_пункт", null).Tables[0].DefaultView; break;
+                case "Улица":
+                    dataGridView1.DataSource = database.ReturnTable("Название", "Улица", null).Tables[0].DefaultView; break;
+                case "Адрес":
+                    dataGridView1.DataSource = database.ReturnTable("Номер_дома, Корпус, Код_улицы, Код_нас_пункт", "Адрес", null).Tables[0].DefaultView; break;
+
             }
 
         }
@@ -217,6 +226,14 @@ namespace kursachBD
             listBox1.Items.Add(database.addNaspunkt(NaspTB.Text));
             TableUpdate(); ComboUpdates();
         }
+        private void NpktEditBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void NpktDelBTN_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
         #region Тип_улицы
         private void TypestraddBTN_Click(object sender, EventArgs e)
@@ -224,6 +241,14 @@ namespace kursachBD
             DWorks database = new DWorks(Credentials);
             listBox1.Items.Add(database.addTypestreet(TypestrTB.Text));
             TableUpdate(); ComboUpdates();
+        }
+        private void TypestrEditBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void TypestrDelBTN_Click(object sender, EventArgs e)
+        {
+
         }
         #endregion
         #region File
@@ -249,6 +274,14 @@ namespace kursachBD
                 ));
             TableUpdate(); ComboUpdates();
         }
+        private void AdressEditBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void AdressDelBTN_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
         #region Улица
         private void StrAddBTN_Click(object sender, EventArgs e)
@@ -258,6 +291,20 @@ namespace kursachBD
             listBox1.Items.Add(database.addStreet(StreetTB.Text));
             TableUpdate(); ComboUpdates();
         }
+        private void StrEditBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void StrDelBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
         #endregion
+
+        
     }
 }
