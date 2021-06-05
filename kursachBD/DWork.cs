@@ -177,11 +177,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string addSotrud(string surname, string name, string otch)
+        public string addSotrud(string surname, string name, string otch, int PodrCode, int DolCode, string log, string pass, int StatCode)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"INSERT INTO Список_сотрудников (Фамилия, Имя, Отчество) VALUES ('{surname}', '{name}', '{otch}')", connection);
+                SqlCommand command = new SqlCommand($"INSERT INTO Список_сотрудников (Фамилия, Имя, Отчество, Код_подразделения, Код_должности, Логин, Пароль, Код_статуса) VALUES ('{surname}', '{name}', '{otch}', {PodrCode}, {DolCode}, '{log}', '{pass}', {StatCode})", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
