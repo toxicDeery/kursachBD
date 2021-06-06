@@ -67,6 +67,25 @@ namespace kursachBD
                     AdressCB.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                     EmailTB.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
                     SiteTB.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString(); break;
+                case "Рубрика":
+                    RubrickTB.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(); break;
+                case "Новость":
+                    RubrickCB.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(); 
+                    NewsTB.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    TextTB.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    DateRazmDTP.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
+                    DateArchiveDTP.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
+                    SizeNTB.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    SotrudCB.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString(); break;
+                case "Архив":
+                    NewsDTP.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                    NewsCB.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString(); break;
+                case "Файл":
+                    FileTB.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    SizeFileTB.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    TypefTB.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    KratfTB.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    NewsFArchCB.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString(); break;
 
             }
         }
@@ -123,10 +142,10 @@ namespace kursachBD
             DWorks tet = new DWorks(Credentials);
             switch (tabControl4.SelectedIndex)
             {
-                case 0: { selectedTable = "Новость"; dataGridView1.DataSource = tet.dataSet("Название_информации, Текст, Дата_размещения, Дата_перевода_в_архив, Размер_в_Кб", "Новость", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Новость", null).Tables[0].DefaultView; break; }
+                case 0: { selectedTable = "Новость"; dataGridView1.DataSource = tet.dataSet("Код_рубрики, Название_информации, Текст, Дата_размещения, Дата_перевода_в_архив, Размер_в_Кб, Код_сотрудника", "Новость", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Новость", null).Tables[0].DefaultView; break; }
                 case 1: { selectedTable = "Рубрика"; dataGridView1.DataSource = tet.dataSet("Рубрика", "Рубрика", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Рубрика", null).Tables[0].DefaultView; break; }
                 case 2: { selectedTable = "Архив"; dataGridView1.DataSource = tet.dataSet("Дата_новости, Код_новости", "Архив", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Архив", null).Tables[0].DefaultView; break; }
-                case 3: { selectedTable = "Файл"; dataGridView1.DataSource = tet.dataSet("Название, Размер, Тип", "Файл", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Файл", null).Tables[0].DefaultView; break; }
+                case 3: { selectedTable = "Файл"; dataGridView1.DataSource = tet.dataSet("Название, Размер, Тип, Краткое_название, Код_новости", "Файл", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Файл", null).Tables[0].DefaultView; break; }
             }
         }
 
@@ -155,6 +174,10 @@ namespace kursachBD
             AdressCB.Items.Clear();
             OrgaCB.Items.Clear();
             PodrazdelCB.Items.Clear();
+            RubrickCB.Items.Clear();
+            SotrudCB.Items.Clear();
+            NewsCB.Items.Clear();
+            NewsFArchCB.Items.Clear();
             foreach(string i in BufferListUpdate(0))
             {
                 TypenaspCB.Items.Add(i);
@@ -191,7 +214,19 @@ namespace kursachBD
             {
                 PodrazdelCB.Items.Add(i);
             }
-
+            foreach (string i in BufferListUpdate(9))
+            {
+                RubrickCB.Items.Add(i);
+            }
+            foreach (string i in BufferListUpdate(10))
+            {
+                SotrudCB.Items.Add(i);
+            }
+            foreach (string i in BufferListUpdate(11))
+            {
+                NewsCB.Items.Add(i);
+                NewsFArchCB.Items.Add(i);
+            }
 
 
         }
@@ -264,6 +299,27 @@ namespace kursachBD
                         Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
                     }
                     break;
+                case 9: // Рубрика
+                    dataGridViewListReturner.DataSource = database.ReturnTable("Рубрика", "Рубрика", null).Tables[0].DefaultView;
+                    for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
+                    {
+                        Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
+                    }
+                    break;
+                case 10: // Сотрудник
+                    dataGridViewListReturner.DataSource = database.ReturnTable("Фамилия", "Список_сотрудников", null).Tables[0].DefaultView;
+                    for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
+                    {
+                        Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
+                    }
+                    break;
+                case 11: // Новость
+                    dataGridViewListReturner.DataSource = database.ReturnTable("Название_информации", "Новость", null).Tables[0].DefaultView;
+                    for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
+                    {
+                        Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
+                    }
+                    break;
 
 
 
@@ -293,7 +349,7 @@ namespace kursachBD
                 case "Список_сотрудников":
                     dataGridView1.DataSource = database.ReturnTable("Фамилия, Имя, Отчество, Код_подразделения, Код_должности, Логин, Пароль, Код_статуса", "Список_сотрудников", null).Tables[0].DefaultView; break;
                 case "Подразделение":
-                    dataGridView1.DataSource = database.ReturnTable("Название, Этаж", "Подразделение", null).Tables[0].DefaultView; break;
+                    dataGridView1.DataSource = database.ReturnTable("Название, Этаж, Код_организации", "Подразделение", null).Tables[0].DefaultView; break;
                 case "Организация":
                     dataGridView1.DataSource = database.ReturnTable("Название, Краткое_название, Контактный_телефон, Адрес, Эл_адрес, Адрес_сайта", "Организация", null).Tables[0].DefaultView; break;
                 case "Рубрика":
@@ -301,9 +357,9 @@ namespace kursachBD
                 case "Архив":
                     dataGridView1.DataSource = database.ReturnTable("Дата_новости, Код_новости", "Архив", null).Tables[0].DefaultView; break;
                 case "Файл":
-                    dataGridView1.DataSource = database.ReturnTable("Название, Размер, Тип, Код_новости", "Файл", null).Tables[0].DefaultView; break;
+                    dataGridView1.DataSource = database.ReturnTable("Название, Размер, Тип, Краткое_название, Код_новости", "Файл", null).Tables[0].DefaultView; break;
                 case "Новость":
-                    dataGridView1.DataSource = database.ReturnTable("Название_информации, Текст, Дата_размещения, Дата_перевода_в_архив, Размер_в_Кб, Код_сотрудника", "Новость", null).Tables[0].DefaultView; break;
+                    dataGridView1.DataSource = database.ReturnTable("Код_рубрики, Название_информации, Текст, Дата_размещения, Дата_перевода_в_архив, Размер_в_Кб, Код_сотрудника", "Новость", null).Tables[0].DefaultView; break;
             }
 
         }
@@ -339,13 +395,13 @@ namespace kursachBD
         {
             DWorks database = new DWorks(Credentials);
             if (tempeID != -1) { listBox1.Items.Add(database.editTypestreet(TypestrTB.Text, tempeID)); tempeID = -1; }
-            TableUpdate();
+            TableUpdate();ComboUpdates();
         }
         private void TypestrDelBTN_Click(object sender, EventArgs e)
         {
             DWorks database = new DWorks(Credentials);
             if (tempeID != -1) { listBox1.Items.Add(database.delTypestreet(tempeID)); tempeID = -1; }
-            TableUpdate();
+            TableUpdate(); ComboUpdates();
         }
         #endregion
         #region File
@@ -552,20 +608,107 @@ namespace kursachBD
             TableUpdate(); ComboUpdates();
         }
         #endregion
-
+        #region Rubrick
         private void RubrickAddBTN_Click(object sender, EventArgs e)
         {
-
+            DWorks database = new DWorks(Credentials);
+            listBox1.Items.Add(database.addRubrick(RubrickTB.Text));
+            TableUpdate(); ComboUpdates();
         }
 
         private void RubrickEditBTN_Click(object sender, EventArgs e)
         {
-
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != -1) { listBox1.Items.Add(database.editRubrick(RubrickTB.Text, tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
         }
 
         private void RubrickDelBTN_Click(object sender, EventArgs e)
         {
-
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != -1) { listBox1.Items.Add(database.delRubrick(tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
         }
+        #endregion
+        #region News
+        private void NewsAddBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            listBox1.Items.Add(database.addNews(
+                GetDirCode("Рубрика", $"{RubrickCB.SelectedItem.ToString()}", 1),
+                NewsTB.Text, TextTB.Text,
+                DateRazmDTP.Value, DateArchiveDTP.Value,
+                SizeNTB.Text,
+                GetDirCode("Список_сотрудников", $"{SotrudCB.SelectedItem.ToString()}", 2)
+                ));
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void NewsEditBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != -1)
+            {
+                listBox1.Items.Add(database.editNews(GetDirCode("Рубрика", $"{RubrickCB.SelectedItem.ToString()}", 1),
+                NewsTB.Text, TextTB.Text,
+                DateRazmDTP.Value, DateArchiveDTP.Value,
+                SizeNTB.Text,
+                GetDirCode("Список_сотрудников", $"{SotrudCB.SelectedItem.ToString()}", 1),
+                tempeID)); tempeID = -1;
+            }
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void NewsDelBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != -1) { listBox1.Items.Add(database.delNews(tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
+        }
+        #endregion
+        #region Archive
+        private void ArchiveAddBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            listBox1.Items.Add(database.addArchive(NewsDTP.Value, GetDirCode("Новость", $"{NewsCB.SelectedItem.ToString()}", 2)));
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void ArchiveEditBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != -1) { listBox1.Items.Add(database.editArchive(NewsDTP.Value, GetDirCode("Новость", $"{NewsCB.SelectedItem.ToString()}", 2), tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void ArchiveDelBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != -1) { listBox1.Items.Add(database.delArchive(tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
+        }
+        #endregion
+        #region Fileadd
+        private void FileAddBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            listBox1.Items.Add(database.addFile(FileTB.Text, SizeFileTB.Text, TypefTB.Text, KratfTB.Text, GetDirCode("Новость", $"{NewsFArchCB.SelectedItem.ToString()}", 2)));
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void FileEditBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != -1) { listBox1.Items.Add(database.editFile(FileTB.Text, SizeFileTB.Text, TypefTB.Text, KratfTB.Text, GetDirCode("Новость", $"{NewsFArchCB.SelectedItem.ToString()}", 2), tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
+        }
+
+        private void FileDelBTN_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != -1) { listBox1.Items.Add(database.delFile(tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
+        }
+        #endregion
     }
 }

@@ -84,7 +84,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"DELETE FROM Рубрика WHERE Код = {ID}", connection);
+                SqlCommand command = new SqlCommand($"DELETE FROM Рубрика WHERE Код_рубрики = {ID}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -96,7 +96,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Рубрика SET Рубрика = '{edit}' WHERE Код = {ID};", connection);
+                SqlCommand command = new SqlCommand($"UPDATE Рубрика SET Рубрика = '{edit}' WHERE Код_рубрики = {ID};", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -250,11 +250,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string addNews(string Nazv, string text, DateTime date, DateTime date1, string size)
+        public string addNews(int RubCode, string Nazv, string text, DateTime date, DateTime date1, string size, int SotrCode)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"INSERT INTO Новость (Название_информации, Текст, Дата_размещения, Дата_перевода_в_архив, Размер_в_Кб) VALUES ('{Nazv}', '{text}', '{date}', '{date1}', '{size}')", connection);
+                SqlCommand command = new SqlCommand($"INSERT INTO Новость (Код_рубрики, Название_информации, Текст, Дата_размещения, Дата_перевода_в_архив, Размер_в_Кб, Код_сотрудника) VALUES ({RubCode},'{Nazv}', '{text}', '{date}', '{date1}', '{size}', {SotrCode})", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -266,7 +266,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"DELETE FROM Новость WHERE Код = {id}", connection);
+                SqlCommand command = new SqlCommand($"DELETE FROM Новость WHERE Код_новости = {id}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -274,11 +274,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string editNews(string edit, string edit1, DateTime date, DateTime date1, string edit2, int id)
+        public string editNews(int RubCode, string edit, string edit1, DateTime date, DateTime date1, string edit2, int SotrCode, int id)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Новость SET Название_информации = '{edit}', Текст = '{edit1}', Дата_размещения = '{date}', Дата_перевода_в_архив = '{date1}', Размер_в_Кб = '{edit2}' WHERE Код = {id}", connection);
+                SqlCommand command = new SqlCommand($"UPDATE Новость SET Код_рубрики = {RubCode}, Название_информации = '{edit}', Текст = '{edit1}', Дата_размещения = '{date}', Дата_перевода_в_архив = '{date1}', Размер_в_Кб = '{edit2}', Код_сотрудника = {SotrCode} WHERE Код_новости = {id}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -286,11 +286,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string addArchive(DateTime date)
+        public string addArchive(DateTime date, int NewsCode)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"INSERT INTO Архив (Дата_новости) VALUES ('{date}')", connection);
+                SqlCommand command = new SqlCommand($"INSERT INTO Архив (Дата_новости, Код_новости) VALUES ('{date}', {NewsCode})", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -302,7 +302,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"DELETE FROM Архив WHERE Код = '{id}'", connection);
+                SqlCommand command = new SqlCommand($"DELETE FROM Архив WHERE Код_архива = '{id}'", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -310,11 +310,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string editArchive(DateTime date, int id)
+        public string editArchive(DateTime date, int NewsCode, int id)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Архив SET Дата_новости = '{date}' WHERE Код = {id}", connection);
+                SqlCommand command = new SqlCommand($"UPDATE Архив SET Дата_новости = '{date}', Код_новости = {NewsCode} WHERE Код_архива = {id}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -322,11 +322,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string addFile(string Name, string size, string type)
+        public string addFile(string Name, string size, string type, string kratname, int NewsCode)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"INSERT INTO Файл (Название, Размер, Тип) VALUES ('{Name}', '{size}', '{type}')", connection);
+                SqlCommand command = new SqlCommand($"INSERT INTO Файл (Название, Размер, Тип, Краткое_название, Код_новости) VALUES ('{Name}', '{size}', '{type}', '{kratname}', {NewsCode})", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -338,7 +338,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"DELETE FROM Файл WHERE Код = '{id}'", connection);
+                SqlCommand command = new SqlCommand($"DELETE FROM Файл WHERE Код_файла = '{id}'", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -346,11 +346,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string editFile(string edit, string edit1, string edit2, int id)
+        public string editFile(string edit, string edit1, string edit2, string kratname, int NewsCode, int id)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Файл SET Назавние = '{edit}', Размер = '{edit1}', Тип = '{edit2}' WHERE Код = {id}", connection);
+                SqlCommand command = new SqlCommand($"UPDATE Файл SET Назавние = '{edit}', Размер = '{edit1}', Тип = '{edit2}', Краткое_название = '{kratname}', Код_новости = {NewsCode} WHERE Код_файла = {id}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)

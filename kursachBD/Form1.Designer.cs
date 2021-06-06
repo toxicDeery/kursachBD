@@ -33,8 +33,34 @@ namespace kursachBD
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.OrgDelBTN = new System.Windows.Forms.Button();
+            this.OrgEditBTN = new System.Windows.Forms.Button();
+            this.OrgAddBTN = new System.Windows.Forms.Button();
+            this.SiteTB = new System.Windows.Forms.TextBox();
+            this.EmailTB = new System.Windows.Forms.TextBox();
+            this.AdressCB = new System.Windows.Forms.ComboBox();
+            this.NumPhoneTB = new System.Windows.Forms.TextBox();
+            this.KratOrgTB = new System.Windows.Forms.TextBox();
+            this.OrgTB = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.PodrazDelBTN = new System.Windows.Forms.Button();
+            this.PodrazEditBTN = new System.Windows.Forms.Button();
+            this.PodrazAddBTN = new System.Windows.Forms.Button();
+            this.OrgaCB = new System.Windows.Forms.ComboBox();
+            this.FloorTB = new System.Windows.Forms.TextBox();
+            this.PodrazdelTB = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.SotrDelBTN = new System.Windows.Forms.Button();
+            this.SotrEditBTN = new System.Windows.Forms.Button();
+            this.SotrAddBTN = new System.Windows.Forms.Button();
+            this.StatusCB = new System.Windows.Forms.ComboBox();
+            this.DolznCB = new System.Windows.Forms.ComboBox();
+            this.PodrazdelCB = new System.Windows.Forms.ComboBox();
+            this.PasswordTB = new System.Windows.Forms.TextBox();
+            this.LogTB = new System.Windows.Forms.TextBox();
+            this.MiddlenameTB = new System.Windows.Forms.TextBox();
+            this.NameTB = new System.Windows.Forms.TextBox();
+            this.SurnameTB = new System.Windows.Forms.TextBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.StatusDelBTN = new System.Windows.Forms.Button();
             this.StatusEditBTN = new System.Windows.Forms.Button();
@@ -80,12 +106,23 @@ namespace kursachBD
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.SotrudCB = new System.Windows.Forms.ComboBox();
+            this.SizeNTB = new System.Windows.Forms.TextBox();
+            this.DateArchiveDTP = new System.Windows.Forms.DateTimePicker();
+            this.DateRazmDTP = new System.Windows.Forms.DateTimePicker();
+            this.TextTB = new System.Windows.Forms.TextBox();
+            this.NewsTB = new System.Windows.Forms.TextBox();
+            this.RubrickCB = new System.Windows.Forms.ComboBox();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.RubrickDelBTN = new System.Windows.Forms.Button();
+            this.RubrickEditBTN = new System.Windows.Forms.Button();
+            this.RubrickAddBTN = new System.Windows.Forms.Button();
+            this.RubrickTB = new System.Windows.Forms.TextBox();
             this.tabPage16 = new System.Windows.Forms.TabPage();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.ArchiveDelBTN = new System.Windows.Forms.Button();
+            this.ArchiveEditBTN = new System.Windows.Forms.Button();
+            this.ArchiveAddBTN = new System.Windows.Forms.Button();
+            this.NewsDTP = new System.Windows.Forms.DateTimePicker();
             this.tabPage17 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage18 = new System.Windows.Forms.TabPage();
@@ -94,36 +131,18 @@ namespace kursachBD
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.dataGridViewListReturner = new System.Windows.Forms.DataGridView();
-            this.SurnameTB = new System.Windows.Forms.TextBox();
-            this.NameTB = new System.Windows.Forms.TextBox();
-            this.MiddlenameTB = new System.Windows.Forms.TextBox();
-            this.LogTB = new System.Windows.Forms.TextBox();
-            this.PasswordTB = new System.Windows.Forms.TextBox();
-            this.PodrazdelCB = new System.Windows.Forms.ComboBox();
-            this.DolznCB = new System.Windows.Forms.ComboBox();
-            this.StatusCB = new System.Windows.Forms.ComboBox();
-            this.SotrAddBTN = new System.Windows.Forms.Button();
-            this.SotrEditBTN = new System.Windows.Forms.Button();
-            this.SotrDelBTN = new System.Windows.Forms.Button();
-            this.PodrazdelTB = new System.Windows.Forms.TextBox();
-            this.FloorTB = new System.Windows.Forms.TextBox();
-            this.OrgaCB = new System.Windows.Forms.ComboBox();
-            this.PodrazAddBTN = new System.Windows.Forms.Button();
-            this.PodrazEditBTN = new System.Windows.Forms.Button();
-            this.PodrazDelBTN = new System.Windows.Forms.Button();
-            this.OrgTB = new System.Windows.Forms.TextBox();
-            this.KratOrgTB = new System.Windows.Forms.TextBox();
-            this.NumPhoneTB = new System.Windows.Forms.TextBox();
-            this.AdressCB = new System.Windows.Forms.ComboBox();
-            this.EmailTB = new System.Windows.Forms.TextBox();
-            this.SiteTB = new System.Windows.Forms.TextBox();
-            this.OrgAddBTN = new System.Windows.Forms.Button();
-            this.OrgEditBTN = new System.Windows.Forms.Button();
-            this.OrgDelBTN = new System.Windows.Forms.Button();
-            this.RubrickTB = new System.Windows.Forms.TextBox();
-            this.RubrickAddBTN = new System.Windows.Forms.Button();
-            this.RubrickEditBTN = new System.Windows.Forms.Button();
-            this.RubrickDelBTN = new System.Windows.Forms.Button();
+            this.NewsAddBTN = new System.Windows.Forms.Button();
+            this.NewsEditBTN = new System.Windows.Forms.Button();
+            this.NewsDelBTN = new System.Windows.Forms.Button();
+            this.NewsCB = new System.Windows.Forms.ComboBox();
+            this.FileTB = new System.Windows.Forms.TextBox();
+            this.SizeFileTB = new System.Windows.Forms.TextBox();
+            this.TypefTB = new System.Windows.Forms.TextBox();
+            this.KratfTB = new System.Windows.Forms.TextBox();
+            this.NewsFArchCB = new System.Windows.Forms.ComboBox();
+            this.FileAddBTN = new System.Windows.Forms.Button();
+            this.FileEditBTN = new System.Windows.Forms.Button();
+            this.FileDelBTN = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -141,6 +160,7 @@ namespace kursachBD
             this.tabPage13.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabControl4.SuspendLayout();
+            this.tabPage14.SuspendLayout();
             this.tabPage15.SuspendLayout();
             this.tabPage16.SuspendLayout();
             this.tabPage17.SuspendLayout();
@@ -207,6 +227,79 @@ namespace kursachBD
             this.tabPage4.Text = "Организация";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // OrgDelBTN
+            // 
+            this.OrgDelBTN.Location = new System.Drawing.Point(306, 188);
+            this.OrgDelBTN.Name = "OrgDelBTN";
+            this.OrgDelBTN.Size = new System.Drawing.Size(75, 23);
+            this.OrgDelBTN.TabIndex = 8;
+            this.OrgDelBTN.Text = "button4";
+            this.OrgDelBTN.UseVisualStyleBackColor = true;
+            this.OrgDelBTN.Click += new System.EventHandler(this.OrgDelBTN_Click);
+            // 
+            // OrgEditBTN
+            // 
+            this.OrgEditBTN.Location = new System.Drawing.Point(165, 188);
+            this.OrgEditBTN.Name = "OrgEditBTN";
+            this.OrgEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.OrgEditBTN.TabIndex = 7;
+            this.OrgEditBTN.Text = "button3";
+            this.OrgEditBTN.UseVisualStyleBackColor = true;
+            this.OrgEditBTN.Click += new System.EventHandler(this.OrgEditBTN_Click);
+            // 
+            // OrgAddBTN
+            // 
+            this.OrgAddBTN.Location = new System.Drawing.Point(31, 188);
+            this.OrgAddBTN.Name = "OrgAddBTN";
+            this.OrgAddBTN.Size = new System.Drawing.Size(75, 23);
+            this.OrgAddBTN.TabIndex = 6;
+            this.OrgAddBTN.Text = "button2";
+            this.OrgAddBTN.UseVisualStyleBackColor = true;
+            this.OrgAddBTN.Click += new System.EventHandler(this.OrgAddBTN_Click);
+            // 
+            // SiteTB
+            // 
+            this.SiteTB.Location = new System.Drawing.Point(6, 147);
+            this.SiteTB.Name = "SiteTB";
+            this.SiteTB.Size = new System.Drawing.Size(100, 20);
+            this.SiteTB.TabIndex = 5;
+            // 
+            // EmailTB
+            // 
+            this.EmailTB.Location = new System.Drawing.Point(6, 121);
+            this.EmailTB.Name = "EmailTB";
+            this.EmailTB.Size = new System.Drawing.Size(100, 20);
+            this.EmailTB.TabIndex = 4;
+            // 
+            // AdressCB
+            // 
+            this.AdressCB.FormattingEnabled = true;
+            this.AdressCB.Location = new System.Drawing.Point(6, 94);
+            this.AdressCB.Name = "AdressCB";
+            this.AdressCB.Size = new System.Drawing.Size(121, 21);
+            this.AdressCB.TabIndex = 3;
+            // 
+            // NumPhoneTB
+            // 
+            this.NumPhoneTB.Location = new System.Drawing.Point(6, 68);
+            this.NumPhoneTB.Name = "NumPhoneTB";
+            this.NumPhoneTB.Size = new System.Drawing.Size(100, 20);
+            this.NumPhoneTB.TabIndex = 2;
+            // 
+            // KratOrgTB
+            // 
+            this.KratOrgTB.Location = new System.Drawing.Point(6, 42);
+            this.KratOrgTB.Name = "KratOrgTB";
+            this.KratOrgTB.Size = new System.Drawing.Size(100, 20);
+            this.KratOrgTB.TabIndex = 1;
+            // 
+            // OrgTB
+            // 
+            this.OrgTB.Location = new System.Drawing.Point(6, 16);
+            this.OrgTB.Name = "OrgTB";
+            this.OrgTB.Size = new System.Drawing.Size(100, 20);
+            this.OrgTB.TabIndex = 0;
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.PodrazDelBTN);
@@ -222,6 +315,58 @@ namespace kursachBD
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Подразделение";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // PodrazDelBTN
+            // 
+            this.PodrazDelBTN.Location = new System.Drawing.Point(288, 105);
+            this.PodrazDelBTN.Name = "PodrazDelBTN";
+            this.PodrazDelBTN.Size = new System.Drawing.Size(75, 23);
+            this.PodrazDelBTN.TabIndex = 5;
+            this.PodrazDelBTN.Text = "button4";
+            this.PodrazDelBTN.UseVisualStyleBackColor = true;
+            this.PodrazDelBTN.Click += new System.EventHandler(this.PodrazDelBTN_Click);
+            // 
+            // PodrazEditBTN
+            // 
+            this.PodrazEditBTN.Location = new System.Drawing.Point(156, 105);
+            this.PodrazEditBTN.Name = "PodrazEditBTN";
+            this.PodrazEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.PodrazEditBTN.TabIndex = 4;
+            this.PodrazEditBTN.Text = "button3";
+            this.PodrazEditBTN.UseVisualStyleBackColor = true;
+            this.PodrazEditBTN.Click += new System.EventHandler(this.PodrazEditBTN_Click);
+            // 
+            // PodrazAddBTN
+            // 
+            this.PodrazAddBTN.Location = new System.Drawing.Point(27, 105);
+            this.PodrazAddBTN.Name = "PodrazAddBTN";
+            this.PodrazAddBTN.Size = new System.Drawing.Size(75, 23);
+            this.PodrazAddBTN.TabIndex = 3;
+            this.PodrazAddBTN.Text = "button2";
+            this.PodrazAddBTN.UseVisualStyleBackColor = true;
+            this.PodrazAddBTN.Click += new System.EventHandler(this.PodrazAddBTN_Click);
+            // 
+            // OrgaCB
+            // 
+            this.OrgaCB.FormattingEnabled = true;
+            this.OrgaCB.Location = new System.Drawing.Point(27, 78);
+            this.OrgaCB.Name = "OrgaCB";
+            this.OrgaCB.Size = new System.Drawing.Size(121, 21);
+            this.OrgaCB.TabIndex = 2;
+            // 
+            // FloorTB
+            // 
+            this.FloorTB.Location = new System.Drawing.Point(27, 52);
+            this.FloorTB.Name = "FloorTB";
+            this.FloorTB.Size = new System.Drawing.Size(100, 20);
+            this.FloorTB.TabIndex = 1;
+            // 
+            // PodrazdelTB
+            // 
+            this.PodrazdelTB.Location = new System.Drawing.Point(27, 26);
+            this.PodrazdelTB.Name = "PodrazdelTB";
+            this.PodrazdelTB.Size = new System.Drawing.Size(100, 20);
+            this.PodrazdelTB.TabIndex = 0;
             // 
             // tabPage6
             // 
@@ -243,6 +388,95 @@ namespace kursachBD
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "Список_сотрудников";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // SotrDelBTN
+            // 
+            this.SotrDelBTN.Location = new System.Drawing.Point(267, 233);
+            this.SotrDelBTN.Name = "SotrDelBTN";
+            this.SotrDelBTN.Size = new System.Drawing.Size(75, 23);
+            this.SotrDelBTN.TabIndex = 10;
+            this.SotrDelBTN.Text = "button4";
+            this.SotrDelBTN.UseVisualStyleBackColor = true;
+            this.SotrDelBTN.Click += new System.EventHandler(this.SotrDelBTN_Click);
+            // 
+            // SotrEditBTN
+            // 
+            this.SotrEditBTN.Location = new System.Drawing.Point(147, 233);
+            this.SotrEditBTN.Name = "SotrEditBTN";
+            this.SotrEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.SotrEditBTN.TabIndex = 9;
+            this.SotrEditBTN.Text = "button3";
+            this.SotrEditBTN.UseVisualStyleBackColor = true;
+            this.SotrEditBTN.Click += new System.EventHandler(this.SotrEditBTN_Click);
+            // 
+            // SotrAddBTN
+            // 
+            this.SotrAddBTN.Location = new System.Drawing.Point(19, 233);
+            this.SotrAddBTN.Name = "SotrAddBTN";
+            this.SotrAddBTN.Size = new System.Drawing.Size(75, 23);
+            this.SotrAddBTN.TabIndex = 8;
+            this.SotrAddBTN.Text = "button2";
+            this.SotrAddBTN.UseVisualStyleBackColor = true;
+            this.SotrAddBTN.Click += new System.EventHandler(this.SotrAddBTN_Click);
+            // 
+            // StatusCB
+            // 
+            this.StatusCB.FormattingEnabled = true;
+            this.StatusCB.Location = new System.Drawing.Point(19, 206);
+            this.StatusCB.Name = "StatusCB";
+            this.StatusCB.Size = new System.Drawing.Size(121, 21);
+            this.StatusCB.TabIndex = 7;
+            // 
+            // DolznCB
+            // 
+            this.DolznCB.FormattingEnabled = true;
+            this.DolznCB.Location = new System.Drawing.Point(19, 127);
+            this.DolznCB.Name = "DolznCB";
+            this.DolznCB.Size = new System.Drawing.Size(121, 21);
+            this.DolznCB.TabIndex = 6;
+            // 
+            // PodrazdelCB
+            // 
+            this.PodrazdelCB.FormattingEnabled = true;
+            this.PodrazdelCB.Location = new System.Drawing.Point(19, 100);
+            this.PodrazdelCB.Name = "PodrazdelCB";
+            this.PodrazdelCB.Size = new System.Drawing.Size(121, 21);
+            this.PodrazdelCB.TabIndex = 5;
+            // 
+            // PasswordTB
+            // 
+            this.PasswordTB.Location = new System.Drawing.Point(19, 180);
+            this.PasswordTB.Name = "PasswordTB";
+            this.PasswordTB.Size = new System.Drawing.Size(100, 20);
+            this.PasswordTB.TabIndex = 4;
+            // 
+            // LogTB
+            // 
+            this.LogTB.Location = new System.Drawing.Point(19, 154);
+            this.LogTB.Name = "LogTB";
+            this.LogTB.Size = new System.Drawing.Size(100, 20);
+            this.LogTB.TabIndex = 3;
+            // 
+            // MiddlenameTB
+            // 
+            this.MiddlenameTB.Location = new System.Drawing.Point(19, 74);
+            this.MiddlenameTB.Name = "MiddlenameTB";
+            this.MiddlenameTB.Size = new System.Drawing.Size(100, 20);
+            this.MiddlenameTB.TabIndex = 2;
+            // 
+            // NameTB
+            // 
+            this.NameTB.Location = new System.Drawing.Point(19, 48);
+            this.NameTB.Name = "NameTB";
+            this.NameTB.Size = new System.Drawing.Size(100, 20);
+            this.NameTB.TabIndex = 1;
+            // 
+            // SurnameTB
+            // 
+            this.SurnameTB.Location = new System.Drawing.Point(19, 22);
+            this.SurnameTB.Name = "SurnameTB";
+            this.SurnameTB.Size = new System.Drawing.Size(100, 20);
+            this.SurnameTB.TabIndex = 0;
             // 
             // tabPage7
             // 
@@ -696,6 +930,16 @@ namespace kursachBD
             // 
             // tabPage14
             // 
+            this.tabPage14.Controls.Add(this.NewsDelBTN);
+            this.tabPage14.Controls.Add(this.NewsEditBTN);
+            this.tabPage14.Controls.Add(this.NewsAddBTN);
+            this.tabPage14.Controls.Add(this.SotrudCB);
+            this.tabPage14.Controls.Add(this.SizeNTB);
+            this.tabPage14.Controls.Add(this.DateArchiveDTP);
+            this.tabPage14.Controls.Add(this.DateRazmDTP);
+            this.tabPage14.Controls.Add(this.TextTB);
+            this.tabPage14.Controls.Add(this.NewsTB);
+            this.tabPage14.Controls.Add(this.RubrickCB);
             this.tabPage14.Location = new System.Drawing.Point(4, 22);
             this.tabPage14.Name = "tabPage14";
             this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
@@ -703,6 +947,57 @@ namespace kursachBD
             this.tabPage14.TabIndex = 0;
             this.tabPage14.Text = "Новость";
             this.tabPage14.UseVisualStyleBackColor = true;
+            // 
+            // SotrudCB
+            // 
+            this.SotrudCB.FormattingEnabled = true;
+            this.SotrudCB.Location = new System.Drawing.Point(6, 177);
+            this.SotrudCB.Name = "SotrudCB";
+            this.SotrudCB.Size = new System.Drawing.Size(121, 21);
+            this.SotrudCB.TabIndex = 6;
+            // 
+            // SizeNTB
+            // 
+            this.SizeNTB.Location = new System.Drawing.Point(6, 151);
+            this.SizeNTB.Name = "SizeNTB";
+            this.SizeNTB.Size = new System.Drawing.Size(100, 20);
+            this.SizeNTB.TabIndex = 5;
+            // 
+            // DateArchiveDTP
+            // 
+            this.DateArchiveDTP.Location = new System.Drawing.Point(6, 125);
+            this.DateArchiveDTP.Name = "DateArchiveDTP";
+            this.DateArchiveDTP.Size = new System.Drawing.Size(200, 20);
+            this.DateArchiveDTP.TabIndex = 4;
+            // 
+            // DateRazmDTP
+            // 
+            this.DateRazmDTP.Location = new System.Drawing.Point(6, 99);
+            this.DateRazmDTP.Name = "DateRazmDTP";
+            this.DateRazmDTP.Size = new System.Drawing.Size(200, 20);
+            this.DateRazmDTP.TabIndex = 3;
+            // 
+            // TextTB
+            // 
+            this.TextTB.Location = new System.Drawing.Point(6, 73);
+            this.TextTB.Name = "TextTB";
+            this.TextTB.Size = new System.Drawing.Size(100, 20);
+            this.TextTB.TabIndex = 2;
+            // 
+            // NewsTB
+            // 
+            this.NewsTB.Location = new System.Drawing.Point(6, 47);
+            this.NewsTB.Name = "NewsTB";
+            this.NewsTB.Size = new System.Drawing.Size(100, 20);
+            this.NewsTB.TabIndex = 1;
+            // 
+            // RubrickCB
+            // 
+            this.RubrickCB.FormattingEnabled = true;
+            this.RubrickCB.Location = new System.Drawing.Point(6, 20);
+            this.RubrickCB.Name = "RubrickCB";
+            this.RubrickCB.Size = new System.Drawing.Size(121, 21);
+            this.RubrickCB.TabIndex = 0;
             // 
             // tabPage15
             // 
@@ -718,12 +1013,50 @@ namespace kursachBD
             this.tabPage15.Text = "Рубрика";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
+            // RubrickDelBTN
+            // 
+            this.RubrickDelBTN.Location = new System.Drawing.Point(256, 64);
+            this.RubrickDelBTN.Name = "RubrickDelBTN";
+            this.RubrickDelBTN.Size = new System.Drawing.Size(75, 23);
+            this.RubrickDelBTN.TabIndex = 3;
+            this.RubrickDelBTN.Text = "button4";
+            this.RubrickDelBTN.UseVisualStyleBackColor = true;
+            this.RubrickDelBTN.Click += new System.EventHandler(this.RubrickDelBTN_Click);
+            // 
+            // RubrickEditBTN
+            // 
+            this.RubrickEditBTN.Location = new System.Drawing.Point(130, 64);
+            this.RubrickEditBTN.Name = "RubrickEditBTN";
+            this.RubrickEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.RubrickEditBTN.TabIndex = 2;
+            this.RubrickEditBTN.Text = "button3";
+            this.RubrickEditBTN.UseVisualStyleBackColor = true;
+            this.RubrickEditBTN.Click += new System.EventHandler(this.RubrickEditBTN_Click);
+            // 
+            // RubrickAddBTN
+            // 
+            this.RubrickAddBTN.Location = new System.Drawing.Point(6, 64);
+            this.RubrickAddBTN.Name = "RubrickAddBTN";
+            this.RubrickAddBTN.Size = new System.Drawing.Size(75, 23);
+            this.RubrickAddBTN.TabIndex = 1;
+            this.RubrickAddBTN.Text = "button2";
+            this.RubrickAddBTN.UseVisualStyleBackColor = true;
+            this.RubrickAddBTN.Click += new System.EventHandler(this.RubrickAddBTN_Click);
+            // 
+            // RubrickTB
+            // 
+            this.RubrickTB.Location = new System.Drawing.Point(6, 25);
+            this.RubrickTB.Name = "RubrickTB";
+            this.RubrickTB.Size = new System.Drawing.Size(100, 20);
+            this.RubrickTB.TabIndex = 0;
+            // 
             // tabPage16
             // 
-            this.tabPage16.Controls.Add(this.button22);
-            this.tabPage16.Controls.Add(this.button21);
-            this.tabPage16.Controls.Add(this.button20);
-            this.tabPage16.Controls.Add(this.dateTimePicker1);
+            this.tabPage16.Controls.Add(this.NewsCB);
+            this.tabPage16.Controls.Add(this.ArchiveDelBTN);
+            this.tabPage16.Controls.Add(this.ArchiveEditBTN);
+            this.tabPage16.Controls.Add(this.ArchiveAddBTN);
+            this.tabPage16.Controls.Add(this.NewsDTP);
             this.tabPage16.Location = new System.Drawing.Point(4, 22);
             this.tabPage16.Name = "tabPage16";
             this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
@@ -732,42 +1065,53 @@ namespace kursachBD
             this.tabPage16.Text = "Архив";
             this.tabPage16.UseVisualStyleBackColor = true;
             // 
-            // button22
+            // ArchiveDelBTN
             // 
-            this.button22.Location = new System.Drawing.Point(269, 89);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(75, 23);
-            this.button22.TabIndex = 3;
-            this.button22.Text = "button22";
-            this.button22.UseVisualStyleBackColor = true;
+            this.ArchiveDelBTN.Location = new System.Drawing.Point(269, 89);
+            this.ArchiveDelBTN.Name = "ArchiveDelBTN";
+            this.ArchiveDelBTN.Size = new System.Drawing.Size(75, 23);
+            this.ArchiveDelBTN.TabIndex = 3;
+            this.ArchiveDelBTN.Text = "button22";
+            this.ArchiveDelBTN.UseVisualStyleBackColor = true;
+            this.ArchiveDelBTN.Click += new System.EventHandler(this.ArchiveDelBTN_Click);
             // 
-            // button21
+            // ArchiveEditBTN
             // 
-            this.button21.Location = new System.Drawing.Point(131, 89);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(75, 23);
-            this.button21.TabIndex = 2;
-            this.button21.Text = "button21";
-            this.button21.UseVisualStyleBackColor = true;
+            this.ArchiveEditBTN.Location = new System.Drawing.Point(131, 89);
+            this.ArchiveEditBTN.Name = "ArchiveEditBTN";
+            this.ArchiveEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.ArchiveEditBTN.TabIndex = 2;
+            this.ArchiveEditBTN.Text = "button21";
+            this.ArchiveEditBTN.UseVisualStyleBackColor = true;
+            this.ArchiveEditBTN.Click += new System.EventHandler(this.ArchiveEditBTN_Click);
             // 
-            // button20
+            // ArchiveAddBTN
             // 
-            this.button20.Location = new System.Drawing.Point(6, 89);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(75, 23);
-            this.button20.TabIndex = 1;
-            this.button20.Text = "button20";
-            this.button20.UseVisualStyleBackColor = true;
+            this.ArchiveAddBTN.Location = new System.Drawing.Point(6, 89);
+            this.ArchiveAddBTN.Name = "ArchiveAddBTN";
+            this.ArchiveAddBTN.Size = new System.Drawing.Size(75, 23);
+            this.ArchiveAddBTN.TabIndex = 1;
+            this.ArchiveAddBTN.Text = "button20";
+            this.ArchiveAddBTN.UseVisualStyleBackColor = true;
+            this.ArchiveAddBTN.Click += new System.EventHandler(this.ArchiveAddBTN_Click);
             // 
-            // dateTimePicker1
+            // NewsDTP
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 53);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.NewsDTP.Location = new System.Drawing.Point(6, 23);
+            this.NewsDTP.Name = "NewsDTP";
+            this.NewsDTP.Size = new System.Drawing.Size(200, 20);
+            this.NewsDTP.TabIndex = 0;
             // 
             // tabPage17
             // 
+            this.tabPage17.Controls.Add(this.FileDelBTN);
+            this.tabPage17.Controls.Add(this.FileEditBTN);
+            this.tabPage17.Controls.Add(this.FileAddBTN);
+            this.tabPage17.Controls.Add(this.NewsFArchCB);
+            this.tabPage17.Controls.Add(this.KratfTB);
+            this.tabPage17.Controls.Add(this.TypefTB);
+            this.tabPage17.Controls.Add(this.SizeFileTB);
+            this.tabPage17.Controls.Add(this.FileTB);
             this.tabPage17.Controls.Add(this.button1);
             this.tabPage17.Location = new System.Drawing.Point(4, 22);
             this.tabPage17.Name = "tabPage17";
@@ -779,7 +1123,7 @@ namespace kursachBD
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(126, 158);
+            this.button1.Location = new System.Drawing.Point(34, 379);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -838,256 +1182,109 @@ namespace kursachBD
             this.dataGridViewListReturner.Size = new System.Drawing.Size(240, 150);
             this.dataGridViewListReturner.TabIndex = 3;
             // 
-            // SurnameTB
+            // NewsAddBTN
             // 
-            this.SurnameTB.Location = new System.Drawing.Point(19, 22);
-            this.SurnameTB.Name = "SurnameTB";
-            this.SurnameTB.Size = new System.Drawing.Size(100, 20);
-            this.SurnameTB.TabIndex = 0;
+            this.NewsAddBTN.Location = new System.Drawing.Point(6, 204);
+            this.NewsAddBTN.Name = "NewsAddBTN";
+            this.NewsAddBTN.Size = new System.Drawing.Size(75, 23);
+            this.NewsAddBTN.TabIndex = 7;
+            this.NewsAddBTN.Text = "button2";
+            this.NewsAddBTN.UseVisualStyleBackColor = true;
+            this.NewsAddBTN.Click += new System.EventHandler(this.NewsAddBTN_Click);
             // 
-            // NameTB
+            // NewsEditBTN
             // 
-            this.NameTB.Location = new System.Drawing.Point(19, 48);
-            this.NameTB.Name = "NameTB";
-            this.NameTB.Size = new System.Drawing.Size(100, 20);
-            this.NameTB.TabIndex = 1;
+            this.NewsEditBTN.Location = new System.Drawing.Point(131, 204);
+            this.NewsEditBTN.Name = "NewsEditBTN";
+            this.NewsEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.NewsEditBTN.TabIndex = 8;
+            this.NewsEditBTN.Text = "button3";
+            this.NewsEditBTN.UseVisualStyleBackColor = true;
+            this.NewsEditBTN.Click += new System.EventHandler(this.NewsEditBTN_Click);
             // 
-            // MiddlenameTB
+            // NewsDelBTN
             // 
-            this.MiddlenameTB.Location = new System.Drawing.Point(19, 74);
-            this.MiddlenameTB.Name = "MiddlenameTB";
-            this.MiddlenameTB.Size = new System.Drawing.Size(100, 20);
-            this.MiddlenameTB.TabIndex = 2;
+            this.NewsDelBTN.Location = new System.Drawing.Point(264, 204);
+            this.NewsDelBTN.Name = "NewsDelBTN";
+            this.NewsDelBTN.Size = new System.Drawing.Size(75, 23);
+            this.NewsDelBTN.TabIndex = 9;
+            this.NewsDelBTN.Text = "button4";
+            this.NewsDelBTN.UseVisualStyleBackColor = true;
+            this.NewsDelBTN.Click += new System.EventHandler(this.NewsDelBTN_Click);
             // 
-            // LogTB
+            // NewsCB
             // 
-            this.LogTB.Location = new System.Drawing.Point(19, 154);
-            this.LogTB.Name = "LogTB";
-            this.LogTB.Size = new System.Drawing.Size(100, 20);
-            this.LogTB.TabIndex = 3;
+            this.NewsCB.FormattingEnabled = true;
+            this.NewsCB.Location = new System.Drawing.Point(6, 49);
+            this.NewsCB.Name = "NewsCB";
+            this.NewsCB.Size = new System.Drawing.Size(121, 21);
+            this.NewsCB.TabIndex = 4;
             // 
-            // PasswordTB
+            // FileTB
             // 
-            this.PasswordTB.Location = new System.Drawing.Point(19, 180);
-            this.PasswordTB.Name = "PasswordTB";
-            this.PasswordTB.Size = new System.Drawing.Size(100, 20);
-            this.PasswordTB.TabIndex = 4;
+            this.FileTB.Location = new System.Drawing.Point(9, 34);
+            this.FileTB.Name = "FileTB";
+            this.FileTB.Size = new System.Drawing.Size(100, 20);
+            this.FileTB.TabIndex = 1;
             // 
-            // PodrazdelCB
+            // SizeFileTB
             // 
-            this.PodrazdelCB.FormattingEnabled = true;
-            this.PodrazdelCB.Location = new System.Drawing.Point(19, 100);
-            this.PodrazdelCB.Name = "PodrazdelCB";
-            this.PodrazdelCB.Size = new System.Drawing.Size(121, 21);
-            this.PodrazdelCB.TabIndex = 5;
+            this.SizeFileTB.Location = new System.Drawing.Point(9, 60);
+            this.SizeFileTB.Name = "SizeFileTB";
+            this.SizeFileTB.Size = new System.Drawing.Size(100, 20);
+            this.SizeFileTB.TabIndex = 2;
             // 
-            // DolznCB
+            // TypefTB
             // 
-            this.DolznCB.FormattingEnabled = true;
-            this.DolznCB.Location = new System.Drawing.Point(19, 127);
-            this.DolznCB.Name = "DolznCB";
-            this.DolznCB.Size = new System.Drawing.Size(121, 21);
-            this.DolznCB.TabIndex = 6;
+            this.TypefTB.Location = new System.Drawing.Point(9, 86);
+            this.TypefTB.Name = "TypefTB";
+            this.TypefTB.Size = new System.Drawing.Size(100, 20);
+            this.TypefTB.TabIndex = 3;
             // 
-            // StatusCB
+            // KratfTB
             // 
-            this.StatusCB.FormattingEnabled = true;
-            this.StatusCB.Location = new System.Drawing.Point(19, 206);
-            this.StatusCB.Name = "StatusCB";
-            this.StatusCB.Size = new System.Drawing.Size(121, 21);
-            this.StatusCB.TabIndex = 7;
+            this.KratfTB.Location = new System.Drawing.Point(9, 112);
+            this.KratfTB.Name = "KratfTB";
+            this.KratfTB.Size = new System.Drawing.Size(100, 20);
+            this.KratfTB.TabIndex = 4;
             // 
-            // SotrAddBTN
+            // NewsFArchCB
             // 
-            this.SotrAddBTN.Location = new System.Drawing.Point(19, 233);
-            this.SotrAddBTN.Name = "SotrAddBTN";
-            this.SotrAddBTN.Size = new System.Drawing.Size(75, 23);
-            this.SotrAddBTN.TabIndex = 8;
-            this.SotrAddBTN.Text = "button2";
-            this.SotrAddBTN.UseVisualStyleBackColor = true;
-            this.SotrAddBTN.Click += new System.EventHandler(this.SotrAddBTN_Click);
+            this.NewsFArchCB.FormattingEnabled = true;
+            this.NewsFArchCB.Location = new System.Drawing.Point(9, 138);
+            this.NewsFArchCB.Name = "NewsFArchCB";
+            this.NewsFArchCB.Size = new System.Drawing.Size(121, 21);
+            this.NewsFArchCB.TabIndex = 5;
             // 
-            // SotrEditBTN
+            // FileAddBTN
             // 
-            this.SotrEditBTN.Location = new System.Drawing.Point(147, 233);
-            this.SotrEditBTN.Name = "SotrEditBTN";
-            this.SotrEditBTN.Size = new System.Drawing.Size(75, 23);
-            this.SotrEditBTN.TabIndex = 9;
-            this.SotrEditBTN.Text = "button3";
-            this.SotrEditBTN.UseVisualStyleBackColor = true;
-            this.SotrEditBTN.Click += new System.EventHandler(this.SotrEditBTN_Click);
+            this.FileAddBTN.Location = new System.Drawing.Point(9, 165);
+            this.FileAddBTN.Name = "FileAddBTN";
+            this.FileAddBTN.Size = new System.Drawing.Size(75, 23);
+            this.FileAddBTN.TabIndex = 6;
+            this.FileAddBTN.Text = "button2";
+            this.FileAddBTN.UseVisualStyleBackColor = true;
+            this.FileAddBTN.Click += new System.EventHandler(this.FileAddBTN_Click);
             // 
-            // SotrDelBTN
+            // FileEditBTN
             // 
-            this.SotrDelBTN.Location = new System.Drawing.Point(267, 233);
-            this.SotrDelBTN.Name = "SotrDelBTN";
-            this.SotrDelBTN.Size = new System.Drawing.Size(75, 23);
-            this.SotrDelBTN.TabIndex = 10;
-            this.SotrDelBTN.Text = "button4";
-            this.SotrDelBTN.UseVisualStyleBackColor = true;
-            this.SotrDelBTN.Click += new System.EventHandler(this.SotrDelBTN_Click);
+            this.FileEditBTN.Location = new System.Drawing.Point(134, 165);
+            this.FileEditBTN.Name = "FileEditBTN";
+            this.FileEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.FileEditBTN.TabIndex = 7;
+            this.FileEditBTN.Text = "button3";
+            this.FileEditBTN.UseVisualStyleBackColor = true;
+            this.FileEditBTN.Click += new System.EventHandler(this.FileEditBTN_Click);
             // 
-            // PodrazdelTB
+            // FileDelBTN
             // 
-            this.PodrazdelTB.Location = new System.Drawing.Point(27, 26);
-            this.PodrazdelTB.Name = "PodrazdelTB";
-            this.PodrazdelTB.Size = new System.Drawing.Size(100, 20);
-            this.PodrazdelTB.TabIndex = 0;
-            // 
-            // FloorTB
-            // 
-            this.FloorTB.Location = new System.Drawing.Point(27, 52);
-            this.FloorTB.Name = "FloorTB";
-            this.FloorTB.Size = new System.Drawing.Size(100, 20);
-            this.FloorTB.TabIndex = 1;
-            // 
-            // OrgaCB
-            // 
-            this.OrgaCB.FormattingEnabled = true;
-            this.OrgaCB.Location = new System.Drawing.Point(27, 78);
-            this.OrgaCB.Name = "OrgaCB";
-            this.OrgaCB.Size = new System.Drawing.Size(121, 21);
-            this.OrgaCB.TabIndex = 2;
-            // 
-            // PodrazAddBTN
-            // 
-            this.PodrazAddBTN.Location = new System.Drawing.Point(27, 105);
-            this.PodrazAddBTN.Name = "PodrazAddBTN";
-            this.PodrazAddBTN.Size = new System.Drawing.Size(75, 23);
-            this.PodrazAddBTN.TabIndex = 3;
-            this.PodrazAddBTN.Text = "button2";
-            this.PodrazAddBTN.UseVisualStyleBackColor = true;
-            this.PodrazAddBTN.Click += new System.EventHandler(this.PodrazAddBTN_Click);
-            // 
-            // PodrazEditBTN
-            // 
-            this.PodrazEditBTN.Location = new System.Drawing.Point(156, 105);
-            this.PodrazEditBTN.Name = "PodrazEditBTN";
-            this.PodrazEditBTN.Size = new System.Drawing.Size(75, 23);
-            this.PodrazEditBTN.TabIndex = 4;
-            this.PodrazEditBTN.Text = "button3";
-            this.PodrazEditBTN.UseVisualStyleBackColor = true;
-            this.PodrazEditBTN.Click += new System.EventHandler(this.PodrazEditBTN_Click);
-            // 
-            // PodrazDelBTN
-            // 
-            this.PodrazDelBTN.Location = new System.Drawing.Point(288, 105);
-            this.PodrazDelBTN.Name = "PodrazDelBTN";
-            this.PodrazDelBTN.Size = new System.Drawing.Size(75, 23);
-            this.PodrazDelBTN.TabIndex = 5;
-            this.PodrazDelBTN.Text = "button4";
-            this.PodrazDelBTN.UseVisualStyleBackColor = true;
-            this.PodrazDelBTN.Click += new System.EventHandler(this.PodrazDelBTN_Click);
-            // 
-            // OrgTB
-            // 
-            this.OrgTB.Location = new System.Drawing.Point(6, 16);
-            this.OrgTB.Name = "OrgTB";
-            this.OrgTB.Size = new System.Drawing.Size(100, 20);
-            this.OrgTB.TabIndex = 0;
-            // 
-            // KratOrgTB
-            // 
-            this.KratOrgTB.Location = new System.Drawing.Point(6, 42);
-            this.KratOrgTB.Name = "KratOrgTB";
-            this.KratOrgTB.Size = new System.Drawing.Size(100, 20);
-            this.KratOrgTB.TabIndex = 1;
-            // 
-            // NumPhoneTB
-            // 
-            this.NumPhoneTB.Location = new System.Drawing.Point(6, 68);
-            this.NumPhoneTB.Name = "NumPhoneTB";
-            this.NumPhoneTB.Size = new System.Drawing.Size(100, 20);
-            this.NumPhoneTB.TabIndex = 2;
-            // 
-            // AdressCB
-            // 
-            this.AdressCB.FormattingEnabled = true;
-            this.AdressCB.Location = new System.Drawing.Point(6, 94);
-            this.AdressCB.Name = "AdressCB";
-            this.AdressCB.Size = new System.Drawing.Size(121, 21);
-            this.AdressCB.TabIndex = 3;
-            // 
-            // EmailTB
-            // 
-            this.EmailTB.Location = new System.Drawing.Point(6, 121);
-            this.EmailTB.Name = "EmailTB";
-            this.EmailTB.Size = new System.Drawing.Size(100, 20);
-            this.EmailTB.TabIndex = 4;
-            // 
-            // SiteTB
-            // 
-            this.SiteTB.Location = new System.Drawing.Point(6, 147);
-            this.SiteTB.Name = "SiteTB";
-            this.SiteTB.Size = new System.Drawing.Size(100, 20);
-            this.SiteTB.TabIndex = 5;
-            // 
-            // OrgAddBTN
-            // 
-            this.OrgAddBTN.Location = new System.Drawing.Point(31, 188);
-            this.OrgAddBTN.Name = "OrgAddBTN";
-            this.OrgAddBTN.Size = new System.Drawing.Size(75, 23);
-            this.OrgAddBTN.TabIndex = 6;
-            this.OrgAddBTN.Text = "button2";
-            this.OrgAddBTN.UseVisualStyleBackColor = true;
-            this.OrgAddBTN.Click += new System.EventHandler(this.OrgAddBTN_Click);
-            // 
-            // OrgEditBTN
-            // 
-            this.OrgEditBTN.Location = new System.Drawing.Point(165, 188);
-            this.OrgEditBTN.Name = "OrgEditBTN";
-            this.OrgEditBTN.Size = new System.Drawing.Size(75, 23);
-            this.OrgEditBTN.TabIndex = 7;
-            this.OrgEditBTN.Text = "button3";
-            this.OrgEditBTN.UseVisualStyleBackColor = true;
-            this.OrgEditBTN.Click += new System.EventHandler(this.OrgEditBTN_Click);
-            // 
-            // OrgDelBTN
-            // 
-            this.OrgDelBTN.Location = new System.Drawing.Point(306, 188);
-            this.OrgDelBTN.Name = "OrgDelBTN";
-            this.OrgDelBTN.Size = new System.Drawing.Size(75, 23);
-            this.OrgDelBTN.TabIndex = 8;
-            this.OrgDelBTN.Text = "button4";
-            this.OrgDelBTN.UseVisualStyleBackColor = true;
-            this.OrgDelBTN.Click += new System.EventHandler(this.OrgDelBTN_Click);
-            // 
-            // RubrickTB
-            // 
-            this.RubrickTB.Location = new System.Drawing.Point(6, 25);
-            this.RubrickTB.Name = "RubrickTB";
-            this.RubrickTB.Size = new System.Drawing.Size(100, 20);
-            this.RubrickTB.TabIndex = 0;
-            // 
-            // RubrickAddBTN
-            // 
-            this.RubrickAddBTN.Location = new System.Drawing.Point(6, 64);
-            this.RubrickAddBTN.Name = "RubrickAddBTN";
-            this.RubrickAddBTN.Size = new System.Drawing.Size(75, 23);
-            this.RubrickAddBTN.TabIndex = 1;
-            this.RubrickAddBTN.Text = "button2";
-            this.RubrickAddBTN.UseVisualStyleBackColor = true;
-            this.RubrickAddBTN.Click += new System.EventHandler(this.RubrickAddBTN_Click);
-            // 
-            // RubrickEditBTN
-            // 
-            this.RubrickEditBTN.Location = new System.Drawing.Point(130, 64);
-            this.RubrickEditBTN.Name = "RubrickEditBTN";
-            this.RubrickEditBTN.Size = new System.Drawing.Size(75, 23);
-            this.RubrickEditBTN.TabIndex = 2;
-            this.RubrickEditBTN.Text = "button3";
-            this.RubrickEditBTN.UseVisualStyleBackColor = true;
-            this.RubrickEditBTN.Click += new System.EventHandler(this.RubrickEditBTN_Click);
-            // 
-            // RubrickDelBTN
-            // 
-            this.RubrickDelBTN.Location = new System.Drawing.Point(256, 64);
-            this.RubrickDelBTN.Name = "RubrickDelBTN";
-            this.RubrickDelBTN.Size = new System.Drawing.Size(75, 23);
-            this.RubrickDelBTN.TabIndex = 3;
-            this.RubrickDelBTN.Text = "button4";
-            this.RubrickDelBTN.UseVisualStyleBackColor = true;
-            this.RubrickDelBTN.Click += new System.EventHandler(this.RubrickDelBTN_Click);
+            this.FileDelBTN.Location = new System.Drawing.Point(263, 165);
+            this.FileDelBTN.Name = "FileDelBTN";
+            this.FileDelBTN.Size = new System.Drawing.Size(75, 23);
+            this.FileDelBTN.TabIndex = 8;
+            this.FileDelBTN.Text = "button4";
+            this.FileDelBTN.UseVisualStyleBackColor = true;
+            this.FileDelBTN.Click += new System.EventHandler(this.FileDelBTN_Click);
             // 
             // Form1
             // 
@@ -1127,10 +1324,13 @@ namespace kursachBD
             this.tabPage13.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
+            this.tabPage14.ResumeLayout(false);
+            this.tabPage14.PerformLayout();
             this.tabPage15.ResumeLayout(false);
             this.tabPage15.PerformLayout();
             this.tabPage16.ResumeLayout(false);
             this.tabPage17.ResumeLayout(false);
+            this.tabPage17.PerformLayout();
             this.tabPage18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -1198,10 +1398,10 @@ namespace kursachBD
         private System.Windows.Forms.Button DolznEditBTN;
         private System.Windows.Forms.Button DolznAddBTN;
         private System.Windows.Forms.TextBox DolznTB;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button ArchiveDelBTN;
+        private System.Windows.Forms.Button ArchiveEditBTN;
+        private System.Windows.Forms.Button ArchiveAddBTN;
+        private System.Windows.Forms.DateTimePicker NewsDTP;
         private System.Windows.Forms.ComboBox TypenaspCB;
         private System.Windows.Forms.ComboBox TypestrCB;
         private System.Windows.Forms.ComboBox NaspCB;
@@ -1236,6 +1436,25 @@ namespace kursachBD
         private System.Windows.Forms.Button RubrickEditBTN;
         private System.Windows.Forms.Button RubrickAddBTN;
         private System.Windows.Forms.TextBox RubrickTB;
+        private System.Windows.Forms.TextBox TextTB;
+        private System.Windows.Forms.TextBox NewsTB;
+        private System.Windows.Forms.ComboBox RubrickCB;
+        private System.Windows.Forms.DateTimePicker DateArchiveDTP;
+        private System.Windows.Forms.DateTimePicker DateRazmDTP;
+        private System.Windows.Forms.ComboBox SotrudCB;
+        private System.Windows.Forms.TextBox SizeNTB;
+        private System.Windows.Forms.Button NewsDelBTN;
+        private System.Windows.Forms.Button NewsEditBTN;
+        private System.Windows.Forms.Button NewsAddBTN;
+        private System.Windows.Forms.ComboBox NewsCB;
+        private System.Windows.Forms.ComboBox NewsFArchCB;
+        private System.Windows.Forms.TextBox KratfTB;
+        private System.Windows.Forms.TextBox TypefTB;
+        private System.Windows.Forms.TextBox SizeFileTB;
+        private System.Windows.Forms.TextBox FileTB;
+        private System.Windows.Forms.Button FileDelBTN;
+        private System.Windows.Forms.Button FileEditBTN;
+        private System.Windows.Forms.Button FileAddBTN;
     }
 }
 
