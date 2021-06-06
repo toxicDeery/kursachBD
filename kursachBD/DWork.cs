@@ -350,7 +350,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Файл SET Назавние = '{edit}', Размер = '{edit1}', Тип = '{edit2}', Краткое_название = '{kratname}', Код_новости = {NewsCode} WHERE Код_файла = {id}", connection);
+                SqlCommand command = new SqlCommand($"UPDATE Файл SET Название = '{edit}', Размер = '{edit1}', Тип = '{edit2}', Краткое_название = '{kratname}', Код_новости = {NewsCode} WHERE Код_файла = {id}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
