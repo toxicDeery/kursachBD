@@ -43,9 +43,25 @@ namespace kursachBD
                     StreetCB.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                     NaspCB.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                     break;
+                case "Должность":
+                    DolznTB.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(); break;
+                case "Статус_сотрудника":
+                    StatusTB.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(); break;
+                case "Список_сотрудников":
+                    SurnameTB.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    NameTB.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    MiddlenameTB.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    PodrazdelCB.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    DolznCB.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    LogTB.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    PasswordTB.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    StatusCB.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString(); break;
+                case "Подразделение":
+                    PodrazdelTB.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    FloorTB.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    OrgaCB.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString(); break;
+                    //case "Организация": 
 
-                //case "Организация": 
-                    
             }
         }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -130,6 +146,9 @@ namespace kursachBD
             NaspCB.Items.Clear();
             DolznCB.Items.Clear();
             StatusCB.Items.Clear();
+            AdressCB.Items.Clear();
+            OrgaCB.Items.Clear();
+            PodrazdelCB.Items.Clear();
             foreach(string i in BufferListUpdate(0))
             {
                 TypenaspCB.Items.Add(i);
@@ -154,6 +173,19 @@ namespace kursachBD
             {
                 StatusCB.Items.Add(i);
             }
+            foreach (string i in BufferListUpdate(6))
+            {
+                AdressCB.Items.Add(i);
+            }
+            foreach (string i in BufferListUpdate(7))
+            {
+                OrgaCB.Items.Add(i);
+            }
+            foreach (string i in BufferListUpdate(8))
+            {
+                PodrazdelCB.Items.Add(i);
+            }
+
 
 
         }
@@ -205,12 +237,27 @@ namespace kursachBD
                         Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
                     }
                     break;
-                /*case 6: // Заполнение адреса
+                case 6: // Заполнение адреса
                     dataGridViewListReturner.DataSource = database.ReturnTable("Код", "Адрес", null).Tables[0].DefaultView;
                     for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
                     {
                         Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
-                    }*/
+                    }
+                    break;
+                case 7: // Организация
+                    dataGridViewListReturner.DataSource = database.ReturnTable("Название", "Организация", null).Tables[0].DefaultView;
+                    for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
+                    {
+                        Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
+                    }
+                    break;
+                case 8: // Организация
+                    dataGridViewListReturner.DataSource = database.ReturnTable("Название", "Подразделение", null).Tables[0].DefaultView;
+                    for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
+                    {
+                        Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
+                    }
+                    break;
 
 
 
@@ -265,7 +312,7 @@ namespace kursachBD
         private void NpktDelBTN_Click(object sender, EventArgs e)
         {
             DWorks database = new DWorks(Credentials);
-            if (tempeID != 1) { listBox1.Items.Add(database.delNaspunkt(tempeID)); tempeID = -1; }
+            if (tempeID != -1) { listBox1.Items.Add(database.delNaspunkt(tempeID)); tempeID = -1; }
             TableUpdate(); ComboUpdates();
         }
         #endregion
@@ -285,7 +332,7 @@ namespace kursachBD
         private void TypestrDelBTN_Click(object sender, EventArgs e)
         {
             DWorks database = new DWorks(Credentials);
-            if (tempeID != 1) { listBox1.Items.Add(database.delTypestreet(tempeID)); tempeID = -1; }
+            if (tempeID != -1) { listBox1.Items.Add(database.delTypestreet(tempeID)); tempeID = -1; }
             TableUpdate();
         }
         #endregion
@@ -325,7 +372,7 @@ namespace kursachBD
         private void AdressDelBTN_Click(object sender, EventArgs e)
         {
             DWorks database = new DWorks(Credentials);
-            if (tempeID != 1) { listBox1.Items.Add(database.delAdress(tempeID)); tempeID = -1; }
+            if (tempeID != -1) { listBox1.Items.Add(database.delAdress(tempeID)); tempeID = -1; }
             TableUpdate(); ComboUpdates();
         }
         #endregion
@@ -345,7 +392,7 @@ namespace kursachBD
         private void StrDelBTN_Click(object sender, EventArgs e)
         {
             DWorks database = new DWorks(Credentials);
-            if (tempeID != 1) { listBox1.Items.Add(database.delStreet(tempeID)); tempeID = -1; }
+            if (tempeID != -1) { listBox1.Items.Add(database.delStreet(tempeID)); tempeID = -1; }
             TableUpdate(); ComboUpdates();
         }
         #endregion
@@ -367,7 +414,7 @@ namespace kursachBD
         private void TypenaspdelBTN_Click(object sender, EventArgs e)
         {
             DWorks database = new DWorks(Credentials);
-            if (tempeID != 1) { listBox1.Items.Add(database.delTypenasp(tempeID)); tempeID = -1; }
+            if (tempeID != -1) { listBox1.Items.Add(database.delTypenasp(tempeID)); tempeID = -1; }
             TableUpdate(); ComboUpdates();
         }
         #endregion
@@ -388,7 +435,7 @@ namespace kursachBD
         private void DolznDelBTN_Click(object sender, EventArgs e)
         {
             DWorks database = new DWorks(Credentials);
-            if (tempeID != 1) { listBox1.Items.Add(database.delDolzn(tempeID)); tempeID = -1; }
+            if (tempeID != -1) { listBox1.Items.Add(database.delDolzn(tempeID)); tempeID = -1; }
             TableUpdate(); ComboUpdates();
         }
 
@@ -411,7 +458,7 @@ namespace kursachBD
         private void StatusDelBTN_Click(object sender, EventArgs e)
         {
             DWorks database = new DWorks(Credentials);
-            if (tempeID != 1) { listBox1.Items.Add(database.delStatusSotr(tempeID)); tempeID = -1; }
+            if (tempeID != -1) { listBox1.Items.Add(database.delStatusSotr(tempeID)); tempeID = -1; }
             TableUpdate(); ComboUpdates();
         }
         #endregion
@@ -423,7 +470,7 @@ namespace kursachBD
                 SurnameTB.Text, NameTB.Text, MiddlenameTB.Text,
                 GetDirCode("Подразделение", $"{PodrazdelCB.SelectedItem.ToString()}", 1),
                 GetDirCode("Должность", $"{DolznCB.SelectedItem.ToString()}", 1), LogTB.Text, PasswordTB.Text,
-                GetDirCode("Статус", $"{StatusCB.SelectedItem.ToString()}", 1)
+                GetDirCode("Статус_сотрудника", $"{StatusCB.SelectedItem.ToString()}", 1)
                 ));
             TableUpdate(); ComboUpdates();
         }
@@ -436,7 +483,7 @@ namespace kursachBD
                 listBox1.Items.Add(database.editSotrud(SurnameTB.Text, NameTB.Text, MiddlenameTB.Text,
                 GetDirCode("Подразделение", $"{PodrazdelCB.SelectedItem.ToString()}", 1),
                 GetDirCode("Должность", $"{DolznCB.SelectedItem.ToString()}", 1), LogTB.Text, PasswordTB.Text,
-                GetDirCode("Статус", $"{StatusCB.SelectedItem.ToString()}", 1),
+                GetDirCode("Статус_сотрудника", $"{StatusCB.SelectedItem.ToString()}", 1),
                 tempeID)); tempeID = -1;
             }
             TableUpdate(); ComboUpdates();
@@ -445,24 +492,30 @@ namespace kursachBD
         private void SotrDelBTN_Click(object sender, EventArgs e)
         {
             DWorks database = new DWorks(Credentials);
-            if (tempeID != 1) { listBox1.Items.Add(database.delSotrud(tempeID)); tempeID = -1; }
+            if (tempeID != -1) { listBox1.Items.Add(database.delSotrud(tempeID)); tempeID = -1; }
             TableUpdate(); ComboUpdates();
         }
         #endregion
         #region Podrazdel
         private void PodrazAddBTN_Click(object sender, EventArgs e)
         {
-
+            DWorks database = new DWorks(Credentials);
+            listBox1.Items.Add(database.addPodrazdel(PodrazdelTB.Text, FloorTB.Text, GetDirCode("Организация", $"{OrgaCB.SelectedItem.ToString()}", 1)));
+            TableUpdate(); ComboUpdates();
         }
 
         private void PodrazEditBTN_Click(object sender, EventArgs e)
         {
-
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != -1) { listBox1.Items.Add(database.editPodrazdel(PodrazdelTB.Text, FloorTB.Text, GetDirCode("Организация", $"{OrgaCB.SelectedItem.ToString()}", 1), tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
         }
 
         private void PodrazDelBTN_Click(object sender, EventArgs e)
         {
-
+            DWorks database = new DWorks(Credentials);
+            if (tempeID != -1) { listBox1.Items.Add(database.delPodrazdel(tempeID)); tempeID = -1; }
+            TableUpdate(); ComboUpdates();
         }
         #endregion
         #region Organization
@@ -483,7 +536,7 @@ namespace kursachBD
         private void OrgDelBTN_Click(object sender, EventArgs e)
         {
             DWorks database = new DWorks(Credentials);
-            if (tempeID != 1) { listBox1.Items.Add(database.deleteOrganization(tempeID)); tempeID = -1; }
+            if (tempeID != -1) { listBox1.Items.Add(database.deleteOrganization(tempeID)); tempeID = -1; }
             TableUpdate(); ComboUpdates();
         }
         #endregion

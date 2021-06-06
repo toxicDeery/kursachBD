@@ -48,7 +48,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"DELETE FROM Организация WHERE Код = {ID}", connection);
+                SqlCommand command = new SqlCommand($"DELETE FROM Организация WHERE Код_организации = {ID}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -60,7 +60,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Организация SET Название = '{edit}', Краткое_название = '{edit1}', Контактный_телефон = '{edit2}', Адрес = {edit3}, Эл_адрес = '{edit4}' , Адрес_сайта = '{edit5}' WHERE Код = {ID}");
+                SqlCommand command = new SqlCommand($"UPDATE Организация SET Название = '{edit}', Краткое_название = '{edit1}', Контактный_телефон = '{edit2}', Адрес = {edit3}, Эл_адрес = '{edit4}' , Адрес_сайта = '{edit5}' WHERE Код_организации = {ID}");
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -120,7 +120,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"DELETE FROM Подразделение WHERE Код = {ID}", connection);
+                SqlCommand command = new SqlCommand($"DELETE FROM Подразделение WHERE Код_подразделения = {ID}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -132,7 +132,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Подразделение SET Название = '{edit}', Этаж = '{edit1}', Код_организации = {OrgCode}  WHERE Код = {ID};", connection);
+                SqlCommand command = new SqlCommand($"UPDATE Подразделение SET Название = '{edit}', Этаж = '{edit1}', Код_организации = {OrgCode}  WHERE Код_подразделения = {ID};", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -156,7 +156,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"DELETE FROM Статус_сотрудника WHERE Код = {ID}", connection);
+                SqlCommand command = new SqlCommand($"DELETE FROM Статус_сотрудника WHERE Код_статуса = {ID}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -168,7 +168,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Статус_сотрудника SET Статус = '{edit}' WHERE Код = {ID};", connection);
+                SqlCommand command = new SqlCommand($"UPDATE Статус_сотрудника SET Статус = '{edit}' WHERE Код_статуса = {ID};", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
 
             }
@@ -193,7 +193,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"DELETE FROM Список_сотрудников WHERE Код = {ID}", connection);
+                SqlCommand command = new SqlCommand($"DELETE FROM Список_сотрудников WHERE Код_сотрудника = {ID}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -205,7 +205,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Список_сотрудников SET Фамилия = '{edit}', Имя = '{edit1}', Отчество = '{edit2}', Код_подразделения = {PodrCode}, Код_должности = {DolCode}, Логин = '{log}', Пароль = '{pass}', Код_статуса = {StatCode} WHERE Код = {ID}", connection);
+                SqlCommand command = new SqlCommand($"UPDATE Список_сотрудников SET Фамилия = '{edit}', Имя = '{edit1}', Отчество = '{edit2}', Код_подразделения = {PodrCode}, Код_должности = {DolCode}, Логин = '{log}', Пароль = '{pass}', Код_статуса = {StatCode} WHERE Код_сотрудника = {ID}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -230,7 +230,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"DELETE FROM Должность WHERE Код = {id}", connection);
+                SqlCommand command = new SqlCommand($"DELETE FROM Должность WHERE Код_должности = {id}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -242,7 +242,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Должность SET Должность = '{edit}' WHERE Код = {id}", connection);
+                SqlCommand command = new SqlCommand($"UPDATE Должность SET Должность = '{edit}' WHERE Код_должности = {id}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)

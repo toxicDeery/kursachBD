@@ -48,7 +48,6 @@ namespace kursachBD
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.OrganizeCB = new System.Windows.Forms.ComboBox();
             this.NaspCB = new System.Windows.Forms.ComboBox();
             this.StreetCB = new System.Windows.Forms.ComboBox();
             this.AdressDelBTN = new System.Windows.Forms.Button();
@@ -368,7 +367,6 @@ namespace kursachBD
             // 
             // tabPage9
             // 
-            this.tabPage9.Controls.Add(this.OrganizeCB);
             this.tabPage9.Controls.Add(this.NaspCB);
             this.tabPage9.Controls.Add(this.StreetCB);
             this.tabPage9.Controls.Add(this.AdressDelBTN);
@@ -383,14 +381,6 @@ namespace kursachBD
             this.tabPage9.TabIndex = 0;
             this.tabPage9.Text = "Адрес";
             this.tabPage9.UseVisualStyleBackColor = true;
-            // 
-            // OrganizeCB
-            // 
-            this.OrganizeCB.FormattingEnabled = true;
-            this.OrganizeCB.Location = new System.Drawing.Point(6, 134);
-            this.OrganizeCB.Name = "OrganizeCB";
-            this.OrganizeCB.Size = new System.Drawing.Size(121, 21);
-            this.OrganizeCB.TabIndex = 7;
             // 
             // NaspCB
             // 
@@ -1168,7 +1158,6 @@ namespace kursachBD
         private System.Windows.Forms.ComboBox TypestrCB;
         private System.Windows.Forms.ComboBox NaspCB;
         private System.Windows.Forms.ComboBox StreetCB;
-        private System.Windows.Forms.ComboBox OrganizeCB;
         private System.Windows.Forms.ComboBox StatusCB;
         private System.Windows.Forms.ComboBox DolznCB;
         private System.Windows.Forms.ComboBox PodrazdelCB;
