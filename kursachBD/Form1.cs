@@ -24,7 +24,7 @@ namespace kursachBD
             "database = kurs;";
         int tempeID = -1;
         string selectedTable;
-        //int tempStudID = -1;
+       
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -125,7 +125,7 @@ namespace kursachBD
             {
                 case 0: { selectedTable = "Новость"; dataGridView1.DataSource = tet.dataSet("Название_информации, Текст, Дата_размещения, Дата_перевода_в_архив, Размер_в_Кб", "Новость", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Новость", null).Tables[0].DefaultView; break; }
                 case 1: { selectedTable = "Рубрика"; dataGridView1.DataSource = tet.dataSet("Рубрика", "Рубрика", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Рубрика", null).Tables[0].DefaultView; break; }
-                case 2: { selectedTable = "Архив"; dataGridView1.DataSource = tet.dataSet("Дата_новости", "Архив", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Архив", null).Tables[0].DefaultView; break; }
+                case 2: { selectedTable = "Архив"; dataGridView1.DataSource = tet.dataSet("Дата_новости, Код_новости", "Архив", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Архив", null).Tables[0].DefaultView; break; }
                 case 3: { selectedTable = "Файл"; dataGridView1.DataSource = tet.dataSet("Название, Размер, Тип", "Файл", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Файл", null).Tables[0].DefaultView; break; }
             }
         }
@@ -296,8 +296,14 @@ namespace kursachBD
                     dataGridView1.DataSource = database.ReturnTable("Название, Этаж", "Подразделение", null).Tables[0].DefaultView; break;
                 case "Организация":
                     dataGridView1.DataSource = database.ReturnTable("Название, Краткое_название, Контактный_телефон, Адрес, Эл_адрес, Адрес_сайта", "Организация", null).Tables[0].DefaultView; break;
-
-
+                case "Рубрика":
+                    dataGridView1.DataSource = database.ReturnTable("Рубрика", "Рубрика", null).Tables[0].DefaultView; break;
+                case "Архив":
+                    dataGridView1.DataSource = database.ReturnTable("Дата_новости, Код_новости", "Архив", null).Tables[0].DefaultView; break;
+                case "Файл":
+                    dataGridView1.DataSource = database.ReturnTable("Название, Размер, Тип, Код_новости", "Файл", null).Tables[0].DefaultView; break;
+                case "Новость":
+                    dataGridView1.DataSource = database.ReturnTable("Название_информации, Текст, Дата_размещения, Дата_перевода_в_архив, Размер_в_Кб, Код_сотрудника", "Новость", null).Tables[0].DefaultView; break;
             }
 
         }
@@ -546,5 +552,20 @@ namespace kursachBD
             TableUpdate(); ComboUpdates();
         }
         #endregion
+
+        private void RubrickAddBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RubrickEditBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RubrickDelBTN_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

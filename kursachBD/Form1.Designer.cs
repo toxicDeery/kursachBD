@@ -120,6 +120,10 @@ namespace kursachBD
             this.OrgAddBTN = new System.Windows.Forms.Button();
             this.OrgEditBTN = new System.Windows.Forms.Button();
             this.OrgDelBTN = new System.Windows.Forms.Button();
+            this.RubrickTB = new System.Windows.Forms.TextBox();
+            this.RubrickAddBTN = new System.Windows.Forms.Button();
+            this.RubrickEditBTN = new System.Windows.Forms.Button();
+            this.RubrickDelBTN = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -137,6 +141,7 @@ namespace kursachBD
             this.tabPage13.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabControl4.SuspendLayout();
+            this.tabPage15.SuspendLayout();
             this.tabPage16.SuspendLayout();
             this.tabPage17.SuspendLayout();
             this.tabPage18.SuspendLayout();
@@ -701,6 +706,10 @@ namespace kursachBD
             // 
             // tabPage15
             // 
+            this.tabPage15.Controls.Add(this.RubrickDelBTN);
+            this.tabPage15.Controls.Add(this.RubrickEditBTN);
+            this.tabPage15.Controls.Add(this.RubrickAddBTN);
+            this.tabPage15.Controls.Add(this.RubrickTB);
             this.tabPage15.Location = new System.Drawing.Point(4, 22);
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
@@ -1043,6 +1052,43 @@ namespace kursachBD
             this.OrgDelBTN.UseVisualStyleBackColor = true;
             this.OrgDelBTN.Click += new System.EventHandler(this.OrgDelBTN_Click);
             // 
+            // RubrickTB
+            // 
+            this.RubrickTB.Location = new System.Drawing.Point(6, 25);
+            this.RubrickTB.Name = "RubrickTB";
+            this.RubrickTB.Size = new System.Drawing.Size(100, 20);
+            this.RubrickTB.TabIndex = 0;
+            // 
+            // RubrickAddBTN
+            // 
+            this.RubrickAddBTN.Location = new System.Drawing.Point(6, 64);
+            this.RubrickAddBTN.Name = "RubrickAddBTN";
+            this.RubrickAddBTN.Size = new System.Drawing.Size(75, 23);
+            this.RubrickAddBTN.TabIndex = 1;
+            this.RubrickAddBTN.Text = "button2";
+            this.RubrickAddBTN.UseVisualStyleBackColor = true;
+            this.RubrickAddBTN.Click += new System.EventHandler(this.RubrickAddBTN_Click);
+            // 
+            // RubrickEditBTN
+            // 
+            this.RubrickEditBTN.Location = new System.Drawing.Point(130, 64);
+            this.RubrickEditBTN.Name = "RubrickEditBTN";
+            this.RubrickEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.RubrickEditBTN.TabIndex = 2;
+            this.RubrickEditBTN.Text = "button3";
+            this.RubrickEditBTN.UseVisualStyleBackColor = true;
+            this.RubrickEditBTN.Click += new System.EventHandler(this.RubrickEditBTN_Click);
+            // 
+            // RubrickDelBTN
+            // 
+            this.RubrickDelBTN.Location = new System.Drawing.Point(256, 64);
+            this.RubrickDelBTN.Name = "RubrickDelBTN";
+            this.RubrickDelBTN.Size = new System.Drawing.Size(75, 23);
+            this.RubrickDelBTN.TabIndex = 3;
+            this.RubrickDelBTN.Text = "button4";
+            this.RubrickDelBTN.UseVisualStyleBackColor = true;
+            this.RubrickDelBTN.Click += new System.EventHandler(this.RubrickDelBTN_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1081,6 +1127,8 @@ namespace kursachBD
             this.tabPage13.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
+            this.tabPage15.ResumeLayout(false);
+            this.tabPage15.PerformLayout();
             this.tabPage16.ResumeLayout(false);
             this.tabPage17.ResumeLayout(false);
             this.tabPage18.ResumeLayout(false);
@@ -1184,6 +1232,10 @@ namespace kursachBD
         private System.Windows.Forms.Button OrgDelBTN;
         private System.Windows.Forms.Button OrgEditBTN;
         private System.Windows.Forms.Button OrgAddBTN;
+        private System.Windows.Forms.Button RubrickDelBTN;
+        private System.Windows.Forms.Button RubrickEditBTN;
+        private System.Windows.Forms.Button RubrickAddBTN;
+        private System.Windows.Forms.TextBox RubrickTB;
     }
 }
 
