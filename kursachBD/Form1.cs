@@ -60,7 +60,13 @@ namespace kursachBD
                     PodrazdelTB.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                     FloorTB.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                     OrgaCB.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString(); break;
-                    //case "Организация": 
+                case "Организация": 
+                    OrgTB.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    KratOrgTB.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    NumPhoneTB.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    AdressCB.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    EmailTB.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    SiteTB.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString(); break;
 
             }
         }
