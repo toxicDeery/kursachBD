@@ -106,6 +106,9 @@ namespace kursachBD
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.NewsDelBTN = new System.Windows.Forms.Button();
+            this.NewsEditBTN = new System.Windows.Forms.Button();
+            this.NewsAddBTN = new System.Windows.Forms.Button();
             this.SotrudCB = new System.Windows.Forms.ComboBox();
             this.SizeNTB = new System.Windows.Forms.TextBox();
             this.DateArchiveDTP = new System.Windows.Forms.DateTimePicker();
@@ -119,11 +122,20 @@ namespace kursachBD
             this.RubrickAddBTN = new System.Windows.Forms.Button();
             this.RubrickTB = new System.Windows.Forms.TextBox();
             this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.NewsCB = new System.Windows.Forms.ComboBox();
             this.ArchiveDelBTN = new System.Windows.Forms.Button();
             this.ArchiveEditBTN = new System.Windows.Forms.Button();
             this.ArchiveAddBTN = new System.Windows.Forms.Button();
             this.NewsDTP = new System.Windows.Forms.DateTimePicker();
             this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.FileDelBTN = new System.Windows.Forms.Button();
+            this.FileEditBTN = new System.Windows.Forms.Button();
+            this.FileAddBTN = new System.Windows.Forms.Button();
+            this.NewsFArchCB = new System.Windows.Forms.ComboBox();
+            this.KratfTB = new System.Windows.Forms.TextBox();
+            this.TypefTB = new System.Windows.Forms.TextBox();
+            this.SizeFileTB = new System.Windows.Forms.TextBox();
+            this.FileTB = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage18 = new System.Windows.Forms.TabPage();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -131,18 +143,14 @@ namespace kursachBD
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.dataGridViewListReturner = new System.Windows.Forms.DataGridView();
-            this.NewsAddBTN = new System.Windows.Forms.Button();
-            this.NewsEditBTN = new System.Windows.Forms.Button();
-            this.NewsDelBTN = new System.Windows.Forms.Button();
-            this.NewsCB = new System.Windows.Forms.ComboBox();
-            this.FileTB = new System.Windows.Forms.TextBox();
-            this.SizeFileTB = new System.Windows.Forms.TextBox();
-            this.TypefTB = new System.Windows.Forms.TextBox();
-            this.KratfTB = new System.Windows.Forms.TextBox();
-            this.NewsFArchCB = new System.Windows.Forms.ComboBox();
-            this.FileAddBTN = new System.Windows.Forms.Button();
-            this.FileEditBTN = new System.Windows.Forms.Button();
-            this.FileDelBTN = new System.Windows.Forms.Button();
+            this.tabPage19 = new System.Windows.Forms.TabPage();
+            this.DateQuery1DTP = new System.Windows.Forms.DateTimePicker();
+            this.AddSotrDTP = new System.Windows.Forms.DateTimePicker();
+            this.Query1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DateQuery2DTP = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Query2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -168,6 +176,7 @@ namespace kursachBD
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).BeginInit();
+            this.tabPage19.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -175,11 +184,12 @@ namespace kursachBD
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage19);
             this.tabControl1.Controls.Add(this.tabPage18);
             this.tabControl1.Location = new System.Drawing.Point(1, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(463, 523);
+            this.tabControl1.Size = new System.Drawing.Size(640, 523);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -189,7 +199,7 @@ namespace kursachBD
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(455, 497);
+            this.tabPage1.Size = new System.Drawing.Size(632, 497);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Организация";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -204,7 +214,7 @@ namespace kursachBD
             this.tabControl2.Location = new System.Drawing.Point(3, 6);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(446, 485);
+            this.tabControl2.Size = new System.Drawing.Size(623, 485);
             this.tabControl2.TabIndex = 0;
             this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
             // 
@@ -370,6 +380,7 @@ namespace kursachBD
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.AddSotrDTP);
             this.tabPage6.Controls.Add(this.SotrDelBTN);
             this.tabPage6.Controls.Add(this.SotrEditBTN);
             this.tabPage6.Controls.Add(this.SotrAddBTN);
@@ -384,14 +395,14 @@ namespace kursachBD
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(438, 459);
+            this.tabPage6.Size = new System.Drawing.Size(615, 459);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "Список_сотрудников";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // SotrDelBTN
             // 
-            this.SotrDelBTN.Location = new System.Drawing.Point(267, 233);
+            this.SotrDelBTN.Location = new System.Drawing.Point(267, 279);
             this.SotrDelBTN.Name = "SotrDelBTN";
             this.SotrDelBTN.Size = new System.Drawing.Size(75, 23);
             this.SotrDelBTN.TabIndex = 10;
@@ -401,7 +412,7 @@ namespace kursachBD
             // 
             // SotrEditBTN
             // 
-            this.SotrEditBTN.Location = new System.Drawing.Point(147, 233);
+            this.SotrEditBTN.Location = new System.Drawing.Point(147, 279);
             this.SotrEditBTN.Name = "SotrEditBTN";
             this.SotrEditBTN.Size = new System.Drawing.Size(75, 23);
             this.SotrEditBTN.TabIndex = 9;
@@ -411,7 +422,7 @@ namespace kursachBD
             // 
             // SotrAddBTN
             // 
-            this.SotrAddBTN.Location = new System.Drawing.Point(19, 233);
+            this.SotrAddBTN.Location = new System.Drawing.Point(19, 279);
             this.SotrAddBTN.Name = "SotrAddBTN";
             this.SotrAddBTN.Size = new System.Drawing.Size(75, 23);
             this.SotrAddBTN.TabIndex = 8;
@@ -948,6 +959,36 @@ namespace kursachBD
             this.tabPage14.Text = "Новость";
             this.tabPage14.UseVisualStyleBackColor = true;
             // 
+            // NewsDelBTN
+            // 
+            this.NewsDelBTN.Location = new System.Drawing.Point(264, 204);
+            this.NewsDelBTN.Name = "NewsDelBTN";
+            this.NewsDelBTN.Size = new System.Drawing.Size(75, 23);
+            this.NewsDelBTN.TabIndex = 9;
+            this.NewsDelBTN.Text = "button4";
+            this.NewsDelBTN.UseVisualStyleBackColor = true;
+            this.NewsDelBTN.Click += new System.EventHandler(this.NewsDelBTN_Click);
+            // 
+            // NewsEditBTN
+            // 
+            this.NewsEditBTN.Location = new System.Drawing.Point(131, 204);
+            this.NewsEditBTN.Name = "NewsEditBTN";
+            this.NewsEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.NewsEditBTN.TabIndex = 8;
+            this.NewsEditBTN.Text = "button3";
+            this.NewsEditBTN.UseVisualStyleBackColor = true;
+            this.NewsEditBTN.Click += new System.EventHandler(this.NewsEditBTN_Click);
+            // 
+            // NewsAddBTN
+            // 
+            this.NewsAddBTN.Location = new System.Drawing.Point(6, 204);
+            this.NewsAddBTN.Name = "NewsAddBTN";
+            this.NewsAddBTN.Size = new System.Drawing.Size(75, 23);
+            this.NewsAddBTN.TabIndex = 7;
+            this.NewsAddBTN.Text = "button2";
+            this.NewsAddBTN.UseVisualStyleBackColor = true;
+            this.NewsAddBTN.Click += new System.EventHandler(this.NewsAddBTN_Click);
+            // 
             // SotrudCB
             // 
             this.SotrudCB.FormattingEnabled = true;
@@ -1065,6 +1106,14 @@ namespace kursachBD
             this.tabPage16.Text = "Архив";
             this.tabPage16.UseVisualStyleBackColor = true;
             // 
+            // NewsCB
+            // 
+            this.NewsCB.FormattingEnabled = true;
+            this.NewsCB.Location = new System.Drawing.Point(6, 49);
+            this.NewsCB.Name = "NewsCB";
+            this.NewsCB.Size = new System.Drawing.Size(121, 21);
+            this.NewsCB.TabIndex = 4;
+            // 
             // ArchiveDelBTN
             // 
             this.ArchiveDelBTN.Location = new System.Drawing.Point(269, 89);
@@ -1121,6 +1170,72 @@ namespace kursachBD
             this.tabPage17.Text = "Файл";
             this.tabPage17.UseVisualStyleBackColor = true;
             // 
+            // FileDelBTN
+            // 
+            this.FileDelBTN.Location = new System.Drawing.Point(263, 165);
+            this.FileDelBTN.Name = "FileDelBTN";
+            this.FileDelBTN.Size = new System.Drawing.Size(75, 23);
+            this.FileDelBTN.TabIndex = 8;
+            this.FileDelBTN.Text = "button4";
+            this.FileDelBTN.UseVisualStyleBackColor = true;
+            this.FileDelBTN.Click += new System.EventHandler(this.FileDelBTN_Click);
+            // 
+            // FileEditBTN
+            // 
+            this.FileEditBTN.Location = new System.Drawing.Point(134, 165);
+            this.FileEditBTN.Name = "FileEditBTN";
+            this.FileEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.FileEditBTN.TabIndex = 7;
+            this.FileEditBTN.Text = "button3";
+            this.FileEditBTN.UseVisualStyleBackColor = true;
+            this.FileEditBTN.Click += new System.EventHandler(this.FileEditBTN_Click);
+            // 
+            // FileAddBTN
+            // 
+            this.FileAddBTN.Location = new System.Drawing.Point(9, 165);
+            this.FileAddBTN.Name = "FileAddBTN";
+            this.FileAddBTN.Size = new System.Drawing.Size(75, 23);
+            this.FileAddBTN.TabIndex = 6;
+            this.FileAddBTN.Text = "button2";
+            this.FileAddBTN.UseVisualStyleBackColor = true;
+            this.FileAddBTN.Click += new System.EventHandler(this.FileAddBTN_Click);
+            // 
+            // NewsFArchCB
+            // 
+            this.NewsFArchCB.FormattingEnabled = true;
+            this.NewsFArchCB.Location = new System.Drawing.Point(9, 138);
+            this.NewsFArchCB.Name = "NewsFArchCB";
+            this.NewsFArchCB.Size = new System.Drawing.Size(121, 21);
+            this.NewsFArchCB.TabIndex = 5;
+            // 
+            // KratfTB
+            // 
+            this.KratfTB.Location = new System.Drawing.Point(9, 112);
+            this.KratfTB.Name = "KratfTB";
+            this.KratfTB.Size = new System.Drawing.Size(100, 20);
+            this.KratfTB.TabIndex = 4;
+            // 
+            // TypefTB
+            // 
+            this.TypefTB.Location = new System.Drawing.Point(9, 86);
+            this.TypefTB.Name = "TypefTB";
+            this.TypefTB.Size = new System.Drawing.Size(100, 20);
+            this.TypefTB.TabIndex = 3;
+            // 
+            // SizeFileTB
+            // 
+            this.SizeFileTB.Location = new System.Drawing.Point(9, 60);
+            this.SizeFileTB.Name = "SizeFileTB";
+            this.SizeFileTB.Size = new System.Drawing.Size(100, 20);
+            this.SizeFileTB.TabIndex = 2;
+            // 
+            // FileTB
+            // 
+            this.FileTB.Location = new System.Drawing.Point(9, 34);
+            this.FileTB.Name = "FileTB";
+            this.FileTB.Size = new System.Drawing.Size(100, 20);
+            this.FileTB.TabIndex = 1;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(34, 379);
@@ -1154,17 +1269,17 @@ namespace kursachBD
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(466, 24);
+            this.dataGridView1.Location = new System.Drawing.Point(647, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(427, 497);
+            this.dataGridView1.Size = new System.Drawing.Size(451, 497);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(948, 52);
+            this.dataGridView2.Location = new System.Drawing.Point(1180, 204);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(240, 150);
             this.dataGridView2.TabIndex = 2;
@@ -1177,120 +1292,91 @@ namespace kursachBD
             // dataGridViewListReturner
             // 
             this.dataGridViewListReturner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewListReturner.Location = new System.Drawing.Point(948, 240);
+            this.dataGridViewListReturner.Location = new System.Drawing.Point(1189, 365);
             this.dataGridViewListReturner.Name = "dataGridViewListReturner";
             this.dataGridViewListReturner.Size = new System.Drawing.Size(240, 150);
             this.dataGridViewListReturner.TabIndex = 3;
             // 
-            // NewsAddBTN
+            // tabPage19
             // 
-            this.NewsAddBTN.Location = new System.Drawing.Point(6, 204);
-            this.NewsAddBTN.Name = "NewsAddBTN";
-            this.NewsAddBTN.Size = new System.Drawing.Size(75, 23);
-            this.NewsAddBTN.TabIndex = 7;
-            this.NewsAddBTN.Text = "button2";
-            this.NewsAddBTN.UseVisualStyleBackColor = true;
-            this.NewsAddBTN.Click += new System.EventHandler(this.NewsAddBTN_Click);
+            this.tabPage19.Controls.Add(this.Query2);
+            this.tabPage19.Controls.Add(this.label2);
+            this.tabPage19.Controls.Add(this.DateQuery2DTP);
+            this.tabPage19.Controls.Add(this.label1);
+            this.tabPage19.Controls.Add(this.Query1);
+            this.tabPage19.Controls.Add(this.DateQuery1DTP);
+            this.tabPage19.Location = new System.Drawing.Point(4, 22);
+            this.tabPage19.Name = "tabPage19";
+            this.tabPage19.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage19.Size = new System.Drawing.Size(632, 497);
+            this.tabPage19.TabIndex = 4;
+            this.tabPage19.Text = "Запросы";
+            this.tabPage19.UseVisualStyleBackColor = true;
             // 
-            // NewsEditBTN
+            // DateQuery1DTP
             // 
-            this.NewsEditBTN.Location = new System.Drawing.Point(131, 204);
-            this.NewsEditBTN.Name = "NewsEditBTN";
-            this.NewsEditBTN.Size = new System.Drawing.Size(75, 23);
-            this.NewsEditBTN.TabIndex = 8;
-            this.NewsEditBTN.Text = "button3";
-            this.NewsEditBTN.UseVisualStyleBackColor = true;
-            this.NewsEditBTN.Click += new System.EventHandler(this.NewsEditBTN_Click);
+            this.DateQuery1DTP.Location = new System.Drawing.Point(16, 48);
+            this.DateQuery1DTP.Name = "DateQuery1DTP";
+            this.DateQuery1DTP.Size = new System.Drawing.Size(200, 20);
+            this.DateQuery1DTP.TabIndex = 0;
             // 
-            // NewsDelBTN
+            // AddSotrDTP
             // 
-            this.NewsDelBTN.Location = new System.Drawing.Point(264, 204);
-            this.NewsDelBTN.Name = "NewsDelBTN";
-            this.NewsDelBTN.Size = new System.Drawing.Size(75, 23);
-            this.NewsDelBTN.TabIndex = 9;
-            this.NewsDelBTN.Text = "button4";
-            this.NewsDelBTN.UseVisualStyleBackColor = true;
-            this.NewsDelBTN.Click += new System.EventHandler(this.NewsDelBTN_Click);
+            this.AddSotrDTP.Location = new System.Drawing.Point(19, 233);
+            this.AddSotrDTP.Name = "AddSotrDTP";
+            this.AddSotrDTP.Size = new System.Drawing.Size(200, 20);
+            this.AddSotrDTP.TabIndex = 11;
             // 
-            // NewsCB
+            // Query1
             // 
-            this.NewsCB.FormattingEnabled = true;
-            this.NewsCB.Location = new System.Drawing.Point(6, 49);
-            this.NewsCB.Name = "NewsCB";
-            this.NewsCB.Size = new System.Drawing.Size(121, 21);
-            this.NewsCB.TabIndex = 4;
+            this.Query1.Location = new System.Drawing.Point(16, 74);
+            this.Query1.Name = "Query1";
+            this.Query1.Size = new System.Drawing.Size(75, 23);
+            this.Query1.TabIndex = 1;
+            this.Query1.Text = "Запрос_1";
+            this.Query1.UseVisualStyleBackColor = true;
+            this.Query1.Click += new System.EventHandler(this.Query1_Click);
             // 
-            // FileTB
+            // label1
             // 
-            this.FileTB.Location = new System.Drawing.Point(9, 34);
-            this.FileTB.Name = "FileTB";
-            this.FileTB.Size = new System.Drawing.Size(100, 20);
-            this.FileTB.TabIndex = 1;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(192, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Выберите дату для первого запроса";
             // 
-            // SizeFileTB
+            // DateQuery2DTP
             // 
-            this.SizeFileTB.Location = new System.Drawing.Point(9, 60);
-            this.SizeFileTB.Name = "SizeFileTB";
-            this.SizeFileTB.Size = new System.Drawing.Size(100, 20);
-            this.SizeFileTB.TabIndex = 2;
+            this.DateQuery2DTP.Location = new System.Drawing.Point(352, 44);
+            this.DateQuery2DTP.Name = "DateQuery2DTP";
+            this.DateQuery2DTP.Size = new System.Drawing.Size(200, 20);
+            this.DateQuery2DTP.TabIndex = 3;
             // 
-            // TypefTB
+            // label2
             // 
-            this.TypefTB.Location = new System.Drawing.Point(9, 86);
-            this.TypefTB.Name = "TypefTB";
-            this.TypefTB.Size = new System.Drawing.Size(100, 20);
-            this.TypefTB.TabIndex = 3;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(349, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(191, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Выберите дату для второго запроса";
             // 
-            // KratfTB
+            // Query2
             // 
-            this.KratfTB.Location = new System.Drawing.Point(9, 112);
-            this.KratfTB.Name = "KratfTB";
-            this.KratfTB.Size = new System.Drawing.Size(100, 20);
-            this.KratfTB.TabIndex = 4;
-            // 
-            // NewsFArchCB
-            // 
-            this.NewsFArchCB.FormattingEnabled = true;
-            this.NewsFArchCB.Location = new System.Drawing.Point(9, 138);
-            this.NewsFArchCB.Name = "NewsFArchCB";
-            this.NewsFArchCB.Size = new System.Drawing.Size(121, 21);
-            this.NewsFArchCB.TabIndex = 5;
-            // 
-            // FileAddBTN
-            // 
-            this.FileAddBTN.Location = new System.Drawing.Point(9, 165);
-            this.FileAddBTN.Name = "FileAddBTN";
-            this.FileAddBTN.Size = new System.Drawing.Size(75, 23);
-            this.FileAddBTN.TabIndex = 6;
-            this.FileAddBTN.Text = "button2";
-            this.FileAddBTN.UseVisualStyleBackColor = true;
-            this.FileAddBTN.Click += new System.EventHandler(this.FileAddBTN_Click);
-            // 
-            // FileEditBTN
-            // 
-            this.FileEditBTN.Location = new System.Drawing.Point(134, 165);
-            this.FileEditBTN.Name = "FileEditBTN";
-            this.FileEditBTN.Size = new System.Drawing.Size(75, 23);
-            this.FileEditBTN.TabIndex = 7;
-            this.FileEditBTN.Text = "button3";
-            this.FileEditBTN.UseVisualStyleBackColor = true;
-            this.FileEditBTN.Click += new System.EventHandler(this.FileEditBTN_Click);
-            // 
-            // FileDelBTN
-            // 
-            this.FileDelBTN.Location = new System.Drawing.Point(263, 165);
-            this.FileDelBTN.Name = "FileDelBTN";
-            this.FileDelBTN.Size = new System.Drawing.Size(75, 23);
-            this.FileDelBTN.TabIndex = 8;
-            this.FileDelBTN.Text = "button4";
-            this.FileDelBTN.UseVisualStyleBackColor = true;
-            this.FileDelBTN.Click += new System.EventHandler(this.FileDelBTN_Click);
+            this.Query2.Location = new System.Drawing.Point(352, 70);
+            this.Query2.Name = "Query2";
+            this.Query2.Size = new System.Drawing.Size(75, 23);
+            this.Query2.TabIndex = 5;
+            this.Query2.Text = "Запрос_2";
+            this.Query2.UseVisualStyleBackColor = true;
+            this.Query2.Click += new System.EventHandler(this.Query2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1317, 532);
+            this.ClientSize = new System.Drawing.Size(1114, 531);
             this.Controls.Add(this.dataGridViewListReturner);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
@@ -1335,6 +1421,8 @@ namespace kursachBD
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).EndInit();
+            this.tabPage19.ResumeLayout(false);
+            this.tabPage19.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1455,6 +1543,14 @@ namespace kursachBD
         private System.Windows.Forms.Button FileDelBTN;
         private System.Windows.Forms.Button FileEditBTN;
         private System.Windows.Forms.Button FileAddBTN;
+        private System.Windows.Forms.TabPage tabPage19;
+        private System.Windows.Forms.DateTimePicker DateQuery1DTP;
+        private System.Windows.Forms.DateTimePicker AddSotrDTP;
+        private System.Windows.Forms.Button Query1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Query2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker DateQuery2DTP;
     }
 }
 

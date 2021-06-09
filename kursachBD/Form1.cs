@@ -110,7 +110,7 @@ namespace kursachBD
             {
                 case 0: { selectedTable = "Организация"; dataGridView1.DataSource = tet.dataSet("Название, Краткое_название, Контактный_телефон, Адрес, Эл_адрес, Адрес_сайта", "Организация", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Организация", null).Tables[0].DefaultView; break; }
                 case 1: { selectedTable = "Подразделение"; dataGridView1.DataSource = tet.dataSet("Название, Этаж, Код_организации", "Подразделение", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Подразделение", null).Tables[0].DefaultView; break; }
-                case 2: { selectedTable = "Список_сотрудников"; dataGridView1.DataSource = tet.dataSet("Фамилия, Имя, Отчество, Код_подразделения, Код_должности, Логин, Пароль, Код_статуса", "Список_сотрудников", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Список_сотрудников", null).Tables[0].DefaultView; break; }
+                case 2: { selectedTable = "Список_сотрудников"; dataGridView1.DataSource = tet.dataSet("Фамилия, Имя, Отчество, Код_подразделения, Код_должности, Логин, Пароль, Код_статуса, Дата_принятия", "Список_сотрудников", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Список_сотрудников", null).Tables[0].DefaultView; break; }
                 case 3: { selectedTable = "Статус_сотрудника"; dataGridView1.DataSource = tet.dataSet("Статус", "Статус_сотрудника", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Статус_сотрудника", null).Tables[0].DefaultView; break; }
                 case 4: { selectedTable = "Должность"; dataGridView1.DataSource = tet.dataSet("Должность", "Должность", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Должность", null).Tables[0].DefaultView; break; }
             }
@@ -347,7 +347,7 @@ namespace kursachBD
                 case "Статус_сотрудника":
                     dataGridView1.DataSource = database.ReturnTable("Статус", "Статус_сотрудника", null).Tables[0].DefaultView; break;
                 case "Список_сотрудников":
-                    dataGridView1.DataSource = database.ReturnTable("Фамилия, Имя, Отчество, Код_подразделения, Код_должности, Логин, Пароль, Код_статуса", "Список_сотрудников", null).Tables[0].DefaultView; break;
+                    dataGridView1.DataSource = database.ReturnTable("Фамилия, Имя, Отчество, Код_подразделения, Код_должности, Логин, Пароль, Код_статуса, Дата_принятия", "Список_сотрудников", null).Tables[0].DefaultView; break;
                 case "Подразделение":
                     dataGridView1.DataSource = database.ReturnTable("Название, Этаж, Код_организации", "Подразделение", null).Tables[0].DefaultView; break;
                 case "Организация":
@@ -470,6 +470,7 @@ namespace kursachBD
             DWorks database = new DWorks(Credentials);
             listBox1.Items.Add(database.addTypenasp(TypenaspTB.Text));
             TableUpdate(); ComboUpdates();
+            TypenaspTB.Clear();
         }
 
         private void TypenaspeditBTN_Click(object sender, EventArgs e)
@@ -538,7 +539,7 @@ namespace kursachBD
                 SurnameTB.Text, NameTB.Text, MiddlenameTB.Text,
                 GetDirCode("Подразделение", $"{PodrazdelCB.SelectedItem.ToString()}", 1),
                 GetDirCode("Должность", $"{DolznCB.SelectedItem.ToString()}", 1), LogTB.Text, PasswordTB.Text,
-                GetDirCode("Статус_сотрудника", $"{StatusCB.SelectedItem.ToString()}", 1)
+                GetDirCode("Статус_сотрудника", $"{StatusCB.SelectedItem.ToString()}", 1), AddSotrDTP.Value
                 ));
             TableUpdate(); ComboUpdates();
         }
@@ -551,7 +552,7 @@ namespace kursachBD
                 listBox1.Items.Add(database.editSotrud(SurnameTB.Text, NameTB.Text, MiddlenameTB.Text,
                 GetDirCode("Подразделение", $"{PodrazdelCB.SelectedItem.ToString()}", 1),
                 GetDirCode("Должность", $"{DolznCB.SelectedItem.ToString()}", 1), LogTB.Text, PasswordTB.Text,
-                GetDirCode("Статус_сотрудника", $"{StatusCB.SelectedItem.ToString()}", 1),
+                GetDirCode("Статус_сотрудника", $"{StatusCB.SelectedItem.ToString()}", 1), AddSotrDTP.Value,
                 tempeID)); tempeID = -1;
             }
             TableUpdate(); ComboUpdates();
@@ -590,14 +591,14 @@ namespace kursachBD
         private void OrgAddBTN_Click(object sender, EventArgs e)
         {
             DWorks database = new DWorks(Credentials);
-            listBox1.Items.Add(database.addOrganization(OrgTB.Text, KratOrgTB.Text, NumPhoneTB.Text, GetDirCode("Адрес", $"{AdressCB.SelectedItem.ToString()}", 1), EmailTB.Text, SiteTB.Text));
+            listBox1.Items.Add(database.addOrganization(OrgTB.Text, KratOrgTB.Text, NumPhoneTB.Text, GetDirCode("Адрес", $"{AdressCB.SelectedItem.ToString()}", 2), EmailTB.Text, SiteTB.Text));
             TableUpdate(); ComboUpdates();
         }
 
         private void OrgEditBTN_Click(object sender, EventArgs e)
         {
             DWorks database = new DWorks(Credentials);
-            if (tempeID != -1) { listBox1.Items.Add(database.editOrganization(OrgTB.Text, KratOrgTB.Text, NumPhoneTB.Text, GetDirCode("Адрес", $"{AdressCB.SelectedItem.ToString()}", 1), EmailTB.Text, SiteTB.Text, tempeID)); tempeID = -1; }
+            if (tempeID != -1) { listBox1.Items.Add(database.editOrganization(OrgTB.Text, KratOrgTB.Text, NumPhoneTB.Text, GetDirCode("Адрес", $"{AdressCB.SelectedItem.ToString()}", 2), EmailTB.Text, SiteTB.Text, tempeID)); tempeID = -1; }
             TableUpdate(); ComboUpdates();
         }
 
@@ -639,7 +640,7 @@ namespace kursachBD
                 NewsTB.Text, TextTB.Text,
                 DateRazmDTP.Value, DateArchiveDTP.Value,
                 SizeNTB.Text,
-                GetDirCode("Список_сотрудников", $"{SotrudCB.SelectedItem.ToString()}", 2)
+                GetDirCode("Список_сотрудников", $"{SotrudCB.SelectedItem.ToString()}", 1)
                 ));
             TableUpdate(); ComboUpdates();
         }
@@ -710,5 +711,18 @@ namespace kursachBD
             TableUpdate(); ComboUpdates();
         }
         #endregion
+
+        private void Query1_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            dataGridView1.DataSource = database.Query1(DateQuery1DTP.Value).Tables[0].DefaultView;
+        }
+
+        private void Query2_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            dataGridView1.DataSource = database.Query2(DateQuery2DTP.Value).Tables[0].DefaultView;
+        }
+
     }
 }

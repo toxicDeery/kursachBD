@@ -32,6 +32,21 @@ namespace kursachBD
             sqlData.Fill(dataSet);
             return dataSet;
         }
+        public DataSet Query1(DateTime date)
+        { 
+            DataSet dataSet = new DataSet();
+            SqlDataAdapter sqlData = new SqlDataAdapter($"SELECT * FROM Список_сотрудников WHERE Логин = '' AND Пароль = '' AND Дата_принятия < '{date}'", connection);
+            sqlData.Fill(dataSet);
+            return dataSet;
+        }
+        public DataSet Query2(DateTime date)
+        {
+            DataSet dataSet = new DataSet();
+            SqlDataAdapter sqlData = new SqlDataAdapter($"SELECT Название_информации, MAX(Размер_в_Кб) FROM Новость WHERE Дата_размещения < '{date}' GROUP BY Название_информации", connection);
+            sqlData.Fill(dataSet);
+            return dataSet;
+        }
+        #region Организация
         public string addOrganization(string Name, string kratName, string phoneNum, int adress, string email, string site)
         {
             try
@@ -60,7 +75,7 @@ namespace kursachBD
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Организация SET Название = '{edit}', Краткое_название = '{edit1}', Контактный_телефон = '{edit2}', Адрес = {edit3}, Эл_адрес = '{edit4}' , Адрес_сайта = '{edit5}' WHERE Код_организации = {ID}");
+                SqlCommand command = new SqlCommand($"UPDATE Организация SET Название = '{edit}', Краткое_название = '{edit1}', Контактный_телефон = '{edit2}', Адрес = {edit3}, Эл_адрес = '{edit4}' , Адрес_сайта = '{edit5}' WHERE Код_организации = {ID}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -68,6 +83,8 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        #endregion
+        #region Rubrick
         public string addRubrick(string Rubrick)
         {
             try
@@ -104,6 +121,8 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        #endregion
+        #region Podrazdel
         public string addPodrazdel(string Name, string floor, int OrgCode)
         {
             try
@@ -140,6 +159,8 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        #endregion
+        #region Status
         public string addStatusSotr(string status)
         {
             try
@@ -177,11 +198,13 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string addSotrud(string surname, string name, string otch, int PodrCode, int DolCode, string log, string pass, int StatCode)
+        #endregion
+        #region Sotrudnik
+        public string addSotrud(string surname, string name, string otch, int PodrCode, int DolCode, string log, string pass, int StatCode, DateTime date)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"INSERT INTO Список_сотрудников (Фамилия, Имя, Отчество, Код_подразделения, Код_должности, Логин, Пароль, Код_статуса) VALUES ('{surname}', '{name}', '{otch}', {PodrCode}, {DolCode}, '{log}', '{pass}', {StatCode})", connection);
+                SqlCommand command = new SqlCommand($"INSERT INTO Список_сотрудников (Фамилия, Имя, Отчество, Код_подразделения, Код_должности, Логин, Пароль, Код_статуса, Дата_принятия) VALUES ('{surname}', '{name}', '{otch}', {PodrCode}, {DolCode}, '{log}', '{pass}', {StatCode}, '{date}')", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -201,11 +224,11 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-        public string editSotrud(string edit, string edit1, string edit2, int PodrCode, int DolCode, string log, string pass, int StatCode, int ID)
+        public string editSotrud(string edit, string edit1, string edit2, int PodrCode, int DolCode, string log, string pass, int StatCode, DateTime date, int ID)
         {
             try
             {
-                SqlCommand command = new SqlCommand($"UPDATE Список_сотрудников SET Фамилия = '{edit}', Имя = '{edit1}', Отчество = '{edit2}', Код_подразделения = {PodrCode}, Код_должности = {DolCode}, Логин = '{log}', Пароль = '{pass}', Код_статуса = {StatCode} WHERE Код_сотрудника = {ID}", connection);
+                SqlCommand command = new SqlCommand($"UPDATE Список_сотрудников SET Фамилия = '{edit}', Имя = '{edit1}', Отчество = '{edit2}', Код_подразделения = {PodrCode}, Код_должности = {DolCode}, Логин = '{log}', Пароль = '{pass}', Код_статуса = {StatCode}, Дата_принятия = '{date}' WHERE Код_сотрудника = {ID}", connection);
                 return $"Команда выполнена. Задействовано строк таблицы: {command.ExecuteNonQuery()}";
             }
             catch (Exception e)
@@ -213,6 +236,8 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        #endregion
+        #region Dolzn
         public string addDolzn(string dolzn)
         {
             try
@@ -250,6 +275,8 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        #endregion
+        #region News
         public string addNews(int RubCode, string Nazv, string text, DateTime date, DateTime date1, string size, int SotrCode)
         {
             try
@@ -286,6 +313,8 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        #endregion
+        #region Archive
         public string addArchive(DateTime date, int NewsCode)
         {
             try
@@ -322,6 +351,8 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        #endregion
+        #region File
         public string addFile(string Name, string size, string type, string kratname, int NewsCode)
         {
             try
@@ -358,6 +389,8 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        #endregion
+        #region Adress
         public string addAdress(string numHome, string korpus, int streetCode, int hoodCode)
         {
             try
@@ -394,6 +427,8 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        #endregion
+        #region Street
         public string addStreet(string nazv, int typestr)
         {
             try
@@ -430,6 +465,8 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        #endregion
+        #region TypeStreet
         public string addTypestreet(string nazvan)
         {
             try
@@ -466,6 +503,8 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        #endregion
+        #region Naspunkt
         public string addNaspunkt(string nazvanie, int typenasp)
         {
             try
@@ -502,6 +541,8 @@ namespace kursachBD
                 return e.ToString();
             }
         }
+        #endregion
+        #region Typenasp
         public string addTypenasp(string nazvanie)
         {
             try
@@ -538,6 +579,6 @@ namespace kursachBD
                 return e.ToString();
             }
         }
-
+        #endregion
     }
 }
