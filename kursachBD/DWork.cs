@@ -46,6 +46,14 @@ namespace kursachBD
             sqlData.Fill(dataSet);
             return dataSet;
         }
+        public DataSet Query3(string name, DateTime date, DateTime date1)
+        {
+            DataSet dataSet = new DataSet();
+            SqlDataAdapter sqlData = new SqlDataAdapter($"SELECT COUNT(Название_информации) as 'Кол-во', Дата_размещения FROM Новость, Список_сотрудников, Подразделение WHERE Новость.Код_сотрудника = Список_сотрудников.Код_сотрудника AND Список_сотрудников.Код_подразделения = Подразделение.Код_подразделения AND Подразделение.Название = '{name}' AND Новость.Дата_размещения > '{date}' AND Новость.Дата_размещения < '{date1}' GROUP BY Дата_размещения", connection);
+            sqlData.Fill(dataSet);
+            return dataSet;
+
+        }
         #region Организация
         public string addOrganization(string Name, string kratName, string phoneNum, int adress, string email, string site)
         {

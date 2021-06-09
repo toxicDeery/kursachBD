@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace kursachBD
 {
@@ -178,7 +179,9 @@ namespace kursachBD
             SotrudCB.Items.Clear();
             NewsCB.Items.Clear();
             NewsFArchCB.Items.Clear();
-            foreach(string i in BufferListUpdate(0))
+           
+            QueryPodrazCB.Items.Clear();
+            foreach (string i in BufferListUpdate(0))
             {
                 TypenaspCB.Items.Add(i);
             }
@@ -209,10 +212,12 @@ namespace kursachBD
             foreach (string i in BufferListUpdate(7))
             {
                 OrgaCB.Items.Add(i);
+                
             }
             foreach (string i in BufferListUpdate(8))
             {
                 PodrazdelCB.Items.Add(i);
+                QueryPodrazCB.Items.Add(i);
             }
             foreach (string i in BufferListUpdate(9))
             {
@@ -292,7 +297,7 @@ namespace kursachBD
                         Temp.Add(dataGridViewListReturner.Rows[i].Cells[0].Value.ToString());
                     }
                     break;
-                case 8: // Организация
+                case 8: // Подразделение
                     dataGridViewListReturner.DataSource = database.ReturnTable("Название", "Подразделение", null).Tables[0].DefaultView;
                     for (int i = 0; i < dataGridViewListReturner.Rows.Count - 1; i++)
                     {
@@ -723,6 +728,59 @@ namespace kursachBD
             DWorks database = new DWorks(Credentials);
             dataGridView1.DataSource = database.Query2(DateQuery2DTP.Value).Tables[0].DefaultView;
         }
+        string[] Months = new string[12]
+        {
+                "Январь",
+                "Февраль",
+                "Март",
+                "Апрель",
+                "Май",
+                "Июнь",
+                "Июль",
+                "Август",
+                "Сентябрь",
+                "Октябрь",
+                "Ноябрь",
+                "Декабрь"
+        };
+        string GetSQLFormatDate(DateTime Date)
+        {
+            string Temp = string.Empty;
+            foreach (char i in Date.ToString("yyyy/MM/dd"))
+            {
+                if (i != '.')
+                {
+                    Temp += i;
+                }
+            }
+            return Temp;
+        }
 
+        private void Query3_Click(object sender, EventArgs e)
+        {
+            DWorks database = new DWorks(Credentials);
+            chart1.Series.Clear();
+            chart1.Series.Add(new Series($"{QueryPodrazCB.SelectedItem}")
+            {
+                ChartType = SeriesChartType.Column
+            });
+            dataGridView1.DataSource = database.Query3(QueryPodrazCB.SelectedItem.ToString(), Query3FromDTP.Value, Query3ToDTP.Value).Tables[0].DefaultView;
+            int TempCount = 0;
+            double CYear;
+            for (int i = 0; i < Math.Abs(Query3FromDTP.Value.Year - Query3ToDTP.Value.Year) * 12; i++)
+            {
+                CYear = Query3FromDTP.Value.Year + Math.Round((double)(i / 12));
+                for (int j = 0; j < dataGridView1.Rows.Count - 1; j++)
+                {
+                    if(CYear == Convert.ToDateTime(dataGridView1.Rows[j].Cells[1].Value).Year && Convert.ToDateTime(dataGridView1.Rows[j].Cells[1].Value).Month == ((i % 12) + 1))
+                    {
+                        TempCount++;
+                    }
+                }
+                chart1.Series[$"{QueryPodrazCB.SelectedItem}"].Points.AddXY($"{Months[i % 12]} {CYear}", TempCount);
+                TempCount = 0;
+            }
+
+        }
     }
 }

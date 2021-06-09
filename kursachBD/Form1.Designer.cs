@@ -29,6 +29,9 @@ namespace kursachBD
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -50,6 +53,7 @@ namespace kursachBD
             this.FloorTB = new System.Windows.Forms.TextBox();
             this.PodrazdelTB = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.AddSotrDTP = new System.Windows.Forms.DateTimePicker();
             this.SotrDelBTN = new System.Windows.Forms.Button();
             this.SotrEditBTN = new System.Windows.Forms.Button();
             this.SotrAddBTN = new System.Windows.Forms.Button();
@@ -136,21 +140,49 @@ namespace kursachBD
             this.TypefTB = new System.Windows.Forms.TextBox();
             this.SizeFileTB = new System.Windows.Forms.TextBox();
             this.FileTB = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tabPage19 = new System.Windows.Forms.TabPage();
+            this.tabControl5 = new System.Windows.Forms.TabControl();
+            this.tabPage20 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DateQuery1DTP = new System.Windows.Forms.DateTimePicker();
+            this.Query1 = new System.Windows.Forms.Button();
+            this.tabPage21 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Query2 = new System.Windows.Forms.Button();
+            this.DateQuery2DTP = new System.Windows.Forms.DateTimePicker();
+            this.tabPage22 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.Query3 = new System.Windows.Forms.Button();
+            this.Query3ToDTP = new System.Windows.Forms.DateTimePicker();
+            this.Query3FromDTP = new System.Windows.Forms.DateTimePicker();
+            this.QueryPodrazCB = new System.Windows.Forms.ComboBox();
             this.tabPage18 = new System.Windows.Forms.TabPage();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.dataGridViewListReturner = new System.Windows.Forms.DataGridView();
-            this.tabPage19 = new System.Windows.Forms.TabPage();
-            this.DateQuery1DTP = new System.Windows.Forms.DateTimePicker();
-            this.AddSotrDTP = new System.Windows.Forms.DateTimePicker();
-            this.Query1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.DateQuery2DTP = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Query2 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -172,11 +204,16 @@ namespace kursachBD
             this.tabPage15.SuspendLayout();
             this.tabPage16.SuspendLayout();
             this.tabPage17.SuspendLayout();
+            this.tabPage19.SuspendLayout();
+            this.tabControl5.SuspendLayout();
+            this.tabPage20.SuspendLayout();
+            this.tabPage21.SuspendLayout();
+            this.tabPage22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tabPage18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).BeginInit();
-            this.tabPage19.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -232,7 +269,7 @@ namespace kursachBD
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(438, 459);
+            this.tabPage4.Size = new System.Drawing.Size(615, 459);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Организация";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -321,7 +358,7 @@ namespace kursachBD
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(438, 459);
+            this.tabPage5.Size = new System.Drawing.Size(615, 459);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Подразделение";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -399,6 +436,13 @@ namespace kursachBD
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "Список_сотрудников";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // AddSotrDTP
+            // 
+            this.AddSotrDTP.Location = new System.Drawing.Point(19, 233);
+            this.AddSotrDTP.Name = "AddSotrDTP";
+            this.AddSotrDTP.Size = new System.Drawing.Size(200, 20);
+            this.AddSotrDTP.TabIndex = 11;
             // 
             // SotrDelBTN
             // 
@@ -498,7 +542,7 @@ namespace kursachBD
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(438, 459);
+            this.tabPage7.Size = new System.Drawing.Size(615, 459);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Статус_сотрудника";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -548,7 +592,7 @@ namespace kursachBD
             this.tabPage8.Controls.Add(this.DolznTB);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(438, 459);
+            this.tabPage8.Size = new System.Drawing.Size(615, 459);
             this.tabPage8.TabIndex = 4;
             this.tabPage8.Text = "Должность";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -596,7 +640,7 @@ namespace kursachBD
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(455, 497);
+            this.tabPage2.Size = new System.Drawing.Size(632, 497);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Адрес";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -611,7 +655,7 @@ namespace kursachBD
             this.tabControl3.Location = new System.Drawing.Point(3, 6);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(446, 485);
+            this.tabControl3.Size = new System.Drawing.Size(623, 485);
             this.tabControl3.TabIndex = 0;
             this.tabControl3.SelectedIndexChanged += new System.EventHandler(this.tabControl3_SelectedIndexChanged);
             // 
@@ -627,7 +671,7 @@ namespace kursachBD
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(438, 459);
+            this.tabPage9.Size = new System.Drawing.Size(615, 459);
             this.tabPage9.TabIndex = 0;
             this.tabPage9.Text = "Адрес";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -866,6 +910,7 @@ namespace kursachBD
             // 
             // tabPage13
             // 
+            this.tabPage13.Controls.Add(this.label22);
             this.tabPage13.Controls.Add(this.TypenaspdelBTN);
             this.tabPage13.Controls.Add(this.TypenaspeditBTN);
             this.tabPage13.Controls.Add(this.TypenpaddBTN);
@@ -873,14 +918,14 @@ namespace kursachBD
             this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
             this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage13.Size = new System.Drawing.Size(438, 459);
+            this.tabPage13.Size = new System.Drawing.Size(615, 459);
             this.tabPage13.TabIndex = 4;
             this.tabPage13.Text = "Тип_населенного_пункта";
             this.tabPage13.UseVisualStyleBackColor = true;
             // 
             // TypenaspdelBTN
             // 
-            this.TypenaspdelBTN.Location = new System.Drawing.Point(227, 52);
+            this.TypenaspdelBTN.Location = new System.Drawing.Point(267, 71);
             this.TypenaspdelBTN.Name = "TypenaspdelBTN";
             this.TypenaspdelBTN.Size = new System.Drawing.Size(75, 23);
             this.TypenaspdelBTN.TabIndex = 3;
@@ -890,7 +935,7 @@ namespace kursachBD
             // 
             // TypenaspeditBTN
             // 
-            this.TypenaspeditBTN.Location = new System.Drawing.Point(103, 52);
+            this.TypenaspeditBTN.Location = new System.Drawing.Point(143, 71);
             this.TypenaspeditBTN.Name = "TypenaspeditBTN";
             this.TypenaspeditBTN.Size = new System.Drawing.Size(101, 23);
             this.TypenaspeditBTN.TabIndex = 2;
@@ -900,7 +945,7 @@ namespace kursachBD
             // 
             // TypenpaddBTN
             // 
-            this.TypenpaddBTN.Location = new System.Drawing.Point(6, 52);
+            this.TypenpaddBTN.Location = new System.Drawing.Point(46, 71);
             this.TypenpaddBTN.Name = "TypenpaddBTN";
             this.TypenpaddBTN.Size = new System.Drawing.Size(75, 23);
             this.TypenpaddBTN.TabIndex = 1;
@@ -910,7 +955,7 @@ namespace kursachBD
             // 
             // TypenaspTB
             // 
-            this.TypenaspTB.Location = new System.Drawing.Point(6, 26);
+            this.TypenaspTB.Location = new System.Drawing.Point(143, 29);
             this.TypenaspTB.Name = "TypenaspTB";
             this.TypenaspTB.Size = new System.Drawing.Size(100, 20);
             this.TypenaspTB.TabIndex = 0;
@@ -921,7 +966,7 @@ namespace kursachBD
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(455, 497);
+            this.tabPage3.Size = new System.Drawing.Size(632, 497);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Новость";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -935,12 +980,19 @@ namespace kursachBD
             this.tabControl4.Location = new System.Drawing.Point(6, 6);
             this.tabControl4.Name = "tabControl4";
             this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(443, 485);
+            this.tabControl4.Size = new System.Drawing.Size(620, 485);
             this.tabControl4.TabIndex = 0;
             this.tabControl4.SelectedIndexChanged += new System.EventHandler(this.tabControl4_SelectedIndexChanged);
             // 
             // tabPage14
             // 
+            this.tabPage14.Controls.Add(this.label21);
+            this.tabPage14.Controls.Add(this.label20);
+            this.tabPage14.Controls.Add(this.label19);
+            this.tabPage14.Controls.Add(this.label18);
+            this.tabPage14.Controls.Add(this.label17);
+            this.tabPage14.Controls.Add(this.label16);
+            this.tabPage14.Controls.Add(this.label15);
             this.tabPage14.Controls.Add(this.NewsDelBTN);
             this.tabPage14.Controls.Add(this.NewsEditBTN);
             this.tabPage14.Controls.Add(this.NewsAddBTN);
@@ -954,80 +1006,80 @@ namespace kursachBD
             this.tabPage14.Location = new System.Drawing.Point(4, 22);
             this.tabPage14.Name = "tabPage14";
             this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage14.Size = new System.Drawing.Size(435, 459);
+            this.tabPage14.Size = new System.Drawing.Size(612, 459);
             this.tabPage14.TabIndex = 0;
             this.tabPage14.Text = "Новость";
             this.tabPage14.UseVisualStyleBackColor = true;
             // 
             // NewsDelBTN
             // 
-            this.NewsDelBTN.Location = new System.Drawing.Point(264, 204);
+            this.NewsDelBTN.Location = new System.Drawing.Point(301, 213);
             this.NewsDelBTN.Name = "NewsDelBTN";
             this.NewsDelBTN.Size = new System.Drawing.Size(75, 23);
             this.NewsDelBTN.TabIndex = 9;
-            this.NewsDelBTN.Text = "button4";
+            this.NewsDelBTN.Text = "Удалить";
             this.NewsDelBTN.UseVisualStyleBackColor = true;
             this.NewsDelBTN.Click += new System.EventHandler(this.NewsDelBTN_Click);
             // 
             // NewsEditBTN
             // 
-            this.NewsEditBTN.Location = new System.Drawing.Point(131, 204);
+            this.NewsEditBTN.Location = new System.Drawing.Point(151, 213);
             this.NewsEditBTN.Name = "NewsEditBTN";
-            this.NewsEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.NewsEditBTN.Size = new System.Drawing.Size(100, 23);
             this.NewsEditBTN.TabIndex = 8;
-            this.NewsEditBTN.Text = "button3";
+            this.NewsEditBTN.Text = "Редактировать";
             this.NewsEditBTN.UseVisualStyleBackColor = true;
             this.NewsEditBTN.Click += new System.EventHandler(this.NewsEditBTN_Click);
             // 
             // NewsAddBTN
             // 
-            this.NewsAddBTN.Location = new System.Drawing.Point(6, 204);
+            this.NewsAddBTN.Location = new System.Drawing.Point(35, 213);
             this.NewsAddBTN.Name = "NewsAddBTN";
             this.NewsAddBTN.Size = new System.Drawing.Size(75, 23);
             this.NewsAddBTN.TabIndex = 7;
-            this.NewsAddBTN.Text = "button2";
+            this.NewsAddBTN.Text = "Добавить";
             this.NewsAddBTN.UseVisualStyleBackColor = true;
             this.NewsAddBTN.Click += new System.EventHandler(this.NewsAddBTN_Click);
             // 
             // SotrudCB
             // 
             this.SotrudCB.FormattingEnabled = true;
-            this.SotrudCB.Location = new System.Drawing.Point(6, 177);
+            this.SotrudCB.Location = new System.Drawing.Point(151, 169);
             this.SotrudCB.Name = "SotrudCB";
             this.SotrudCB.Size = new System.Drawing.Size(121, 21);
             this.SotrudCB.TabIndex = 6;
             // 
             // SizeNTB
             // 
-            this.SizeNTB.Location = new System.Drawing.Point(6, 151);
+            this.SizeNTB.Location = new System.Drawing.Point(151, 143);
             this.SizeNTB.Name = "SizeNTB";
             this.SizeNTB.Size = new System.Drawing.Size(100, 20);
             this.SizeNTB.TabIndex = 5;
             // 
             // DateArchiveDTP
             // 
-            this.DateArchiveDTP.Location = new System.Drawing.Point(6, 125);
+            this.DateArchiveDTP.Location = new System.Drawing.Point(151, 117);
             this.DateArchiveDTP.Name = "DateArchiveDTP";
             this.DateArchiveDTP.Size = new System.Drawing.Size(200, 20);
             this.DateArchiveDTP.TabIndex = 4;
             // 
             // DateRazmDTP
             // 
-            this.DateRazmDTP.Location = new System.Drawing.Point(6, 99);
+            this.DateRazmDTP.Location = new System.Drawing.Point(151, 91);
             this.DateRazmDTP.Name = "DateRazmDTP";
             this.DateRazmDTP.Size = new System.Drawing.Size(200, 20);
             this.DateRazmDTP.TabIndex = 3;
             // 
             // TextTB
             // 
-            this.TextTB.Location = new System.Drawing.Point(6, 73);
+            this.TextTB.Location = new System.Drawing.Point(151, 65);
             this.TextTB.Name = "TextTB";
-            this.TextTB.Size = new System.Drawing.Size(100, 20);
+            this.TextTB.Size = new System.Drawing.Size(406, 20);
             this.TextTB.TabIndex = 2;
             // 
             // NewsTB
             // 
-            this.NewsTB.Location = new System.Drawing.Point(6, 47);
+            this.NewsTB.Location = new System.Drawing.Point(151, 39);
             this.NewsTB.Name = "NewsTB";
             this.NewsTB.Size = new System.Drawing.Size(100, 20);
             this.NewsTB.TabIndex = 1;
@@ -1035,13 +1087,14 @@ namespace kursachBD
             // RubrickCB
             // 
             this.RubrickCB.FormattingEnabled = true;
-            this.RubrickCB.Location = new System.Drawing.Point(6, 20);
+            this.RubrickCB.Location = new System.Drawing.Point(151, 12);
             this.RubrickCB.Name = "RubrickCB";
             this.RubrickCB.Size = new System.Drawing.Size(121, 21);
             this.RubrickCB.TabIndex = 0;
             // 
             // tabPage15
             // 
+            this.tabPage15.Controls.Add(this.label14);
             this.tabPage15.Controls.Add(this.RubrickDelBTN);
             this.tabPage15.Controls.Add(this.RubrickEditBTN);
             this.tabPage15.Controls.Add(this.RubrickAddBTN);
@@ -1049,50 +1102,52 @@ namespace kursachBD
             this.tabPage15.Location = new System.Drawing.Point(4, 22);
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage15.Size = new System.Drawing.Size(435, 459);
+            this.tabPage15.Size = new System.Drawing.Size(612, 459);
             this.tabPage15.TabIndex = 1;
             this.tabPage15.Text = "Рубрика";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
             // RubrickDelBTN
             // 
-            this.RubrickDelBTN.Location = new System.Drawing.Point(256, 64);
+            this.RubrickDelBTN.Location = new System.Drawing.Point(265, 64);
             this.RubrickDelBTN.Name = "RubrickDelBTN";
             this.RubrickDelBTN.Size = new System.Drawing.Size(75, 23);
             this.RubrickDelBTN.TabIndex = 3;
-            this.RubrickDelBTN.Text = "button4";
+            this.RubrickDelBTN.Text = "Удалить";
             this.RubrickDelBTN.UseVisualStyleBackColor = true;
             this.RubrickDelBTN.Click += new System.EventHandler(this.RubrickDelBTN_Click);
             // 
             // RubrickEditBTN
             // 
-            this.RubrickEditBTN.Location = new System.Drawing.Point(130, 64);
+            this.RubrickEditBTN.Location = new System.Drawing.Point(129, 64);
             this.RubrickEditBTN.Name = "RubrickEditBTN";
-            this.RubrickEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.RubrickEditBTN.Size = new System.Drawing.Size(100, 23);
             this.RubrickEditBTN.TabIndex = 2;
-            this.RubrickEditBTN.Text = "button3";
+            this.RubrickEditBTN.Text = "Редактировать";
             this.RubrickEditBTN.UseVisualStyleBackColor = true;
             this.RubrickEditBTN.Click += new System.EventHandler(this.RubrickEditBTN_Click);
             // 
             // RubrickAddBTN
             // 
-            this.RubrickAddBTN.Location = new System.Drawing.Point(6, 64);
+            this.RubrickAddBTN.Location = new System.Drawing.Point(15, 64);
             this.RubrickAddBTN.Name = "RubrickAddBTN";
             this.RubrickAddBTN.Size = new System.Drawing.Size(75, 23);
             this.RubrickAddBTN.TabIndex = 1;
-            this.RubrickAddBTN.Text = "button2";
+            this.RubrickAddBTN.Text = "Добавить";
             this.RubrickAddBTN.UseVisualStyleBackColor = true;
             this.RubrickAddBTN.Click += new System.EventHandler(this.RubrickAddBTN_Click);
             // 
             // RubrickTB
             // 
-            this.RubrickTB.Location = new System.Drawing.Point(6, 25);
+            this.RubrickTB.Location = new System.Drawing.Point(96, 25);
             this.RubrickTB.Name = "RubrickTB";
             this.RubrickTB.Size = new System.Drawing.Size(100, 20);
             this.RubrickTB.TabIndex = 0;
             // 
             // tabPage16
             // 
+            this.tabPage16.Controls.Add(this.label13);
+            this.tabPage16.Controls.Add(this.label12);
             this.tabPage16.Controls.Add(this.NewsCB);
             this.tabPage16.Controls.Add(this.ArchiveDelBTN);
             this.tabPage16.Controls.Add(this.ArchiveEditBTN);
@@ -1101,7 +1156,7 @@ namespace kursachBD
             this.tabPage16.Location = new System.Drawing.Point(4, 22);
             this.tabPage16.Name = "tabPage16";
             this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage16.Size = new System.Drawing.Size(435, 459);
+            this.tabPage16.Size = new System.Drawing.Size(612, 459);
             this.tabPage16.TabIndex = 2;
             this.tabPage16.Text = "Архив";
             this.tabPage16.UseVisualStyleBackColor = true;
@@ -1109,50 +1164,55 @@ namespace kursachBD
             // NewsCB
             // 
             this.NewsCB.FormattingEnabled = true;
-            this.NewsCB.Location = new System.Drawing.Point(6, 49);
+            this.NewsCB.Location = new System.Drawing.Point(131, 50);
             this.NewsCB.Name = "NewsCB";
             this.NewsCB.Size = new System.Drawing.Size(121, 21);
             this.NewsCB.TabIndex = 4;
             // 
             // ArchiveDelBTN
             // 
-            this.ArchiveDelBTN.Location = new System.Drawing.Point(269, 89);
+            this.ArchiveDelBTN.Location = new System.Drawing.Point(292, 90);
             this.ArchiveDelBTN.Name = "ArchiveDelBTN";
             this.ArchiveDelBTN.Size = new System.Drawing.Size(75, 23);
             this.ArchiveDelBTN.TabIndex = 3;
-            this.ArchiveDelBTN.Text = "button22";
+            this.ArchiveDelBTN.Text = "Удалить";
             this.ArchiveDelBTN.UseVisualStyleBackColor = true;
             this.ArchiveDelBTN.Click += new System.EventHandler(this.ArchiveDelBTN_Click);
             // 
             // ArchiveEditBTN
             // 
-            this.ArchiveEditBTN.Location = new System.Drawing.Point(131, 89);
+            this.ArchiveEditBTN.Location = new System.Drawing.Point(145, 90);
             this.ArchiveEditBTN.Name = "ArchiveEditBTN";
-            this.ArchiveEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.ArchiveEditBTN.Size = new System.Drawing.Size(97, 23);
             this.ArchiveEditBTN.TabIndex = 2;
-            this.ArchiveEditBTN.Text = "button21";
+            this.ArchiveEditBTN.Text = "Редактировать";
             this.ArchiveEditBTN.UseVisualStyleBackColor = true;
             this.ArchiveEditBTN.Click += new System.EventHandler(this.ArchiveEditBTN_Click);
             // 
             // ArchiveAddBTN
             // 
-            this.ArchiveAddBTN.Location = new System.Drawing.Point(6, 89);
+            this.ArchiveAddBTN.Location = new System.Drawing.Point(29, 90);
             this.ArchiveAddBTN.Name = "ArchiveAddBTN";
             this.ArchiveAddBTN.Size = new System.Drawing.Size(75, 23);
             this.ArchiveAddBTN.TabIndex = 1;
-            this.ArchiveAddBTN.Text = "button20";
+            this.ArchiveAddBTN.Text = "Добавить";
             this.ArchiveAddBTN.UseVisualStyleBackColor = true;
             this.ArchiveAddBTN.Click += new System.EventHandler(this.ArchiveAddBTN_Click);
             // 
             // NewsDTP
             // 
-            this.NewsDTP.Location = new System.Drawing.Point(6, 23);
+            this.NewsDTP.Location = new System.Drawing.Point(131, 24);
             this.NewsDTP.Name = "NewsDTP";
             this.NewsDTP.Size = new System.Drawing.Size(200, 20);
             this.NewsDTP.TabIndex = 0;
             // 
             // tabPage17
             // 
+            this.tabPage17.Controls.Add(this.label11);
+            this.tabPage17.Controls.Add(this.label10);
+            this.tabPage17.Controls.Add(this.label9);
+            this.tabPage17.Controls.Add(this.label8);
+            this.tabPage17.Controls.Add(this.label3);
             this.tabPage17.Controls.Add(this.FileDelBTN);
             this.tabPage17.Controls.Add(this.FileEditBTN);
             this.tabPage17.Controls.Add(this.FileAddBTN);
@@ -1161,90 +1221,284 @@ namespace kursachBD
             this.tabPage17.Controls.Add(this.TypefTB);
             this.tabPage17.Controls.Add(this.SizeFileTB);
             this.tabPage17.Controls.Add(this.FileTB);
-            this.tabPage17.Controls.Add(this.button1);
             this.tabPage17.Location = new System.Drawing.Point(4, 22);
             this.tabPage17.Name = "tabPage17";
             this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage17.Size = new System.Drawing.Size(435, 459);
+            this.tabPage17.Size = new System.Drawing.Size(612, 459);
             this.tabPage17.TabIndex = 3;
             this.tabPage17.Text = "Файл";
             this.tabPage17.UseVisualStyleBackColor = true;
             // 
             // FileDelBTN
             // 
-            this.FileDelBTN.Location = new System.Drawing.Point(263, 165);
+            this.FileDelBTN.Location = new System.Drawing.Point(275, 166);
             this.FileDelBTN.Name = "FileDelBTN";
             this.FileDelBTN.Size = new System.Drawing.Size(75, 23);
             this.FileDelBTN.TabIndex = 8;
-            this.FileDelBTN.Text = "button4";
+            this.FileDelBTN.Text = "Удалить";
             this.FileDelBTN.UseVisualStyleBackColor = true;
             this.FileDelBTN.Click += new System.EventHandler(this.FileDelBTN_Click);
             // 
             // FileEditBTN
             // 
-            this.FileEditBTN.Location = new System.Drawing.Point(134, 165);
+            this.FileEditBTN.Location = new System.Drawing.Point(134, 166);
             this.FileEditBTN.Name = "FileEditBTN";
-            this.FileEditBTN.Size = new System.Drawing.Size(75, 23);
+            this.FileEditBTN.Size = new System.Drawing.Size(100, 23);
             this.FileEditBTN.TabIndex = 7;
-            this.FileEditBTN.Text = "button3";
+            this.FileEditBTN.Text = "Редактировать";
             this.FileEditBTN.UseVisualStyleBackColor = true;
             this.FileEditBTN.Click += new System.EventHandler(this.FileEditBTN_Click);
             // 
             // FileAddBTN
             // 
-            this.FileAddBTN.Location = new System.Drawing.Point(9, 165);
+            this.FileAddBTN.Location = new System.Drawing.Point(21, 166);
             this.FileAddBTN.Name = "FileAddBTN";
             this.FileAddBTN.Size = new System.Drawing.Size(75, 23);
             this.FileAddBTN.TabIndex = 6;
-            this.FileAddBTN.Text = "button2";
+            this.FileAddBTN.Text = "Добавить";
             this.FileAddBTN.UseVisualStyleBackColor = true;
             this.FileAddBTN.Click += new System.EventHandler(this.FileAddBTN_Click);
             // 
             // NewsFArchCB
             // 
             this.NewsFArchCB.FormattingEnabled = true;
-            this.NewsFArchCB.Location = new System.Drawing.Point(9, 138);
+            this.NewsFArchCB.Location = new System.Drawing.Point(134, 123);
             this.NewsFArchCB.Name = "NewsFArchCB";
             this.NewsFArchCB.Size = new System.Drawing.Size(121, 21);
             this.NewsFArchCB.TabIndex = 5;
             // 
             // KratfTB
             // 
-            this.KratfTB.Location = new System.Drawing.Point(9, 112);
+            this.KratfTB.Location = new System.Drawing.Point(134, 97);
             this.KratfTB.Name = "KratfTB";
             this.KratfTB.Size = new System.Drawing.Size(100, 20);
             this.KratfTB.TabIndex = 4;
             // 
             // TypefTB
             // 
-            this.TypefTB.Location = new System.Drawing.Point(9, 86);
+            this.TypefTB.Location = new System.Drawing.Point(134, 71);
             this.TypefTB.Name = "TypefTB";
             this.TypefTB.Size = new System.Drawing.Size(100, 20);
             this.TypefTB.TabIndex = 3;
             // 
             // SizeFileTB
             // 
-            this.SizeFileTB.Location = new System.Drawing.Point(9, 60);
+            this.SizeFileTB.Location = new System.Drawing.Point(134, 45);
             this.SizeFileTB.Name = "SizeFileTB";
             this.SizeFileTB.Size = new System.Drawing.Size(100, 20);
             this.SizeFileTB.TabIndex = 2;
             // 
             // FileTB
             // 
-            this.FileTB.Location = new System.Drawing.Point(9, 34);
+            this.FileTB.Location = new System.Drawing.Point(134, 19);
             this.FileTB.Name = "FileTB";
             this.FileTB.Size = new System.Drawing.Size(100, 20);
             this.FileTB.TabIndex = 1;
             // 
-            // button1
+            // tabPage19
             // 
-            this.button1.Location = new System.Drawing.Point(34, 379);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.tabPage19.Controls.Add(this.tabControl5);
+            this.tabPage19.Location = new System.Drawing.Point(4, 22);
+            this.tabPage19.Name = "tabPage19";
+            this.tabPage19.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage19.Size = new System.Drawing.Size(632, 497);
+            this.tabPage19.TabIndex = 4;
+            this.tabPage19.Text = "Запросы";
+            this.tabPage19.UseVisualStyleBackColor = true;
+            // 
+            // tabControl5
+            // 
+            this.tabControl5.Controls.Add(this.tabPage20);
+            this.tabControl5.Controls.Add(this.tabPage21);
+            this.tabControl5.Controls.Add(this.tabPage22);
+            this.tabControl5.Location = new System.Drawing.Point(6, 6);
+            this.tabControl5.Name = "tabControl5";
+            this.tabControl5.SelectedIndex = 0;
+            this.tabControl5.Size = new System.Drawing.Size(620, 485);
+            this.tabControl5.TabIndex = 6;
+            // 
+            // tabPage20
+            // 
+            this.tabPage20.Controls.Add(this.label1);
+            this.tabPage20.Controls.Add(this.DateQuery1DTP);
+            this.tabPage20.Controls.Add(this.Query1);
+            this.tabPage20.Location = new System.Drawing.Point(4, 22);
+            this.tabPage20.Name = "tabPage20";
+            this.tabPage20.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage20.Size = new System.Drawing.Size(612, 459);
+            this.tabPage20.TabIndex = 0;
+            this.tabPage20.Text = "Запрос_1";
+            this.tabPage20.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(192, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Выберите дату для первого запроса";
+            // 
+            // DateQuery1DTP
+            // 
+            this.DateQuery1DTP.Location = new System.Drawing.Point(9, 28);
+            this.DateQuery1DTP.Name = "DateQuery1DTP";
+            this.DateQuery1DTP.Size = new System.Drawing.Size(200, 20);
+            this.DateQuery1DTP.TabIndex = 0;
+            // 
+            // Query1
+            // 
+            this.Query1.Location = new System.Drawing.Point(9, 54);
+            this.Query1.Name = "Query1";
+            this.Query1.Size = new System.Drawing.Size(75, 23);
+            this.Query1.TabIndex = 1;
+            this.Query1.Text = "Выполнить";
+            this.Query1.UseVisualStyleBackColor = true;
+            this.Query1.Click += new System.EventHandler(this.Query1_Click);
+            // 
+            // tabPage21
+            // 
+            this.tabPage21.Controls.Add(this.label2);
+            this.tabPage21.Controls.Add(this.Query2);
+            this.tabPage21.Controls.Add(this.DateQuery2DTP);
+            this.tabPage21.Location = new System.Drawing.Point(4, 22);
+            this.tabPage21.Name = "tabPage21";
+            this.tabPage21.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage21.Size = new System.Drawing.Size(612, 459);
+            this.tabPage21.TabIndex = 1;
+            this.tabPage21.Text = "Запрос_2";
+            this.tabPage21.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(191, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Выберите дату для второго запроса";
+            // 
+            // Query2
+            // 
+            this.Query2.Location = new System.Drawing.Point(6, 56);
+            this.Query2.Name = "Query2";
+            this.Query2.Size = new System.Drawing.Size(75, 23);
+            this.Query2.TabIndex = 5;
+            this.Query2.Text = "Выполнить";
+            this.Query2.UseVisualStyleBackColor = true;
+            this.Query2.Click += new System.EventHandler(this.Query2_Click);
+            // 
+            // DateQuery2DTP
+            // 
+            this.DateQuery2DTP.Location = new System.Drawing.Point(6, 30);
+            this.DateQuery2DTP.Name = "DateQuery2DTP";
+            this.DateQuery2DTP.Size = new System.Drawing.Size(200, 20);
+            this.DateQuery2DTP.TabIndex = 3;
+            // 
+            // tabPage22
+            // 
+            this.tabPage22.Controls.Add(this.label7);
+            this.tabPage22.Controls.Add(this.label6);
+            this.tabPage22.Controls.Add(this.label5);
+            this.tabPage22.Controls.Add(this.label4);
+            this.tabPage22.Controls.Add(this.chart1);
+            this.tabPage22.Controls.Add(this.Query3);
+            this.tabPage22.Controls.Add(this.Query3ToDTP);
+            this.tabPage22.Controls.Add(this.Query3FromDTP);
+            this.tabPage22.Controls.Add(this.QueryPodrazCB);
+            this.tabPage22.Location = new System.Drawing.Point(4, 22);
+            this.tabPage22.Name = "tabPage22";
+            this.tabPage22.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage22.Size = new System.Drawing.Size(612, 459);
+            this.tabPage22.TabIndex = 2;
+            this.tabPage22.Text = "Запрос_3";
+            this.tabPage22.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(3, 106);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(23, 15);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "По";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(8, 80);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 15);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "С";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 54);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Период:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(138, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Выберите подразделение";
+            // 
+            // chart1
+            // 
+            chartArea9.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.chart1.Legends.Add(legend9);
+            this.chart1.Location = new System.Drawing.Point(31, 153);
+            this.chart1.Name = "chart1";
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.chart1.Series.Add(series9);
+            this.chart1.Size = new System.Drawing.Size(556, 300);
+            this.chart1.TabIndex = 5;
+            this.chart1.Text = "chart1";
+            // 
+            // Query3
+            // 
+            this.Query3.Location = new System.Drawing.Point(284, 80);
+            this.Query3.Name = "Query3";
+            this.Query3.Size = new System.Drawing.Size(145, 46);
+            this.Query3.TabIndex = 4;
+            this.Query3.Text = "Выполнить";
+            this.Query3.UseVisualStyleBackColor = true;
+            this.Query3.Click += new System.EventHandler(this.Query3_Click);
+            // 
+            // Query3ToDTP
+            // 
+            this.Query3ToDTP.Location = new System.Drawing.Point(31, 106);
+            this.Query3ToDTP.Name = "Query3ToDTP";
+            this.Query3ToDTP.Size = new System.Drawing.Size(200, 20);
+            this.Query3ToDTP.TabIndex = 3;
+            // 
+            // Query3FromDTP
+            // 
+            this.Query3FromDTP.Location = new System.Drawing.Point(31, 80);
+            this.Query3FromDTP.Name = "Query3FromDTP";
+            this.Query3FromDTP.Size = new System.Drawing.Size(200, 20);
+            this.Query3FromDTP.TabIndex = 2;
+            // 
+            // QueryPodrazCB
+            // 
+            this.QueryPodrazCB.FormattingEnabled = true;
+            this.QueryPodrazCB.Location = new System.Drawing.Point(11, 34);
+            this.QueryPodrazCB.Name = "QueryPodrazCB";
+            this.QueryPodrazCB.Size = new System.Drawing.Size(121, 21);
+            this.QueryPodrazCB.TabIndex = 1;
             // 
             // tabPage18
             // 
@@ -1252,7 +1506,7 @@ namespace kursachBD
             this.tabPage18.Location = new System.Drawing.Point(4, 22);
             this.tabPage18.Name = "tabPage18";
             this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage18.Size = new System.Drawing.Size(455, 497);
+            this.tabPage18.Size = new System.Drawing.Size(632, 497);
             this.tabPage18.TabIndex = 3;
             this.tabPage18.Text = "tabPage18";
             this.tabPage18.UseVisualStyleBackColor = true;
@@ -1265,6 +1519,16 @@ namespace kursachBD
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(442, 108);
             this.listBox1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1180, 124);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -1297,80 +1561,149 @@ namespace kursachBD
             this.dataGridViewListReturner.Size = new System.Drawing.Size(240, 150);
             this.dataGridViewListReturner.TabIndex = 3;
             // 
-            // tabPage19
+            // label3
             // 
-            this.tabPage19.Controls.Add(this.Query2);
-            this.tabPage19.Controls.Add(this.label2);
-            this.tabPage19.Controls.Add(this.DateQuery2DTP);
-            this.tabPage19.Controls.Add(this.label1);
-            this.tabPage19.Controls.Add(this.Query1);
-            this.tabPage19.Controls.Add(this.DateQuery1DTP);
-            this.tabPage19.Location = new System.Drawing.Point(4, 22);
-            this.tabPage19.Name = "tabPage19";
-            this.tabPage19.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage19.Size = new System.Drawing.Size(632, 497);
-            this.tabPage19.TabIndex = 4;
-            this.tabPage19.Text = "Запросы";
-            this.tabPage19.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(58, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Название";
             // 
-            // DateQuery1DTP
+            // label8
             // 
-            this.DateQuery1DTP.Location = new System.Drawing.Point(16, 48);
-            this.DateQuery1DTP.Name = "DateQuery1DTP";
-            this.DateQuery1DTP.Size = new System.Drawing.Size(200, 20);
-            this.DateQuery1DTP.TabIndex = 0;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(69, 48);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 13);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Размер";
             // 
-            // AddSotrDTP
+            // label9
             // 
-            this.AddSotrDTP.Location = new System.Drawing.Point(19, 233);
-            this.AddSotrDTP.Name = "AddSotrDTP";
-            this.AddSotrDTP.Size = new System.Drawing.Size(200, 20);
-            this.AddSotrDTP.TabIndex = 11;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(89, 74);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(26, 13);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Тип";
             // 
-            // Query1
+            // label10
             // 
-            this.Query1.Location = new System.Drawing.Point(16, 74);
-            this.Query1.Name = "Query1";
-            this.Query1.Size = new System.Drawing.Size(75, 23);
-            this.Query1.TabIndex = 1;
-            this.Query1.Text = "Запрос_1";
-            this.Query1.UseVisualStyleBackColor = true;
-            this.Query1.Click += new System.EventHandler(this.Query1_Click);
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 100);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 13);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Краткое название";
             // 
-            // label1
+            // label11
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Выберите дату для первого запроса";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(65, 126);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(50, 13);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Новость";
             // 
-            // DateQuery2DTP
+            // label12
             // 
-            this.DateQuery2DTP.Location = new System.Drawing.Point(352, 44);
-            this.DateQuery2DTP.Name = "DateQuery2DTP";
-            this.DateQuery2DTP.Size = new System.Drawing.Size(200, 20);
-            this.DateQuery2DTP.TabIndex = 3;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(24, 30);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(77, 13);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Дата новости";
             // 
-            // label2
+            // label13
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(349, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Выберите дату для второго запроса";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(54, 53);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(50, 13);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "Новость";
             // 
-            // Query2
+            // label14
             // 
-            this.Query2.Location = new System.Drawing.Point(352, 70);
-            this.Query2.Name = "Query2";
-            this.Query2.Size = new System.Drawing.Size(75, 23);
-            this.Query2.TabIndex = 5;
-            this.Query2.Text = "Запрос_2";
-            this.Query2.UseVisualStyleBackColor = true;
-            this.Query2.Click += new System.EventHandler(this.Query2_Click);
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(41, 28);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(49, 13);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Рубрика";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(96, 15);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(49, 13);
+            this.label15.TabIndex = 10;
+            this.label15.Text = "Рубрика";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(21, 42);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(124, 13);
+            this.label16.TabIndex = 11;
+            this.label16.Text = "Название информации";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(108, 68);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(37, 13);
+            this.label17.TabIndex = 12;
+            this.label17.Text = "Текст";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(44, 97);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(101, 13);
+            this.label18.TabIndex = 13;
+            this.label18.Text = "Дата размещения";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(21, 123);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(125, 13);
+            this.label19.TabIndex = 14;
+            this.label19.Text = "Дата перевода в архив";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(74, 146);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(71, 13);
+            this.label20.TabIndex = 15;
+            this.label20.Text = "Размер в Кб";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(85, 172);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(60, 13);
+            this.label21.TabIndex = 16;
+            this.label21.Text = "Сотрудник";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(6, 32);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(131, 13);
+            this.label22.TabIndex = 4;
+            this.label22.Text = "Тип населенного пункта";
             // 
             // Form1
             // 
@@ -1381,6 +1714,7 @@ namespace kursachBD
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
@@ -1415,14 +1749,22 @@ namespace kursachBD
             this.tabPage15.ResumeLayout(false);
             this.tabPage15.PerformLayout();
             this.tabPage16.ResumeLayout(false);
+            this.tabPage16.PerformLayout();
             this.tabPage17.ResumeLayout(false);
             this.tabPage17.PerformLayout();
+            this.tabPage19.ResumeLayout(false);
+            this.tabControl5.ResumeLayout(false);
+            this.tabPage20.ResumeLayout(false);
+            this.tabPage20.PerformLayout();
+            this.tabPage21.ResumeLayout(false);
+            this.tabPage21.PerformLayout();
+            this.tabPage22.ResumeLayout(false);
+            this.tabPage22.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tabPage18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListReturner)).EndInit();
-            this.tabPage19.ResumeLayout(false);
-            this.tabPage19.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1551,6 +1893,35 @@ namespace kursachBD
         private System.Windows.Forms.Button Query2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker DateQuery2DTP;
+        private System.Windows.Forms.TabControl tabControl5;
+        private System.Windows.Forms.TabPage tabPage20;
+        private System.Windows.Forms.TabPage tabPage21;
+        private System.Windows.Forms.TabPage tabPage22;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Button Query3;
+        private System.Windows.Forms.DateTimePicker Query3ToDTP;
+        private System.Windows.Forms.DateTimePicker Query3FromDTP;
+        private System.Windows.Forms.ComboBox QueryPodrazCB;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label22;
     }
 }
 
