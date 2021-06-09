@@ -125,7 +125,7 @@ namespace kursachBD
             DWorks tet = new DWorks(Credentials);
             switch (tabControl3.SelectedIndex)
             {
-                case 0: { selectedTable = "Адрес"; dataGridView1.DataSource = tet.dataSet("Номер_дома, Корпус, Код_улицы, Код_нас_пункт, Код_организации", "Адрес", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Адрес", null).Tables[0].DefaultView; break; }
+                case 0: { selectedTable = "Адрес"; dataGridView1.DataSource = tet.dataSet("Номер_дома, Корпус, Код_улицы, Код_нас_пункт, Код_организации", "Адрес", null).Tables[0].DefaultView; dataGridViewListReturner.DataSource = tet.dataSet("*", "Адрес", null).Tables[0].DefaultView; break; }
                 case 1: { selectedTable = "Улица"; dataGridView1.DataSource = tet.dataSet("Название, Код_типа_улицы", "Улица", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Улица", null).Tables[0].DefaultView; break; }
                 case 2: { selectedTable = "Тип_улицы"; dataGridView1.DataSource = tet.dataSet("Название", "Тип_улицы", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Тип_улицы", null).Tables[0].DefaultView; break; }
                 case 3: { selectedTable = "Населенный_пункт"; dataGridView1.DataSource = tet.dataSet("Название, Код_типа_нас_пункт", "Населенный_пункт", null).Tables[0].DefaultView; dataGridView2.DataSource = tet.dataSet("*", "Населенный_пункт", null).Tables[0].DefaultView; break; }
@@ -596,14 +596,14 @@ namespace kursachBD
         private void OrgAddBTN_Click(object sender, EventArgs e)
         {
             DWorks database = new DWorks(Credentials);
-            listBox1.Items.Add(database.addOrganization(OrgTB.Text, KratOrgTB.Text, NumPhoneTB.Text, GetDirCode("Адрес", $"{AdressCB.SelectedItem.ToString()}", 2), EmailTB.Text, SiteTB.Text));
+            listBox1.Items.Add(database.addOrganization(OrgTB.Text, KratOrgTB.Text, NumPhoneTB.Text, GetDirCode("Адрес", $"{AdressCB.SelectedItem.ToString()}", 0), EmailTB.Text, SiteTB.Text));
             TableUpdate(); ComboUpdates();
         }
 
         private void OrgEditBTN_Click(object sender, EventArgs e)
         {
             DWorks database = new DWorks(Credentials);
-            if (tempeID != -1) { listBox1.Items.Add(database.editOrganization(OrgTB.Text, KratOrgTB.Text, NumPhoneTB.Text, GetDirCode("Адрес", $"{AdressCB.SelectedItem.ToString()}", 2), EmailTB.Text, SiteTB.Text, tempeID)); tempeID = -1; }
+            if (tempeID != -1) { listBox1.Items.Add(database.editOrganization(OrgTB.Text, KratOrgTB.Text, NumPhoneTB.Text, GetDirCode("Адрес", $"{AdressCB.SelectedItem.ToString()}", 0), EmailTB.Text, SiteTB.Text, tempeID)); tempeID = -1; }
             TableUpdate(); ComboUpdates();
         }
 

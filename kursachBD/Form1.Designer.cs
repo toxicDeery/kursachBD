@@ -29,13 +29,19 @@ namespace kursachBD
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
             this.OrgDelBTN = new System.Windows.Forms.Button();
             this.OrgEditBTN = new System.Windows.Forms.Button();
             this.OrgAddBTN = new System.Windows.Forms.Button();
@@ -46,6 +52,9 @@ namespace kursachBD
             this.KratOrgTB = new System.Windows.Forms.TextBox();
             this.OrgTB = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
             this.PodrazDelBTN = new System.Windows.Forms.Button();
             this.PodrazEditBTN = new System.Windows.Forms.Button();
             this.PodrazAddBTN = new System.Windows.Forms.Button();
@@ -53,6 +62,15 @@ namespace kursachBD
             this.FloorTB = new System.Windows.Forms.TextBox();
             this.PodrazdelTB = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.AddSotrDTP = new System.Windows.Forms.DateTimePicker();
             this.SotrDelBTN = new System.Windows.Forms.Button();
             this.SotrEditBTN = new System.Windows.Forms.Button();
@@ -66,11 +84,13 @@ namespace kursachBD
             this.NameTB = new System.Windows.Forms.TextBox();
             this.SurnameTB = new System.Windows.Forms.TextBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.label33 = new System.Windows.Forms.Label();
             this.StatusDelBTN = new System.Windows.Forms.Button();
             this.StatusEditBTN = new System.Windows.Forms.Button();
             this.StatusAddBTN = new System.Windows.Forms.Button();
             this.StatusTB = new System.Windows.Forms.TextBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.label32 = new System.Windows.Forms.Label();
             this.DolznDelBTN = new System.Windows.Forms.Button();
             this.DolznEditBTN = new System.Windows.Forms.Button();
             this.DolznAddBTN = new System.Windows.Forms.Button();
@@ -78,6 +98,10 @@ namespace kursachBD
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.NaspCB = new System.Windows.Forms.ComboBox();
             this.StreetCB = new System.Windows.Forms.ComboBox();
             this.AdressDelBTN = new System.Windows.Forms.Button();
@@ -86,17 +110,22 @@ namespace kursachBD
             this.KorpusTB = new System.Windows.Forms.TextBox();
             this.NumHomeTB = new System.Windows.Forms.TextBox();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.TypestrCB = new System.Windows.Forms.ComboBox();
             this.StrDelBTN = new System.Windows.Forms.Button();
             this.StrEditBTN = new System.Windows.Forms.Button();
             this.StrAddBTN = new System.Windows.Forms.Button();
             this.StreetTB = new System.Windows.Forms.TextBox();
             this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.label25 = new System.Windows.Forms.Label();
             this.TypestrDelBTN = new System.Windows.Forms.Button();
             this.TypestrEditBTN = new System.Windows.Forms.Button();
             this.TypestraddBTN = new System.Windows.Forms.Button();
             this.TypestrTB = new System.Windows.Forms.TextBox();
             this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.TypenaspCB = new System.Windows.Forms.ComboBox();
             this.NpktDelBTN = new System.Windows.Forms.Button();
             this.NpktEditBTN = new System.Windows.Forms.Button();
@@ -183,35 +212,6 @@ namespace kursachBD
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.dataGridViewListReturner = new System.Windows.Forms.DataGridView();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -309,6 +309,60 @@ namespace kursachBD
             this.tabPage4.Text = "Организация";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(66, 153);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(70, 13);
+            this.label51.TabIndex = 14;
+            this.label51.Text = "Адрес сайта";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(34, 127);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(102, 13);
+            this.label50.TabIndex = 13;
+            this.label50.Text = "Электонный адрес";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(98, 100);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(38, 13);
+            this.label49.TabIndex = 12;
+            this.label49.Text = "Адрес";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(22, 74);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(114, 13);
+            this.label48.TabIndex = 11;
+            this.label48.Text = "Контактный телефон";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(36, 48);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(100, 13);
+            this.label47.TabIndex = 10;
+            this.label47.Text = "Краткое название";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(79, 22);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(57, 13);
+            this.label46.TabIndex = 9;
+            this.label46.Text = "Название";
+            // 
             // OrgDelBTN
             // 
             this.OrgDelBTN.Location = new System.Drawing.Point(306, 188);
@@ -401,6 +455,33 @@ namespace kursachBD
             this.tabPage5.Text = "Подразделение";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(15, 78);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(74, 13);
+            this.label45.TabIndex = 8;
+            this.label45.Text = "Организация";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(56, 52);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(33, 13);
+            this.label44.TabIndex = 7;
+            this.label44.Text = "Этаж";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(32, 26);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(57, 13);
+            this.label43.TabIndex = 6;
+            this.label43.Text = "Название";
+            // 
             // PodrazDelBTN
             // 
             this.PodrazDelBTN.Location = new System.Drawing.Point(276, 117);
@@ -483,6 +564,87 @@ namespace kursachBD
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "Список_сотрудников";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(16, 242);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(83, 13);
+            this.label42.TabIndex = 20;
+            this.label42.Text = "Дата принятия";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(58, 212);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(41, 13);
+            this.label41.TabIndex = 19;
+            this.label41.Text = "Статус";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(54, 186);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(45, 13);
+            this.label40.TabIndex = 18;
+            this.label40.Text = "Пароль";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(61, 160);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(38, 13);
+            this.label39.TabIndex = 17;
+            this.label39.Text = "Логин";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(34, 133);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(65, 13);
+            this.label38.TabIndex = 16;
+            this.label38.Text = "Должность";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(12, 106);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(87, 13);
+            this.label37.TabIndex = 15;
+            this.label37.Text = "Подразделение";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(45, 80);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(54, 13);
+            this.label36.TabIndex = 14;
+            this.label36.Text = "Отчество";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(70, 54);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(29, 13);
+            this.label35.TabIndex = 13;
+            this.label35.Text = "Имя";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(43, 28);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(56, 13);
+            this.label34.TabIndex = 12;
+            this.label34.Text = "Фамилия";
             // 
             // AddSotrDTP
             // 
@@ -595,6 +757,15 @@ namespace kursachBD
             this.tabPage7.Text = "Статус_сотрудника";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(20, 31);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(41, 13);
+            this.label33.TabIndex = 4;
+            this.label33.Text = "Статус";
+            // 
             // StatusDelBTN
             // 
             this.StatusDelBTN.Location = new System.Drawing.Point(265, 76);
@@ -645,6 +816,15 @@ namespace kursachBD
             this.tabPage8.TabIndex = 4;
             this.tabPage8.Text = "Должность";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(12, 38);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(65, 13);
+            this.label32.TabIndex = 4;
+            this.label32.Text = "Должность";
             // 
             // DolznDelBTN
             // 
@@ -729,6 +909,42 @@ namespace kursachBD
             this.tabPage9.Text = "Адрес";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(17, 116);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(102, 13);
+            this.label31.TabIndex = 10;
+            this.label31.Text = "Населенный пункт";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(80, 89);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(39, 13);
+            this.label30.TabIndex = 9;
+            this.label30.Text = "Улица";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(76, 63);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(43, 13);
+            this.label29.TabIndex = 8;
+            this.label29.Text = "Корпус";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(49, 37);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(70, 13);
+            this.label28.TabIndex = 7;
+            this.label28.Text = "Номер дома";
+            // 
             // NaspCB
             // 
             this.NaspCB.FormattingEnabled = true;
@@ -806,6 +1022,24 @@ namespace kursachBD
             this.tabPage10.Text = "Улица";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(14, 58);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(60, 13);
+            this.label27.TabIndex = 6;
+            this.label27.Text = "Тип улицы";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(17, 32);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(57, 13);
+            this.label26.TabIndex = 5;
+            this.label26.Text = "Название";
+            // 
             // TypestrCB
             // 
             this.TypestrCB.FormattingEnabled = true;
@@ -867,6 +1101,15 @@ namespace kursachBD
             this.tabPage11.Text = "Тип_улицы";
             this.tabPage11.UseVisualStyleBackColor = true;
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(72, 31);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(60, 13);
+            this.label25.TabIndex = 4;
+            this.label25.Text = "Тип улицы";
+            // 
             // TypestrDelBTN
             // 
             this.TypestrDelBTN.Location = new System.Drawing.Point(277, 66);
@@ -920,6 +1163,24 @@ namespace kursachBD
             this.tabPage12.TabIndex = 3;
             this.tabPage12.Text = "Населенный_пункт";
             this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 59);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(131, 13);
+            this.label24.TabIndex = 6;
+            this.label24.Text = "Тип населенного пункта";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(80, 33);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(57, 13);
+            this.label23.TabIndex = 5;
+            this.label23.Text = "Название";
             // 
             // TypenaspCB
             // 
@@ -1656,16 +1917,16 @@ namespace kursachBD
             // 
             // chart1
             // 
-            chartArea14.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea14);
-            legend14.Name = "Legend1";
-            this.chart1.Legends.Add(legend14);
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
             this.chart1.Location = new System.Drawing.Point(31, 153);
             this.chart1.Name = "chart1";
-            series14.ChartArea = "ChartArea1";
-            series14.Legend = "Legend1";
-            series14.Name = "Series1";
-            this.chart1.Series.Add(series14);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(556, 300);
             this.chart1.TabIndex = 5;
             this.chart1.Text = "chart1";
@@ -1763,279 +2024,18 @@ namespace kursachBD
             this.dataGridViewListReturner.Size = new System.Drawing.Size(240, 150);
             this.dataGridViewListReturner.TabIndex = 3;
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(80, 33);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(57, 13);
-            this.label23.TabIndex = 5;
-            this.label23.Text = "Название";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 59);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(131, 13);
-            this.label24.TabIndex = 6;
-            this.label24.Text = "Тип населенного пункта";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(72, 31);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(60, 13);
-            this.label25.TabIndex = 4;
-            this.label25.Text = "Тип улицы";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(17, 32);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(57, 13);
-            this.label26.TabIndex = 5;
-            this.label26.Text = "Название";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(14, 58);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(60, 13);
-            this.label27.TabIndex = 6;
-            this.label27.Text = "Тип улицы";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(49, 37);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(70, 13);
-            this.label28.TabIndex = 7;
-            this.label28.Text = "Номер дома";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(76, 63);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(43, 13);
-            this.label29.TabIndex = 8;
-            this.label29.Text = "Корпус";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(80, 89);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(39, 13);
-            this.label30.TabIndex = 9;
-            this.label30.Text = "Улица";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(17, 116);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(102, 13);
-            this.label31.TabIndex = 10;
-            this.label31.Text = "Населенный пункт";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(12, 38);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(65, 13);
-            this.label32.TabIndex = 4;
-            this.label32.Text = "Должность";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(20, 31);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(41, 13);
-            this.label33.TabIndex = 4;
-            this.label33.Text = "Статус";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(43, 28);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(56, 13);
-            this.label34.TabIndex = 12;
-            this.label34.Text = "Фамилия";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(70, 54);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(29, 13);
-            this.label35.TabIndex = 13;
-            this.label35.Text = "Имя";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(45, 80);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(54, 13);
-            this.label36.TabIndex = 14;
-            this.label36.Text = "Отчество";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(12, 106);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(87, 13);
-            this.label37.TabIndex = 15;
-            this.label37.Text = "Подразделение";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(34, 133);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(65, 13);
-            this.label38.TabIndex = 16;
-            this.label38.Text = "Должность";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(61, 160);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(38, 13);
-            this.label39.TabIndex = 17;
-            this.label39.Text = "Логин";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(54, 186);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(45, 13);
-            this.label40.TabIndex = 18;
-            this.label40.Text = "Пароль";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(58, 212);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(41, 13);
-            this.label41.TabIndex = 19;
-            this.label41.Text = "Статус";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(16, 242);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(83, 13);
-            this.label42.TabIndex = 20;
-            this.label42.Text = "Дата принятия";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(32, 26);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(57, 13);
-            this.label43.TabIndex = 6;
-            this.label43.Text = "Название";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(56, 52);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(33, 13);
-            this.label44.TabIndex = 7;
-            this.label44.Text = "Этаж";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(15, 78);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(74, 13);
-            this.label45.TabIndex = 8;
-            this.label45.Text = "Организация";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(79, 22);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(57, 13);
-            this.label46.TabIndex = 9;
-            this.label46.Text = "Название";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(36, 48);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(100, 13);
-            this.label47.TabIndex = 10;
-            this.label47.Text = "Краткое название";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(22, 74);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(114, 13);
-            this.label48.TabIndex = 11;
-            this.label48.Text = "Контактный телефон";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(98, 100);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(38, 13);
-            this.label49.TabIndex = 12;
-            this.label49.Text = "Адрес";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(34, 127);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(102, 13);
-            this.label50.TabIndex = 13;
-            this.label50.Text = "Электонный адрес";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(66, 153);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(70, 13);
-            this.label51.TabIndex = 14;
-            this.label51.Text = "Адрес сайта";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1114, 531);
+            this.ClientSize = new System.Drawing.Size(1113, 531);
             this.Controls.Add(this.dataGridViewListReturner);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Новостная лента организации";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
